@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
+    <title>Restaurante Pihuicho</title>
+    <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="CSS/EstiloC.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloBLateral.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloBotonSearch.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloPiePagina.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="CSS/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+
+    <body>
+        <header>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <div class="sidebar">
+                <h2>PRODUCTOS</h2>
+                <ul>
+                    <li><a href="CVestimenta.php"><i class="fas fa-qrcode"></i>Vestimenta</a></li>
+                    <li><a href="#"><i class="fas fa-qrcode"></i>Medicamentos</a></li>
+                    <li><a href="#"><i class="fas fa-qrcode"></i>Alimento</a></li>
+                    <li><a href="CAccesorios.php"><i class="fas fa-qrcode"></i>Accesorios</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
+            </div>
+
+            <div class="Busqueda">
+                <input type="text" placeholder="Buscar platos">
+                <div class="btn">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+
+            <div class="info-header">
+                <nav>
+                    <a href="#">Registrate</a>
+                    <a href="#">Iniciar Sesion</a>
+                </nav>
+            </div>
+
+        </header>
+        
+        <main>
+            <div class="consulta-body">
+                <div class="consulta-container">
+                    <div class="consulta-card">
+                        <div class="left-column background1-left-column">
+                            <h6>Veterinaria</h6>
+                            <h2>DoctorPet</h2>
+                            <i class="fa-sharp fa-solid fa-shield-dog"></i>
+                        </div>
+                        <div class="right-column">
+                            <div>
+                                <h4>Atención</h4>
+                                <h6>08:00 a.m. - 18:00 p.m.</h6>
+                            </div>
+                            <h2>Consulta por Internet</h2>
+                            <p>Nuestros veterinarios están esperando por su consulta online. Registre sus datos y eliga un
+                            horario disponible para su atención online, y una vez hecho se le enviara un link de zoom
+                            15 minutos antes de su cita programada.</p>
+                            <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo registrar..." 
+                               target="_blank" class="button background1-left-column">Empezar</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>    
+        </main>
+
+        <footer class="footer">
+            <div class="container-f">
+                <div class="footer-row">
+                    <div class="footer-links">
+                        <h4>Veterinaria</h4>
+                        <ul>
+                            <li><a href="#">Nosotros</a></li>
+                            <li><a href="#">Nuestra tienda</a></li>
+                            <li><a href="#">Trabaja con nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Ayuda</h4>
+                        <ul>
+                            <li><a href="#">Medios de pagos</a></li>
+                            <li><a href="#">Preguntas frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Redes Sociales</h4>
+                        <div class="social-link">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

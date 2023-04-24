@@ -1,0 +1,221 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
+    <title>Restaurante Pihuicho</title>
+    <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="CSS/EstiloC.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloBLateral.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloBotonSearch.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloPiePagina.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <div class="sidebar">
+            <h2>PRODUCTOS</h2>
+            <ul>
+                <li><a href="CVestimenta.php"><i class="fas fa-qrcode"></i>Vestimenta</a></li>
+                <li><a href="#"><i class="fas fa-qrcode"></i>Medicamentos</a></li>
+                <li><a href="#"><i class="fas fa-qrcode"></i>Alimento</a></li>
+                <li><a href="CAccesorios.php"><i class="fas fa-qrcode"></i>Accesorios</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
+        </div>
+
+        <div class="Busqueda">
+            <input type="text" placeholder="Buscar platos">
+            <div class="btn">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+
+        <div class="info-header">
+            <nav>
+                <a href="#">Registrate</a>
+                <a href="#">Iniciar Sesion</a>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <div class="Barra-main">
+            <nav>
+                <ul class="menu-horizontal">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li>
+                        <a href="#">Productos</a>
+                        <ul class="menu-vertical">
+                            <li><a href="CVestimenta.php">Vestimenta</a></li>
+                            <li><a href="CMedicamentos.php">Medicamentos</a></li>
+                            <li><a href="CAlimentos.php">Alimentos</a></li>
+                            <li><a href="CAccesorios.php">Accesorios</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios</a>
+                        <ul class="menu-vertical">
+                            <li><a href="#">Consultas</a></li>
+                            <li><a href="CBañosCortes.php">Baño y Corte</a></li>
+                            <li><a href="CCampañas.php">Campañas</a></li>
+                            <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
+                            <li><a href="#">Atencion a Domicilio</a></li>
+                            <li><a href="#">Consultas online</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Adopciones</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Brit_Care_felino_pate-atun-pollo-y-leche.jpg" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Atún con pollo y leche</h3>
+                    <p>70 gr. de comida para gatos</p><br>
+                    <h3>S/.11.50</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Adulto-Salmon.jpg" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Salmón</h3>
+                    <p>7 gr. de comida para gato</p><br>
+                    <h3>S/.89.90</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Brit_Care_felino_pate-atun-y-camarones-esterilizado.jpg" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Atún y camarones</h3>
+                    <p>70 gr. de comida para gatos</p><br>
+                    <h3>S/.11.50</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Adulto-Esterilizado-Pollo.jpg" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Pollo</h3>
+                    <p>2 gr. de comida para gato</p><br>
+                    <h3>S/.76.50</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/ricocan-cordero-y-cereales-adultos-razas-pequenas-x-01-kg.jpg" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Ricocan Cordero y Cereales</h3>
+                    <p>3 kg. de comida para perro</p><br>
+                    <h3>S/.34.90</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/bell´s.png" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Comida para Perros BELL'S</h3>
+                    <p>Bolsa de 25Kg.</p><br>
+                    <h3>S/.78.50</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Nutrican.png" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Comida para Perros NUTRICAN</h3>
+                    <p>Bolsa de 25Kg.</p><br>
+                    <h3>S/.96.80</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir Caldo de Gallina">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="Imagenes/catalogo/alimentos/Dentitoy.png" alt="" />
+                </figure>
+                <div class="contenido">
+                    <h3>Snacks para Perros DENTITOY</h3>
+                    <p>Barrita Paquete 6un</p><br>
+                    <h3>S/.3.90</h3>
+                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
+                        <i class="bi bi-whatsapp"></i> Pedido</a>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container-f">
+            <div class="footer-row">
+                <div class="footer-links">
+                    <h4>Veterinaria</h4>
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Nuestra tienda</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Medios de pagos</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-link">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
