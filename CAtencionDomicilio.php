@@ -31,7 +31,7 @@
                 <li><a href="CBañosCortes.php"><i class="fas fa-qrcode"></i>Baños y Cortes</a></li>
                 <li><a href="CCampañas.php"><i class="fas fa-qrcode"></i>Campañas</a></li>
                 <li><a href="CAnimalesPerdidos.php"><i class="fas fa-qrcode"></i>Animales Perdidos</a></li>
-                <li><a href="AtencioDomicilio.php"><i class="fas fa-qrcode"></i>Atencion a Domicilio</a></li>
+                <li><a href="AtencionDomicilio.php"><i class="fas fa-qrcode"></i>Atencion a Domicilio</a></li>
                 <li><a href="CConsultaInternet.php"><i class="fas fa-qrcode"></i>Consultas por Internet</a></li>
             </ul>
         </div>
@@ -70,12 +70,11 @@
                                 <h4>Atención</h4>
                                 <h6>08:00 a.m. - 18:00 p.m.</h6>
                             </div>
-                            <h2>Consulta por Internet</h2>
-                            <p>Nuestros veterinarios están esperando por su consulta online. Registre sus datos y eliga un
-                            horario disponible para su atención online, y una vez hecho se le enviara un link de zoom
-                            15 minutos antes de su cita programada.</p>
+                            <h2>Atencion a Domicilio</h2>
+                            <p>Nuestros veterinarios estarán siempre alerta a la necesidad de sus clientes.
+                            Es por ello que si los necesitas en tu hogar ellos irán lo más rapido posible a acudir a tu llamado</p>
                             <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo registrar..." 
-                               target="_blank" class="button background1-left-column">Empezar</a>
+                               target="_blank" class="button background1-left-column">Contactanos</a>
                         </div>
                     </div>
                 </div> 

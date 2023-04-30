@@ -27,8 +27,8 @@
             <h2>PRODUCTOS</h2>
             <ul>
                 <li><a href="CVestimenta.php"><i class="fas fa-qrcode"></i>Vestimenta</a></li>
-                <li><a href="#"><i class="fas fa-qrcode"></i>Medicamentos</a></li>
-                <li><a href="#"><i class="fas fa-qrcode"></i>Alimento</a></li>
+                <li><a href="CMedicamentos.php"><i class="fas fa-qrcode"></i>Medicamentos</a></li>
+                <li><a href="CAlimento.php"><i class="fas fa-qrcode"></i>Alimento</a></li>
                 <li><a href="CAccesorios.php"><i class="fas fa-qrcode"></i>Accesorios</a></li>
             </ul>
         </div>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="Busqueda">
-            <input type="text" placeholder="Buscar platos">
+            <input type="text" placeholder="Buscar">
             <div class="btn">
                 <i class="fa fa-search"></i>
             </div>
@@ -74,7 +74,7 @@
                             <li><a href="CCampañas.php">Campañas</a></li>
                             <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
                             <li><a href="#">Atencion a Domicilio</a></li>
-                            <li><a href="#">Consultas online</a></li>
+                            <li><a href="CConsultaInternet.php">Consultas online</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Adopciones</a></li>
