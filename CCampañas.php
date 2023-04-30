@@ -2,8 +2,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
-    <title>Restaurante Pihuicho</title>
+    <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
+    <title>Doctor Pet</title>
     <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -19,39 +19,41 @@
 
     <body>
         <header>
-            <input type="checkbox" id="check">
-            <label for="check">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
-            <div class="sidebar">
-                <h2>PRODUCTOS</h2>
-                <ul>
-                    <li><a href="CVestimenta.php"><i class="fas fa-qrcode"></i>Vestimenta</a></li>
-                    <li><a href="#"><i class="fas fa-qrcode"></i>Medicamentos</a></li>
-                    <li><a href="#"><i class="fas fa-qrcode"></i>Alimento</a></li>
-                    <li><a href="CAccesorios.php"><i class="fas fa-qrcode"></i>Accesorios</a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
-            </div>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <div class="sidebar">
+            <h2>SERVICIOS</h2>
+            <ul>
+                <li><a href="#.php"><i class="fas fa-qrcode"></i>Consulta</a></li>
+                <li><a href="CBañosCortes.php"><i class="fas fa-qrcode"></i>Baños y Cortes</a></li>
+                <li><a href="CCampañas.php"><i class="fas fa-qrcode"></i>Campañas</a></li>
+                <li><a href="CAnimalesPerdidos.php"><i class="fas fa-qrcode"></i>Animales Perdidos</a></li>
+                <li><a href="AtencionDomicilio.php"><i class="fas fa-qrcode"></i>Atencion a Domicilio</a></li>
+                <li><a href="CConsultaInternet.php"><i class="fas fa-qrcode"></i>Consultas por Internet</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
+        </div>
 
-            <div class="Busqueda">
-                <input type="text" placeholder="Buscar platos">
-                <div class="btn">
-                    <i class="fa fa-search"></i>
-                </div>
+        <div class="Busqueda">
+            <input type="text" placeholder="Buscar">
+            <div class="btn">
+                <i class="fa fa-search"></i>
             </div>
+        </div>
 
-            <div class="info-header">
-                <nav>
-                    <a href="#">Registrate</a>
-                    <a href="#">Iniciar Sesion</a>
-                </nav>
-            </div>
+        <div class="info-header">
+            <nav>
+                <a href="#">Registrate</a>
+                <a href="#">Iniciar Sesion</a>
+            </nav>
+        </div>
 
-        </header>
+    </header>
 
         <main>
             <div class="Barra-main">
@@ -76,7 +78,7 @@
                             <li><a href="CCampañas.php">Campañas</a></li>
                             <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
                             <li><a href="#">Atencion a Domicilio</a></li>
-                            <li><a href="#">Consultas online</a></li>
+                            <li><a href="CConsultaInternet.php">Consultas online</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Adopciones</a></li>
