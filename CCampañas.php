@@ -54,6 +54,35 @@
         </header>
 
         <main>
+            <div class="Barra-main">
+            <nav>
+                <ul class="menu-horizontal">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li>
+                        <a href="#">Productos</a>
+                        <ul class="menu-vertical">
+                            <li><a href="CVestimenta.php">Vestimenta</a></li>
+                            <li><a href="CMedicamentos.php">Medicamentos</a></li>
+                            <li><a href="CAlimentos.php">Alimentos</a></li>
+                            <li><a href="CAccesorios.php">Accesorios</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios</a>
+                        <ul class="menu-vertical">
+                            <li><a href="#">Consultas</a></li>
+                            <li><a href="CBañosCortes.php">Baño y Corte</a></li>
+                            <li><a href="CCampañas.php">Campañas</a></li>
+                            <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
+                            <li><a href="#">Atencion a Domicilio</a></li>
+                            <li><a href="#">Consultas online</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Adopciones</a></li>
+                </ul>
+            </nav>
+        </div>
             <div class="body-m">
                 <div class="card-campaña">
                     <div class="face front">
