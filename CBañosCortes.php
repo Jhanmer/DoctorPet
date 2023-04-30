@@ -26,7 +26,7 @@
         <div class="sidebar">
             <h2>SERVICIOS</h2>
             <ul>
-                <li><a href="#.php"><i class="fas fa-qrcode"></i>Consulta</a></li>
+                <li><a href="CConsultas.php"><i class="fas fa-qrcode"></i>Consulta</a></li>
                 <li><a href="CBañosCortes.php"><i class="fas fa-qrcode"></i>Baños y Cortes</a></li>
                 <li><a href="CCampañas.php"><i class="fas fa-qrcode"></i>Campañas</a></li>
                 <li><a href="CAnimalesPerdidos.php"><i class="fas fa-qrcode"></i>Animales Perdidos</a></li>
@@ -47,7 +47,7 @@
 
         <div class="info-header">
             <nav>
-                <a href="#">Registrate</a>
+                <a href="RegistroC.php">Registrate</a>
                 <a href="#">Iniciar Sesion</a>
             </nav>
         </div>
@@ -71,11 +71,11 @@
                     <li>
                         <a href="#">Servicios</a>
                         <ul class="menu-vertical">
-                            <li><a href="#">Consultas</a></li>
+                            <li><a href="CConusltas.php">Consultas</a></li>
                             <li><a href="CBañosCortes.php">Baño y Corte</a></li>
                             <li><a href="CCampañas.php">Campañas</a></li>
                             <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
-                            <li><a href="#">Atencion a Domicilio</a></li>
+                            <li><a href="CAtencionDomicilio.php">Atencion a Domicilio</a></li>
                             <li><a href="CConsultaInternet.php">Consultas online</a></li>
                         </ul>
                     </li>

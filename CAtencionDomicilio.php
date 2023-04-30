@@ -27,7 +27,7 @@
         <div class="sidebar">
             <h2>SERVICIOS</h2>
             <ul>
-                <li><a href="#.php"><i class="fas fa-qrcode"></i>Consulta</a></li>
+                <li><a href="CConsultas.php"><i class="fas fa-qrcode"></i>Consulta</a></li>
                 <li><a href="CBañosCortes.php"><i class="fas fa-qrcode"></i>Baños y Cortes</a></li>
                 <li><a href="CCampañas.php"><i class="fas fa-qrcode"></i>Campañas</a></li>
                 <li><a href="CAnimalesPerdidos.php"><i class="fas fa-qrcode"></i>Animales Perdidos</a></li>
@@ -48,10 +48,10 @@
 
         <div class="info-header">
             <nav>
-                <a href="#">Registrate</a>
+                <a href="Registro.php">Registrate</a>
                 <a href="#">Iniciar Sesion</a>
                 <a href="CAccesorios">Productos</a>
-                <a href="#">Servicios</a>
+                <a href="CConsultas.php">Servicios</a>
             </nav>
         </div>
     </header>
