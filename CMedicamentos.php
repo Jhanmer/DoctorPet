@@ -45,7 +45,7 @@
 
         <div class="info-header">
             <nav>
-                <a href="#">Registrate</a>
+                <a href="RegistroC.php">Registrate</a>
                 <a href="#">Iniciar Sesion</a>
             </nav>
         </div>
@@ -69,11 +69,11 @@
                     <li>
                         <a href="#">Servicios</a>
                         <ul class="menu-vertical">
-                            <li><a href="#">Consultas</a></li>
+                            <li><a href="CConsultas.php">Consultas</a></li>
                             <li><a href="CBañosCortes.php">Baño y Corte</a></li>
                             <li><a href="CCampañas.php">Campañas</a></li>
                             <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
-                            <li><a href="#">Atencion a Domicilio</a></li>
+                            <li><a href="CAtencionDomicilio.php">Atencion a Domicilio</a></li>
                             <li><a href="CConsultaInternet.php">Consultas online</a></li>
                         </ul>
                     </li>
