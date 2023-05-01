@@ -50,7 +50,7 @@
             <nav>
                 <a href="RegistroC.php">Registrate</a>
                 <a href="#">Iniciar Sesion</a>
-                <a href="CAccesorios">Productos</a>
+                <a href="CAccesorios.php">Productos</a>
                 <a href="CConsultas.php">Servicios</a>
             </nav>
         </div>

@@ -71,7 +71,7 @@
                     <li>
                         <a href="#">Servicios</a>
                         <ul class="menu-vertical">
-                            <li><a href="CConusltas.php">Consultas</a></li>
+                            <li><a href="CConsultas.php">Consultas</a></li>
                             <li><a href="CBañosCortes.php">Baño y Corte</a></li>
                             <li><a href="CCampañas.php">Campañas</a></li>
                             <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
