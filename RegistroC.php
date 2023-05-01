@@ -36,10 +36,10 @@
                             <i class="fa-solid fa-cake-candles"></i>
                             <input type="date" min="1900-01-01">
                         </div>
-                        <div class="input-field-RC-2">
+                        <div class="input-field-RC-3">
                             <i class="fa-solid fa-venus-mars"></i>
-                            <input type="radio" name="gender" value="Hombre">Hombre
-                            <input type="radio" name="gender" value="Muejr">Mujer
+                            <input type="radio" name="gender" value="Hombre"><p>Hombre</p>
+                            <input type="radio" name="gender" value="Muejr"><p>Mujer</p>
                         </div>
                         <div class="input-field-RC">
                             <i class="fa-solid fa-location-dot"></i>

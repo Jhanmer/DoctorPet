@@ -50,12 +50,28 @@
 .input-field-RC-2{
     background-color: #515966;
     margin: 15px 0;
-    padding: 15px;
+    padding: 10px;
     border-radius: 3px;
     display: flex;
     align-items: center;
     transition: max-height 0.5s;
     overflow: hidden;
+}
+.input-field-RC-3{
+    background-color: #515966;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+.input-field-RC-3 input{
+    margin-left: 40px;
+    width: 15px;
+}
+.input-field-RC-3 p{
+    font-size: 20px;
 }
 input{
     width: 100%;
@@ -73,6 +89,10 @@ input::placeholder{
     color: #04BD7D;
 }
 .input-field-RC-2 i{
+    color: #04BD7D;
+}
+.input-field-RC-3 i{
+    margin-left: 15px;
     color: #04BD7D;
 }
 form p{
@@ -121,13 +141,14 @@ form p a{
     height: 20px;
 }
 .select-box{
-    margin-left: 15px;
+    margin-left: 22px;
     padding: 0 2px 0 0;
     border: none;
     appearance: none;
     width: 100%;
     color: white;
     background-color: #515966;
+    font-size: 20px;
 }
 .select-container .icon-container{
     width: 30px;
