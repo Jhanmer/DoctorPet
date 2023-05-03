@@ -90,29 +90,29 @@
         </div>
         <section>
             <h2>Reservar cita</h2>
-            <form class="formulario">
+            <form class="formulario" action="./controlador/RegistrarConsulta.php" method="post">
                 <fieldset>
                     <!-- <legend>Contáctanos llenando todos los campos</legend> -->
                     <div class="contenedor-campos">
                         <div class="campo">
                             <label for="">Nombre</label>
-                            <input class="input-text" type="text" placeholder="Tu Nombre">
+                            <input name="txtNom" class="input-text" type="text" placeholder="Tu Nombre">
                         </div>
                         <div class="campo">
                             <label for="">Teléfono</label>
-                            <input class="input-text" type="tel" placeholder="teléfono">
+                            <input name="txtTelefono"class="input-text" type="tel" placeholder="teléfono">
                         </div>
                         <div class="campo">
                             <label for="">Fecha</label>
-                            <input class="input-text" type="date" placeholder="teléfono">
+                            <input name="txtFecha" class="input-text" type="date">
                         </div>
                         <div class="campo">
                             <label for="">Correo</label>
-                            <input class="input-text" type="email" placeholder="email">
+                            <input name="txtCorreo" class="input-text" type="email" placeholder="email">
                         </div>
                         <div class="campo">
                             <label for="">Motivo</label>
-                            <textarea class="input-text" placeholder="Cuéntanos tu asunto..."></textarea>
+                            <textarea  name="txtMotivo" class="input-text" placeholder="Cuéntanos tu asunto..."></textarea>
                         </div>
                     </div><!-- contenedor campos -->
                     <div class="alinear-derecha flex">

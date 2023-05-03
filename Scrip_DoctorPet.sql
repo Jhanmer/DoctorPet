@@ -6,10 +6,11 @@ use BDDoctorPet;
 drop table if exists DP_Consulta;
 Create table DP_Consulta( 
 idConsulta int primary key auto_increment not null, 
-FechaCons date not null, 
-Motivo varchar(200) not null, 
+nombreCli varchar(50) not null,
 TelefonoCons char(9) not null, 
-evidenciaImg varchar(500) null
+FechaCons date not null, 
+correoCli varchar(100) not null,
+Motivo varchar(200) not null
 ); 
 
 drop table if exists DP_Distrito;
@@ -112,5 +113,20 @@ foreign key (idCategoriaPro) references DP_Categoria_Producto(idCategoriaPro)
 
 
 
-
-
+/*
+PROCEDIMIENTOS ALMACENADOS
+*/
+drop procedure if exists SP_InsertarConsulta;
+	delimiter $$
+	create procedure SP_InsertarConsulta
+	(in 
+	nombreCli varchar (50),
+	TelefonoCons char(9),
+	FechaCons date,
+	correoCli varchar(100),
+	Motivo varchar(200))
+	begin
+	insert into DP_Consulta(nombreCli,TelefonoCons,FechaCons,correoCli,Motivo) 
+	values(nombreCli,TelefonoCons,FechaCons,correoCli,Motivo);
+	end $$
+	delimiter ;
