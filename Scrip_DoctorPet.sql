@@ -1,0 +1,116 @@
+drop database if exists BDDoctorPet;
+create database BDDoctorPet;
+use BDDoctorPet;
+
+
+drop table if exists DP_Consulta;
+Create table DP_Consulta( 
+idConsulta int primary key auto_increment not null, 
+FechaCons date not null, 
+Motivo varchar(200) not null, 
+TelefonoCons char(9) not null, 
+evidenciaImg varchar(500) null
+); 
+
+drop table if exists DP_Distrito;
+Create table DP_Distrito( 
+idDistrito int primary key auto_increment not null, 
+Nombre varchar(100) 
+); 
+drop table if exists DP_Categoria_Producto;
+Create table DP_Categoria_Producto(
+idCategoriaPro int primary key auto_increment not null, 
+nombreCatePro varchar(100)
+);
+
+drop table if exists DP_Raza;
+Create table DP_Raza(
+idRaza int primary key auto_increment not null,
+nombreRaza varchar(100)
+);
+
+drop table if exists DP_Especie;
+Create table DP_Especie(
+idEspecie int primary key auto_increment not null,
+nombreEspe varchar(100)
+);
+
+drop table if exists DP_Cliente;
+Create table DP_Cliente( 
+idCliente int primary key auto_increment not null, 
+nombre varchar(50) not null, 
+apellidos varchar(50) not null, 
+Email varchar(100) not null, 
+Fecha_nacimiento date not null, 
+Genero bit not null,
+direccion varchar(100) not null, 
+IdDistrito int, 
+Password varchar(50) not null, 
+Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
+foreign key (IdDistrito) references DP_Distrito(IdDistrito)
+); 
+
+drop table if exists DP_Mascota;
+Create table DP_Mascota( 
+idMascota int primary key auto_increment not null, 
+NomMasc varchar(200), 
+EdadMasc int, 
+idEspecie int, 
+idRaza  int, 
+idCliente int, 
+foreign key (idCliente) references DP_Cliente(idCliente),
+foreign key (idEspecie) references DP_Especie(idEspecie),
+foreign key (idRaza) references DP_Raza(idRaza)
+); 
+
+drop table if exists DP_Personal;
+Create table DP_Personal( 
+idPersonal int primary key auto_increment not null, 
+NomPers varchar(200), 
+ApePers varchar(200), 
+CorreoPers varchar(200), 
+NumeroPers int, 
+IdDistrito int,
+CargoPers varchar(200),
+foreign key (IdDistrito) references DP_Distrito(IdDistrito)
+); 
+
+
+drop table if exists DP_Camapania;
+Create table DP_Camapania(
+idCampania int primary key auto_increment not null, 
+tip_campania varchar(100) not null,
+direccion varchar(200) not null,
+idDistrito int not null,
+urlGoogle_maps varchar(500) null,
+foreign key (IdDistrito) references DP_Distrito(IdDistrito)
+);
+
+drop table if exists DP_BanioCorte;
+Create table DP_BanioCorte(
+idBanioCorte int primary key auto_increment not null, 
+idCliente int not null,
+idMascota int not null,
+direccion varchar(200) not null,
+idDistrito int not null,
+urlGoogle_maps varchar(500) null,
+foreign key (idCliente) references DP_Cliente(idCliente),
+foreign key (idMascota) references DP_Mascota(idMascota),
+foreign key (IdDistrito) references DP_Distrito(IdDistrito)
+);
+
+
+drop table if exists DP_Producto;
+Create table DP_Producto(
+idProducto int primary key auto_increment not null,
+nombreProducto varchar(100) not null,
+idCategoriaPro int not null,
+precio Decimal(10,2) not null,
+fechaVencimiento date not null,
+foreign key (idCategoriaPro) references DP_Categoria_Producto(idCategoriaPro)
+);
+
+
+
+
+
