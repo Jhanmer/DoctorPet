@@ -18,6 +18,19 @@ Create table DP_Distrito(
 idDistrito int primary key auto_increment not null, 
 Nombre varchar(100) 
 ); 
+INSERT INTO DP_Distrito (idDistrito, Nombre) VALUES
+(1, 'Chorrillos'),
+(2, 'Pachacamac'),
+(3, 'Pucusana'),
+(4, 'San Juan de Miraflores'),
+(5, 'San Bartolo'),
+(6, 'Punta Hermosa'),
+(7, 'Punta Negra'),
+(8, 'Lurín'),
+(9, 'Santa María del Mar'),
+(10, 'Villa El Salvador'),
+(11, 'Villa María del Triunfo');
+
 drop table if exists DP_Categoria_Producto;
 Create table DP_Categoria_Producto(
 idCategoriaPro int primary key auto_increment not null, 
