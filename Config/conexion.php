@@ -1,4 +1,5 @@
 <?php
+
 class Conexion
 {
 	private $usuario;
@@ -32,6 +33,7 @@ class Conexion
 		mysqli_close($cadena);
 		$cadena = null;
 	}
+
 }
 
 ?>

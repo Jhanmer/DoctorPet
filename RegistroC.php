@@ -1,5 +1,5 @@
 <?php 
-    require 'modelo/conexion_bd.php';
+    require 'Config/conexion_bd.php';
     $consultaDist = "select * from dp_distrito;";
     $ListaDist = mysqli_query($conn,$consultaDist);
 ?>

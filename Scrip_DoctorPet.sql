@@ -54,11 +54,12 @@ Create table DP_Cliente(
 idCliente int primary key auto_increment not null, 
 nombre varchar(50) not null, 
 apellidos varchar(50) not null, 
-Email varchar(100) not null, 
 Fecha_nacimiento date not null, 
 Genero bit not null,
 direccion varchar(100) not null, 
 IdDistrito int, 
+Telefono varchar(20),
+Email varchar(100) not null, 
 Password varchar(50) not null, 
 Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
 foreign key (IdDistrito) references DP_Distrito(IdDistrito)
