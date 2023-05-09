@@ -96,23 +96,23 @@
                     <div class="contenedor-campos">
                         <div class="campo">
                             <label for="">Nombre</label>
-                            <input name="txtNom" class="input-text" type="text" placeholder="Tu Nombre">
+                            <input name="txtNom" class="input-text" type="text" placeholder="Tu Nombre" required="">
                         </div>
                         <div class="campo">
                             <label for="">Teléfono</label>
-                            <input name="txtTelefono"class="input-text" type="tel" placeholder="teléfono">
+                            <input name="txtTelefono"class="input-text" type="tel" placeholder="teléfono" required="">
                         </div>
                         <div class="campo">
                             <label for="">Fecha</label>
-                            <input name="txtFecha" class="input-text" type="date">
+                            <input name="txtFecha" class="input-text" type="date" required="">
                         </div>
                         <div class="campo">
                             <label for="">Correo</label>
-                            <input name="txtCorreo" class="input-text" type="email" placeholder="email">
+                            <input name="txtCorreo" class="input-text" type="email" placeholder="email" required="">
                         </div>
                         <div class="campo">
                             <label for="">Motivo</label>
-                            <textarea  name="txtMotivo" class="input-text" placeholder="Cuéntanos tu asunto..."></textarea>
+                            <textarea  name="txtMotivo" class="input-text" required="" placeholder="Cuéntanos tu asunto..."></textarea>
                         </div>
                     </div><!-- contenedor campos -->
                     <div class="alinear-derecha flex">
