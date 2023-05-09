@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
-    <title>Doctor Pet - Registro de Usuario</title>
+    <title>Doctor Pet - Registro de Cliente</title>
     <link href="CSS/EstiloRegistroCliente.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -68,11 +68,11 @@
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" name="contraseña" placeholder="Contraseña">
                         </div>
-                        <p>Olvidaste tu contraseña <a href="#">click aquí</a></p>
+                        <p>Olvidaste tu contraseña <a href="#">Haz click aquí</a></p>
                     </div>
                     <div class="btn-field-RC">
                         <input type="submit" name="registro" value="Registrarse">
-                        <button type="button"><a href="#">Login</a></button>
+                        <button type="button"><a href="#">Ingresar</a></button>
                     </div>
                 </form>
             </div>
