@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
-    <title>Doctor Pet</title>
+    <title>Doctor-Pet-Servicios</title>
     <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
