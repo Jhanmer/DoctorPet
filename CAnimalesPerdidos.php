@@ -1,9 +1,8 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
-    <title>Doctor Pet</title>
+    <title>Doctor Pet - Animales Perdidos</title>
     <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -13,9 +12,7 @@
     <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloPiePagina.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
 </head>
-
 <body>
     <header>
         <input type="checkbox" id="check">
@@ -91,7 +88,7 @@
                 </figure>
                 <div class="contenido">
                     <h3>Nombre: Lucas</h3>
-                    <p><strong>Fecha:</strong> 22 de Abril</p>
+                    <p><strong>Fecha:</strong> 18 de Abril</p>
                     <p><strong>Visto Ultimamente:</strong> Real Plaza VMT</p>
                     <p><strong>Numero de contacto:</strong> 987 987 654</p>
                     <p><strong>Tamaño:</strong> 60cm</p>
