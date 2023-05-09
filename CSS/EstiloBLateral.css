@@ -9,7 +9,7 @@ body{
     width: 280px;
     height: 100%;
     margin-top: 850px;
-    background: #009999;
+    background: linear-gradient(black, #69bedf);;
     transition: all .5s ease;
     z-index: 1;
 }

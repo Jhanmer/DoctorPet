@@ -233,10 +233,7 @@
                     <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
                         <i class="bi bi-whatsapp"></i> Pedido</a>
                 </div>
-            </div>
-        </div>
-    </main>
-    <footer class="footer">
+            </div><footer class="footer">
         <div class="container-f">
             <div class="footer-row">
                 <div class="footer-links">
@@ -265,6 +262,9 @@
             </div>
         </div>
     </footer>
+        </div>
+    </main>
+    
 
 </body>
 
