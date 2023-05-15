@@ -133,7 +133,7 @@ CREATE TABLE dp_mascota_perdida (
   contacto_perdido int(15) NOT NULL,
   tamanio_perdido varchar(50) NOT NULL,
   descripcion_perdido varchar(200) NOT NULL
-)
+);
 INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido) VALUES
 (1, 'Carlos', '14 de mayo', 'Mall del sur', 992992992, '60cm', 'De estatura pequeña, con manchitas rojas'),
 (2, 'Panchito', '15 de mayo', 'Mall del sur, junto con las gatitas ', 993993993, 'aproximado de 50 cm de altura', 'Estatura pequeña, manchita en su cola'),
