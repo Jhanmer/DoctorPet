@@ -90,6 +90,7 @@
         </div>
         <section>
             <h2>Reservar cita</h2>
+            
             <form class="formulario" action="./controlador/RegistrarConsulta.php" method="post">
                 <fieldset>
                     <!-- <legend>Contáctanos llenando todos los campos</legend> -->
