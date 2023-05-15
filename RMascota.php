@@ -66,7 +66,7 @@
                     <label>edad</label>
                   </div> 
                   <div class="user-box">
-                    <input type="password" name="raza" required="">
+                    <input type="text" name="raza" required="">
                     <label>raza</label>
                   </div>
                   <a href="#">
