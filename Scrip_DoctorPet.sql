@@ -125,6 +125,23 @@ fechaVencimiento date not null,
 foreign key (idCategoriaPro) references DP_Categoria_Producto(idCategoriaPro)
 );
 
+CREATE TABLE dp_mascota_perdida (
+  Id_perdidos int(10) NOT NULL,
+  nombre_perdido varchar(50) NOT NULL,
+  fecha_perdido varchar(30) NOT NULL,
+  visto_perdido varchar(50) NOT NULL,
+  contacto_perdido int(15) NOT NULL,
+  tamanio_perdido varchar(50) NOT NULL,
+  descripcion_perdido varchar(200) NOT NULL
+)
+INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido) VALUES
+(1, 'Carlos', '14 de mayo', 'Mall del sur', 992992992, '60cm', 'De estatura pequeña, con manchitas rojas'),
+(2, 'Panchito', '15 de mayo', 'Mall del sur, junto con las gatitas ', 993993993, 'aproximado de 50 cm de altura', 'Estatura pequeña, manchita en su cola'),
+(3, 'Luisito', '13 de mayo', 'Real plaza de vmt', 996996996, '1 cm', 'mi pulguita se perdio'),
+(4, 'Dumbito', '14 de abril', 'Zoologico ', 994994994, '15 metros', 'Tiene 3 piernas, se escapo cuando vio una rata'),
+(5, 'Jacinto', '2 de marzo', 'Mercado unicachi', 997997997, '40cm', 'Me acompañaba al mercado, y se perdio cuando fui a la carniceria'),
+(6, 'Quesito', '8 de junio', 'Plaza de armas de surco', 998998998, '20cm', 'Mi ratita esta gordita, fuimos a un parque y aparecieron gatos'),
+(7, 'Zapatito', '4 de marzo', 'Universidad utp', 944944944, '5cm', 'mi lorito se perdio en el baño');
 
 
 /*
