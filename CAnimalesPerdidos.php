@@ -1,14 +1,17 @@
+<?php 
+    require "Config/conexion_bd.php";
+    $con = fnConnect($msg);
+?>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
     <title>Doctor Pet - Animales Perdidos</title>
-    <link href="CSS/EstiloBFila.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstiloBarraFila.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="CSS/EstiloC.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloBLateral.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/EstiloBotonSearch.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloPiePagina.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -33,13 +36,6 @@
         </div>
         <div class="logo">
             <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
-        </div>
-
-        <div class="Busqueda">
-            <input type="text" placeholder="Buscar">
-            <div class="btn">
-                <i class="fa fa-search"></i>
-            </div>
         </div>
 
         <div class="info-header">
@@ -80,93 +76,75 @@
                 </ul>
             </nav>
         </div>
-
+        
+        <div class="contenedor-botones-perdidos">
+            <form action="" method="GET">
+                <div class="boton-box2">
+                    <input type="text" name="busqueda" placeholder="Búsqueda">
+                    <input type="submit" name="enviar" value="Buscar">
+                </div>
+            </form>    
+            <div class="boton-box">
+                <a href="Ranimales_perdidos.php">Registrar mascota perdida</a>
+            </div>
+        </div>
+        
         <div class="container">
+            <?php 
+            if(!isset($_GET['enviar'])){
+                $sqlshow="select * from dp_mascota_perdida";
+                $resultconsul= mysqli_query($con, $sqlshow);
+                while($mostrarlost= mysqli_fetch_array($resultconsul)){       
+            ?>
             <div class="card">
                 <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/lucas.jpeg" alt="" />
+                    <img src="Imagenes/Servicios/AnimalesPerdidos/meperdi.jpg" alt="" />
                 </figure>
                 <div class="contenido">
-                    <h3>Nombre: Lucas</h3>
-                    <p><strong>Fecha:</strong> 18 de Abril</p>
-                    <p><strong>Visto Ultimamente:</strong> Real Plaza VMT</p>
-                    <p><strong>Numero de contacto:</strong> 987 987 654</p>
-                    <p><strong>Tamaño:</strong> 60cm</p>
-                    <p><strong>Características:</strong> Tiene un collar con un PIN donde esta su nombre, tiene un mancha en la pata derecha</p><br>
+                    <h3>Nombre: <?php echo $mostrarlost['nombre_perdido'] ?> </h3>
+                    <p><strong>Fecha:</strong> <?php echo $mostrarlost['fecha_perdido'] ?> </p>
+                    <p><strong>Visto Ultimamente:</strong> <?php echo $mostrarlost['visto_perdido'] ?> </p>
+                    <p><strong>Numero de contacto:</strong> <?php echo $mostrarlost['contacto_perdido'] ?> </p>
+                    <p><strong>Tamaño:</strong> <?php echo $mostrarlost['tamanio_perdido'] ?> </p>
+                    <p><strong>Características:</strong> <?php echo $mostrarlost['descripcion_perdido'] ?> </p><br>
                     <h2>Si me ves, por favor llama a mi familia.</h2>
                     <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
                         <i class="bi bi-whatsapp"></i> Mas información</a>
                 </div>
             </div>
+            <?php 
+                 }   
+            }else 
+                if(isset($_GET['enviar'])){
+                    $busqueda = $_GET['busqueda'];
+                    $consultaMP = $con->query("SELECT * FROM dp_mascota_perdida WHERE nombre_perdido LIKE '%$busqueda%' OR descripcion_perdido LIKE '%$busqueda%' "
+                            . " OR fecha_perdido LIKE '%$busqueda%' OR visto_perdido LIKE '%$busqueda%' OR contacto_perdido LIKE '%$busqueda%' OR tamanio_perdido LIKE '%$busqueda%' ");
+                    while($row = $consultaMP->fetch_array()){
+                         
+            ?>
             <div class="card">
                 <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/carmen.jpg" alt="" />
+                    <img src="Imagenes/Servicios/AnimalesPerdidos/meperdi.jpg" alt="" />
                 </figure>
                 <div class="contenido">
-                    <h3>Nombre: Carmen</h3>
-                    <p><strong>Fecha:</strong> 21 de Abril</p>
-                    <p><strong>Visto Ultimamente:</strong> Por el Macro de Villa el Salvador</p>
-                    <p><strong>Numero de contacto:</strong> 987 987 652</p>
-                    <p><strong>Tamaño:</strong> 15cm</p>
-                    <p><strong>Características:</strong> Tiene un collar con un PIN donde esta su nombre.</p><br>
+                    <h3>Nombre: <?php echo $row['nombre_perdido'] ?> </h3>
+                    <p><strong>Fecha:</strong> <?php echo $row['fecha_perdido'] ?> </p>
+                    <p><strong>Visto Ultimamente:</strong> <?php echo $row['visto_perdido'] ?> </p>
+                    <p><strong>Numero de contacto:</strong> <?php echo $row['contacto_perdido'] ?> </p>
+                    <p><strong>Tamaño:</strong> <?php echo $row['tamanio_perdido'] ?> </p>
+                    <p><strong>Características:</strong> <?php echo $row['descripcion_perdido'];  ?> </p><br>
                     <h2>Si me ves, por favor llama a mi familia.</h2>
                     <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
                         <i class="bi bi-whatsapp"></i> Mas información</a>
                 </div>
             </div>
-            <div class="card">
-                <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/perico.jpg" alt="" />
-                </figure>
-                <div class="contenido">
-                    <h3>Nombre: Perico</h3>
-                    <p><strong>Fecha:</strong> 19 de Abril</p>
-                    <p><strong>Visto Ultimamente:</strong> Club metropolitano Huayna Cápac</p>
-                    <p><strong>Numero de contacto:</strong> 987 987 651</p>
-                    <p><strong>Tamaño:</strong> 15cm</p>
-                    <p><strong>Características:</strong> Tiene un collar con un PIN donde esta su nombre.</p><br>
-                    <h2>Si me ves, por favor llama a mi familia.</h2>
-                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                        <i class="bi bi-whatsapp"></i> Mas información</a>
-                </div>
-            </div>
-
-        </div>
-         <div class="container">
-            <div class="card">
-                <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/blaki.jpg" alt="" />
-                </figure>
-                <div class="contenido">
-                    <h3>Nombre: Blacki</h3>
-                    <p><strong>Fecha:</strong> 18 de Abril</p>
-                    <p><strong>Visto Ultimamente:</strong> Terminal Pesquero VMT</p>
-                    <p><strong>Numero de contacto:</strong> 987 987 650</p>
-                    <p><strong>Tamaño:</strong> 60cm</p>
-                    <p><strong>Características:</strong> Tiene un collar con un PIN donde esta su nombre.</p><br>
-                    <h2>Si me ves, por favor llama a mi familia.</h2>
-                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                        <i class="bi bi-whatsapp"></i> Mas información</a>
-                </div>
-            </div>
-            <div class="card">
-                <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/pandi.jpg" alt="" />
-                </figure>
-                <div class="contenido">
-                    <h3>Nombre: Pandi</h3>
-                    <p><strong>Fecha:</strong> 23 de Abril</p>
-                    <p><strong>Visto Ultimamente:</strong> Av. Union, paralelo a la estación del tren</p>
-                    <p><strong>Numero de contacto:</strong> 987 987 251</p>
-                    <p><strong>Tamaño:</strong> 15cm</p>
-                    <p><strong>Características:</strong> Tiene un collar con un PIN donde esta su nombre.</p><br>
-                    <h2>Si me ves, por favor llama a mi familia.</h2>
-                    <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo pedir ...">
-                        <i class="bi bi-whatsapp"></i> Mas información</a>
-                </div>
-            </div>
-        </div>
+            <?php 
+                    }   
+                }
+            ?>
+        </div> 
     </main>
+    
     <footer class="footer">
         <div class="container-f">
             <div class="footer-row">

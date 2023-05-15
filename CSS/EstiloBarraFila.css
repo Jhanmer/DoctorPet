@@ -19,25 +19,26 @@
 }
 .menu-horizontal > li > a{
     display: block;
-    padding: 15px 7px;;
+    padding: 15px 48px;;
     color: white;
     text-decoration: none;
 }
 .menu-horizontal >li:hover{
-    background-color: #6FD60F;
+    background-color: #2670f7;
 }
 .menu-vertical{
     position: absolute;
     display: none;
     list-style: none;
-    width: 236px;
+    width: 192px;
+    z-index: 1;
     background-color: rgba(0,0,0,.5);    
 }
 .menu-horizontal li:hover .menu-vertical{
     display: block;
 }
 .menu-vertical li:hover{
-    background-color: #7FD533;
+    background-color: #41abf3;
     
 }
 .menu-vertical li a{

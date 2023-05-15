@@ -1,14 +1,21 @@
 <?php
-$server="localhost";
-$username="root";
-$password="";
-$database="bddoctorpet";
-
-    try{
-        $conn = mysqli_connect($server,$username,$password,$database);
-    }catch(PDOException $e){
-        die('Connected failed: '.$e->getMessage());
+function fnConnect(&$msg){
+    $con = mysqli_connect('localhost','root','');
+    if(!$con){
+        $msg = 'ERROR en la conexion';
+        return false;
     }
-    $conn->set_charset("utf8");
+    $rpta = mysqli_select_db($con, 'bddoctorpet'); //nombre bd
+    if(!$rpta){
+        $msg = 'Base de datos no existe!!!';
+        mysqli_close($con);
+        return false;
+    }
+    return $con;
+}
+function say($cad){
+    echo $cad;
+}
+//funcion que recibe un titulo y un mensaje muestra en tabla
 ?>
 

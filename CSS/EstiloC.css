@@ -5,11 +5,11 @@
 }
 .container{
     width: 100%;
-    display: flex;
     max-width: 2100px;
 }
 .card{
-    width: 60%;
+    display: inline-grid;
+    width: 30%;
     margin: 20px;
     border-radius: 6px;
     overflow: hidden;
@@ -51,4 +51,55 @@
 .card .contenido a:hover{
     background: #2fb4cc;
     color: #fff;
+}
+.contenedor-botones-perdidos{
+    padding: 0 0 0 22.5%;
+    height: 20%;
+    display: flex;
+}
+.contenedor-botones-perdidos .boton-box{
+    margin: 0 0 0 5%;
+}
+.contenedor-botones-perdidos .boton-box2 input{
+ position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  background-color: #62db63;
+}
+
+.contenedor-botones-perdidos .boton-box a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  letter-spacing: 4px;
+  background-color: #62db63;
+}
+
+.contenedor-botones-perdidos .boton-box2 input:hover,
+.contenedor-botones-perdidos .boton-box a:hover
+{
+  background: #c55555;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #c55555,
+              0 0 25px #c55555,
+              0 0 50px #c55555,
+              0 0 100px #c55555;
 }

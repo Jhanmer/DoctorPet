@@ -1,14 +1,15 @@
 <?php 
     require 'Config/conexion_bd.php';
+    $con = fnConnect($msg);
     $consultaDist = "select * from dp_distrito;";
-    $ListaDist = mysqli_query($conn,$consultaDist);
+    $ListaDist = mysqli_query($con,$consultaDist);
 ?>
 <html>
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
     <title>Doctor Pet - Registro de Cliente</title>
-    <link href="CSS/EstiloRegistroCliente.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/EstiloRegistro_Cliente.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
     <body>
@@ -17,7 +18,7 @@
             <div class="form-content-RC">
                 <h1 id="title">Registro</h1>
                 <form action="#" method="POST">
-                <?php include 'Controlador/Controlador_registrar_usuario.php'; ?>
+                <?php include 'Controlador/Ctrl_Registro_Cliente.php'; ?>
                     <div class="input-group-RC">
                         <div class="input-field-RC">
                             <i class="fa-solid fa-user"></i>

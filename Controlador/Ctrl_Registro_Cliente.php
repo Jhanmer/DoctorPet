@@ -25,7 +25,7 @@ if(!empty($_POST['registro'])){
         $telefono=$_POST['telefono'];
         $correo=$_POST['correo'];
         
-        $sql=$conn->query("insert into dp_cliente(nombre,apellidos,Email,Fecha_nacimiento,Genero,direccion,IdDistrito,Telefono,Password)
+        $sql=$con->query("insert into dp_cliente(nombre,apellidos,Email,Fecha_nacimiento,Genero,direccion,IdDistrito,Telefono,Password)
                 values('$nombre','$apellido','$correo','$fecha_nacimiento','$gender','$direccion','$district','$telefono','$contraseña')");
         if($sql==1){
             echo '<div class="success">Usuario registrado correctamente</div>';
