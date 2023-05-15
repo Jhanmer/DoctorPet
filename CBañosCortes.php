@@ -7,7 +7,7 @@
     <link href="CSS/EstiloBarraFila.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="CSS/EstiloC.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/EstilosC.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloBLateral.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloBotonSearch.css" rel="stylesheet" type="text/css" />
     <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
