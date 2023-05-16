@@ -84,7 +84,7 @@
             </nav>
         </div>
 
-        <div class="container">
+        <div class="container-baniocorte">
             <div class="card">
                 <figure>
                     <img src="Imagenes/Servicios/BaniosCortes/banios.jpg" alt="" height="50px" width="60px" />
@@ -141,7 +141,5 @@
             </div>
         </div>
     </footer>
-
 </body>
-
 </html>

@@ -7,6 +7,13 @@
     width: 100%;
     max-width: 2100px;
 }
+.container-baniocorte{
+    width: 100%;
+    max-width: 2100px;
+    
+    display: flex;
+    justify-content: center;
+}
 .card{
     display: inline-grid;
     width: 30%;
