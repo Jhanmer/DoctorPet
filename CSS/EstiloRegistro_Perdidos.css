@@ -1,18 +1,16 @@
-html {
-  height: 100%;
-}
 body {
   margin:0;
-  padding:0;
+  padding: 0;
   font-family: sans-serif;
   background: linear-gradient(black, #69bedf);
+  height: 125vh;
 }
-
 .login-box {
   position: absolute;
+  margin: 80px 0 0 0;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 420px;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
@@ -73,7 +71,7 @@ body {
   font-size: 12px;
 }
 
-.login-box form a {
+.login-box .boton-box input{
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -83,11 +81,28 @@ body {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  margin-top: 30px;
+  letter-spacing: 3px;
+  border: none;
+  background: transparent;
+}
+.login-box .boton-outline-info a{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  border: none;
+  background: transparent; 
 }
 
-.login-box a:hover {
+.login-box .boton-box input:hover,
+.login-box .boton-outline-info a:hover{
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -96,84 +111,13 @@ body {
               0 0 50px #03e9f4,
               0 0 100px #03e9f4;
 }
-
-.login-box a span {
-  position: absolute;
-  display: block;
+.alerta{
+    color:red;
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-.login-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
-  animation: btn-anim1 1s linear infinite;
+.success{
+    color:green;
+    text-align: center;
+    margin-bottom: 10px;
 }
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
-  animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-  50%,100% {
-    top: 100%;
-  }
-}
-
-.login-box a span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
-  animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-  50%,100% {
-    right: 100%;
-  }
-}
-
-.login-box a span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
-  animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
-}
-
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-  50%,100% {
-    bottom: 100%;
-  }
-}
-

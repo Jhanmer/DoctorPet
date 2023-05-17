@@ -1,16 +1,18 @@
+html {
+  height: 100%;
+}
 body {
   margin:0;
-  padding: 0;
+  padding:0;
   font-family: sans-serif;
-  background: linear-gradient(black, #51CDA5);
-  height: 125vh;
+  background: linear-gradient(black, #69bedf);
 }
+
 .login-box {
   position: absolute;
-  margin: 80px 0 0 0;
   top: 50%;
   left: 50%;
-  width: 420px;
+  width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
@@ -81,28 +83,13 @@ body {
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 30px;
-  letter-spacing: 3px;
+  margin-top: 40px;
+  letter-spacing: 4px;
   border: none;
   background: transparent;
 }
-.login-box .boton-outline-info a{
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #03e9f4;
-  font-size: 16px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 10px;
-  letter-spacing: 4px;
-  border: none;
-  background: transparent; 
-}
 
-.login-box .boton-box input:hover,
-.login-box .boton-outline-info a:hover{
+.login-box .boton-box input:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;

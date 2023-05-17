@@ -42,12 +42,38 @@ Create table DP_Raza(
 idRaza int primary key auto_increment not null,
 nombreRaza varchar(100)
 );
+INSERT INTO dp_raza (idRaza, nombreRaza) VALUES
+(1, 'Perro - Boxer'),
+(2, 'Perro - Bulldog'),
+(3, 'Perro - Caniche'),
+(4, 'Perro - Chihuahua'),
+(5, 'Perro - Chow chow'),
+(6, 'Perro - Golden retriever'),
+(7, 'Perro - Husky'),
+(8, 'Perro - Labrador'),
+(9, 'Perro - Pitbull'),
+(10, 'Perro - San Bernardo'),
+(11, 'Perro - Yorkshire terrier'),
+(12, 'Perro - Mestizo'),
+(13, 'Gato - Azul ruso'),
+(14, 'Gato - British Shorthair'),
+(15, 'Gato - Himalayo'),
+(16, 'Gato - Maine Coon'),
+(17, 'Gato - Persa'),
+(18, 'Gato - Ragdoll'),
+(19, 'Gato - Siames'),
+(20, 'Gato - Sphynx'),
+(21, 'Gato - Siberiano'),
+(22, 'Gato - Mestizo');
 
 drop table if exists DP_Especie;
 Create table DP_Especie(
 idEspecie int primary key auto_increment not null,
 nombreEspe varchar(100)
 );
+INSERT INTO dp_especie (idEspecie, nombreEspe) VALUES
+(1, 'Perro'),
+(2, 'Gato');
 
 drop table if exists DP_Cliente;
 Create table DP_Cliente( 
@@ -69,10 +95,11 @@ drop table if exists DP_Mascota;
 Create table DP_Mascota( 
 idMascota int primary key auto_increment not null, 
 NomMasc varchar(200), 
-EdadMasc int, 
+EdadMasc varchar(20), 
 idEspecie int, 
 idRaza  int, 
-idCliente int, 
+SexoMasc varchar(10), 
+idCliente int,
 foreign key (idCliente) references DP_Cliente(idCliente),
 foreign key (idEspecie) references DP_Especie(idEspecie),
 foreign key (idRaza) references DP_Raza(idRaza)

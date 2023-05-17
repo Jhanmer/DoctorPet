@@ -3,7 +3,7 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
         <title>Doctor Pet - Animales Perdidos</title>
-        <link href="CSS/EstiloRegistro_Perdido.css" rel="stylesheet">
+        <link href="CSS/EstiloRegistro_Perdidos.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
         
     </head>
@@ -15,7 +15,7 @@
                 <form action="#" method="POST">
                   <div class="user-box">
                     <input type="text" name="nom_lost" required="">
-                    <label>Nombre de la mascota desaparecida</label>
+                    <label>Nombre de mascota desaparecida</label>
                   </div>
                   <div class="user-box">
                     <input type="text" name="dia_lost" required="">
@@ -35,7 +35,7 @@
                   </div> 
                   <div class="user-box">
                     <input type="text" name="descrip_lost" required="">
-                    <label>Descripción de la mascota desaparecida</label>
+                    <label>Descripción de mascota desaparecida</label>
                   </div> 
                   <div class="boton-box">
                       <input type="submit" name="enviar" value="Registrar desaparición" id="enviar">
