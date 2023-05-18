@@ -17,23 +17,17 @@ class Conexion
 
 	function AbrirConexion()
 	{
-		$cadena = mysqli_connect($this->servidor,$this->usuario,$this->clave,$this->basededatos);
-		if($cadena)
-		{
+		$cadena = mysqli_connect($this->servidor, $this->usuario, $this->clave, $this->basededatos);
+		if (mysqli_connect_error()) {
+			die("Error al conectar con MySQL: " . mysqli_connect_error());
+		} else {
 			return $cadena;
 		}
-		else
-		{
-			return "Error".mysqli_error();
-		}
 	}
+
 
 	function CerrarConexion($cadena)
 	{
 		mysqli_close($cadena);
-		$cadena = null;
 	}
-
 }
-
-?>
