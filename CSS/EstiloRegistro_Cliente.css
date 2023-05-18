@@ -157,6 +157,9 @@ form p a{
     justify-content: center;
     background-color: #04BD7D;
 }
+.icon-container {
+    pointer-events: none;
+}
 .icon-container i{
     font-size: 30px;
     color: #FFFFFF;

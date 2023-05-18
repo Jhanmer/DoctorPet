@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
     <title>Doctor Pet - Registro de Cliente</title>
-    <link href="CSS/EstiloRegistro_Mascotas.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/EstiloRegistro_Mascota.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/EstiloBLateral.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/EstiloHContenedor.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -41,6 +41,7 @@
     </header>
     
     <main>
+        <div class="ctn-masc">
             <div class="login-box">
                 <h2>Registro Mascota</h2>
                 <?php include 'Controlador/Ctrl_Registro_Mascota.php';?> 
@@ -53,7 +54,7 @@
                     <input type="text" name="edad_masc" required="">
                     <label>Edad</label>
                   </div>
-                  <div class="user-box">
+                  <div class="contenedor-select">
                         <select name="especie_masc" class="select-box">
                             <option value="">Seleccione especie de la mascota</option>
                             <?php while($row = mysqli_fetch_assoc($ListaEspecie)){ ?>
@@ -62,9 +63,12 @@
                                 </option>
                             <?php } ?>    
                         </select>
+                      <div class="icon-contenedor">
+                          <i class="fa-solid fa-caret-down"></i>
+                      </div>
                   </div>
                     
-                  <div class="user-box">
+                  <div class="contenedor-select">
                         <select name="raza_masc" class="select-box">
                             <option value="">Seleccione raza de la mascota</option>
                             <?php while($row = mysqli_fetch_assoc($ListaRaza)){ ?>
@@ -73,13 +77,18 @@
                                 </option>
                             <?php } ?>    
                         </select>
+                      <div class="icon-contenedor">
+                          <i class="fa-solid fa-caret-down"></i>
+                      </div>
                   </div>  
                   
-                  <div class="user-box">
-                        <input type="radio" name="genero_masc" value="Hombre">
+                  <div class="contenedor-select">
+                      <div class="option-box">
+                        <input type="radio" name="genero_masc" value="Macho">
                         <p>Macho</p>
-                        <input type="radio" name="genero_masc" value="Mujer">
+                        <input type="radio" name="genero_masc" value="Hembra">
                         <p>Hembra</p>
+                      </div>
                   </div>
                     
                   <div class="user-box">
@@ -92,7 +101,8 @@
                   </div>  
                 </form>
             </div>
-        </main>   
+        </div> 
+    </main>   
 
 </body>
 </html>

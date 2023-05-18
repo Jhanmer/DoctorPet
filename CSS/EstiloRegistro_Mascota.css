@@ -1,16 +1,15 @@
-html {
-  height: 100%;
-}
 body {
   margin:0;
   padding:0;
   font-family: sans-serif;
   background: linear-gradient(black, #69bedf);
 }
-
+.ctn-masc{
+    height: 125vh;
+}
 .login-box {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   width: 400px;
   padding: 40px;
@@ -107,4 +106,49 @@ body {
     color:green;
     text-align: center;
     margin-bottom: 10px;
+}
+.contenedor-select{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 250px;
+    height: 50px;
+    margin-bottom: 25px;
+}
+.select-box{
+    border:none;
+    appearance: none;
+    padding: 0 30px 0 15px;
+    width: 100%;
+    color: white;
+    background-color: #5d87f0;
+    font-size: 16.5px;
+}
+.contenedor-select .icon-contenedor{
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #155ee8;
+}
+.icon-contenedor {
+    pointer-events: none;
+}
+.icon-contenedor i{
+    font-size: 30px;
+    color: white;
+}
+.option-box{
+    padding: 0 30px;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: #5d87f0;
+}
+.option-box input{
+    margin: 0 25px;
 }
