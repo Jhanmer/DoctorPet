@@ -6,7 +6,7 @@ if (isset($_SESSION["autenticado"]) == false) {
 	
 	echo"<script>alert('Usted no a iniciado Sesion.. esta siendo redireccionado a la pagina principal')</script>";
 	?>
-	<META http-equiv="Refresh" content="1; URL=../CAccesorios.php" >
+	<META http-equiv="Refresh" content="1; URL=../CAnimalesPerdidos.php" >
 	<?php
 	exit();
 }
@@ -14,7 +14,7 @@ elseif($_SESSION["autenticado"] != "Si")
 {
 	echo"<script>alert('Usted no a iniciado Sesion.. esta siendo redireccionado a la pagina principal')</script>";
 	?>
-	<META http-equiv="Refresh" content="1; URL=../CAccesorios.php" >
+	<META http-equiv="Refresh" content="1; URL=../CAnimalesPerdidos.php" >
 	<?php
 	exit();
 

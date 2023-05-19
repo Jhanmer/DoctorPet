@@ -41,7 +41,7 @@
         <div class="info-header">
             <nav>
                 <a href="RegistroC.php">Registrate</a>
-                <a href="#">Iniciar Sesion</a>
+                <a href="login/index.php">Iniciar Sesion</a>
             </nav>
         </div>
 

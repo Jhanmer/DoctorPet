@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset ($_SESSION["Cargo"])) {
+  $Cargo = $_SESSION["Cargo"];
+}else{
+  $Cargo = null;
+}
+include "./Config/conexion.php";
+?>
 <html>
     <head>
         <meta charset="UTF-8">

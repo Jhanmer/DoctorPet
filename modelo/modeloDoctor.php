@@ -21,7 +21,21 @@ class cUsuario
 
 		return  $Result;
 	}
+	function Login($user,$pass)
+	{
+		require_once('../Config/conexion.php');
 
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query = "call SP_Login('".$user."','".$pass."')";
+
+		$Result = mysqli_query($Cadena,$Query);
+
+		$cnx->CerrarConexion($Cadena);
+		return $Result;
+	}
 }
 
 ?>

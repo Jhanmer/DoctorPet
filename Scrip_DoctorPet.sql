@@ -87,6 +87,7 @@ IdDistrito int,
 Telefono varchar(20),
 Email varchar(100) not null, 
 Password varchar(50) not null, 
+cargo varchar(20) default 'Usuario'not null,
 Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
 foreign key (IdDistrito) references DP_Distrito(IdDistrito)
 ); 
@@ -188,3 +189,26 @@ drop procedure if exists SP_InsertarConsulta;
 	values(nombreCli,TelefonoCons,FechaCons,correoCli,Motivo);
 	end $$
 	delimiter ;
+
+drop procedure if exists SP_Login;
+DELIMITER $$
+create PROCEDURE SP_Login(in
+_email varchar(100),
+_clave varchar(50)
+)
+BEGIN
+	DECLARE res INT;
+    select count(*) into res from dp_cliente where Email like _email;
+	IF res = 0 THEN
+		select -1;
+	ELSE
+		select count(*) into res from dp_cliente where Password like _clave;
+		IF res = 0 THEN
+			select -2;
+		ELSE
+			select * from dp_cliente
+			where Email like _email and Password like _clave;
+		END IF;
+	END IF;
+End$$
+DELIMITER ;
