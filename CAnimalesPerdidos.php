@@ -2,6 +2,16 @@
     require "Config/conexion_bd.php";
     $con = fnConnect($msg);
 ?>
+
+<?php
+session_start();
+if (isset ($_SESSION["cargo"])) {
+    $Cargo = $_SESSION["cargo"];
+}else{
+    $Cargo = null;
+}
+include "Config/conexion.php";
+?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -36,15 +46,27 @@
         </div>
         <div class="logo">
             <a href="#"><img src="Imagenes/LOGO.jpg" alt="" /></a>
-        </div>
-
-        <div class="info-header">
-            <nav>
-                <a href="RegistroC.php">Registrate</a>
-                <a href="login/index.php">Iniciar Sesion</a>
-            </nav>
-        </div>
-
+        </div>                       
+        <?php
+                if($Cargo != "Usuario"){
+                    echo "
+                    <div class='info-header'>
+                        <nav>
+                            <a href='RegistroC.php'>Registrate</a>
+                            <a href='login/index.php'>Iniciar Sesion</a>
+                        </nav>
+                    </div>";
+                }
+        ?>
+        <?php
+            if($Cargo == "Usuario"){
+                echo "<div class='info-header'>
+                        <nav>
+                            <a href='Config/salir.php'>Salir</a>
+                        </nav>
+                    </div>";
+            }
+        ?>                       
     </header>
     <main>
         <div class="Barra-main">
@@ -73,6 +95,12 @@
                         </ul>
                     </li>
                     <li><a href="#">Adopciones</a></li>
+                    <?php
+                        if($Cargo == "Usuario"){
+                            echo "<li><a href='RMascota.php'>Registrar Mascota</a></li>";
+                        }
+                    ?>
+
                 </ul>
             </nav>
         </div>

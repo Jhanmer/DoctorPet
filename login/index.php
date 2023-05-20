@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+
+include "../Config/conexion.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +70,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" method="post" action="../Controlador/controladorlogin.php">
+				<form action="../Controlador/controladorLogin.php" method="post">
 					<span class="login100-form-title p-b-26">
 						Bienvenido
 					</span>
@@ -73,7 +80,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 
-						<input class="input100" type="text" name="email" id="txtEmail">
+						<input  class="input100" type="text" name="txtEmail" id="txtEmail" >
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -81,7 +88,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass" id="txtPassword">
+						<input class="input100" type="password" name="txtPassword" id="txtPassword">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 

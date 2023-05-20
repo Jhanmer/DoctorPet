@@ -1,4 +1,3 @@
-<script>alert();</script>
 <?php
 if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 	$user = $_POST['txtEmail'];
@@ -8,7 +7,7 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 	{
 		echo "Datos no definidos";
 		?>	
-
+		<!DOCTYPE html>
 		<META http-equiv="Refresh" content="2; URL=../login/index.php" >
 		
 		<?php
