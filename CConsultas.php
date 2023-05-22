@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset ($_SESSION["cargo"])) {
+    $Cargo = $_SESSION["cargo"];
+}else{
+    $Cargo = null;
+}
+include "Config/conexion.php";
+?>
 <html>
 
 <head>
@@ -50,12 +59,26 @@
             </div>
         </div>
 
-        <div class="info-header">
-            <nav>
-                <a href="RegistroC.php">Registrate</a>
-                <a href="#">Iniciar Sesion</a>
-            </nav>
-        </div>
+        <?php
+                if($Cargo != "Usuario"){
+                    echo "
+                    <div class='info-header'>
+                        <nav>
+                            <a href='RegistroC.php'>Registrate</a>
+                            <a href='login/index.php'>Iniciar Sesion</a>
+                        </nav>
+                    </div>";
+                }
+        ?>
+        <?php
+            if($Cargo == "Usuario"){
+                echo "<div class='info-header'>
+                        <nav>
+                            <a href='Config/salir.php'>Salir</a>
+                        </nav>
+                    </div>";
+            }
+        ?> 
 
     </header>
     <main class="contendor sombra">
@@ -85,6 +108,11 @@
                         </ul>
                     </li>
                     <li><a href="#">Adopciones</a></li>
+                    <?php
+                        if($Cargo == "Usuario"){
+                            echo "<li><a href='RMascota.php'>Registrar Mascota</a></li>";
+                        }
+                    ?>
                 </ul>
             </nav>
         </div>

@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset ($_SESSION["cargo"])) {
+    $Cargo = $_SESSION["cargo"];
+}else{
+    $Cargo = null;
+}
+include "Config/conexion.php";
+?>
 <html>
 
 <head>
@@ -45,11 +54,28 @@
                 <i class="fa fa-search"></i>
             </div>
         </div>
-
+        <?php
+                if($Cargo != "Usuario"){
+                    echo "
+                    <div class='info-header'>
+                        <nav>
+                            <a href='RegistroC.php'>Registrate</a>
+                            <a href='login/index.php'>Iniciar Sesion</a>
+                        </nav>
+                    </div>";
+                }
+        ?>
+        <?php
+            if($Cargo == "Usuario"){
+                echo "<div class='info-header'>
+                        <nav>
+                            <a href='Config/salir.php'>Salir</a>
+                        </nav>
+                    </div>";
+            }
+        ?>
         <div class="info-header">
             <nav>
-                <a href="RegistroC.php">Registrate</a>
-                <a href="#">Iniciar Sesion</a>
                 <a href="CAccesorios.php">Productos</a>
                 <a href="CConsultas.php">Servicios</a>
             </nav>
