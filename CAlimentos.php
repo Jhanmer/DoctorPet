@@ -195,6 +195,7 @@
                         <li><a href="#">Nosotros</a></li>
                         <li><a href="#">Nuestra tienda</a></li>
                         <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="/RTrabajadores.php">Registro de trabajadores</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">

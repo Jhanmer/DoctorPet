@@ -22,7 +22,7 @@ $ListaDist = mysqli_query($con, $consultaDist);
 <body>
   <header>
     <a href="#" class="logo"><img src="./Imagenes/LOGO.jpg" alt="Logo"></a>
-    <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Regresar</a>
+    <a href="./CAnimalesPerdidos.php" class="back-button"><i class="fas fa-arrow-left"></i> Regresar</a>
   </header>
   <br><br>
   <h2>Registrar Trabajador</h2>
