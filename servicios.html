@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrPet-Productos</title>
-
-    <link href="CSS/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
-
+    <title>Dr.Pet</title>
+    <link rel="stylesheet" href="estilos/css/normalize.css">
+    <link rel="stylesheet" href="estilos/fontawesome/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos/css/header.css">
+    <link rel="stylesheet" href="estilos/css/footer.css">
+    <link rel="stylesheet" href="estilos/css/contacto.css">
+    <link rel="stylesheet" href="estilos/css/body.css">
+    <link href="estilos/css/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
+    <link href="estilos/css/EstiloBarraFila.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-    <header>
 
+<body>
+
+    <header>
+        
         <div class="container-fluid">
 
             <div class="navb-logo">
@@ -37,6 +46,10 @@
 
                 <div class="item">
                     <a href="contacto.html">Contactanos</a>
+                </div>
+
+                <div class="item">
+                    <a href="nosotros.html">Nosotros</a>
                 </div>
 
                 <div class="item">
@@ -81,11 +94,11 @@
                             </div>
 
                             <div class="modal-line">
-                                <i class="fa-solid fa-circle-info"></i><a href="nosotros.html">Nosotros</a>
+                                <i class="fa-solid fa-circle-info"></i><a href="contacto.html">Contacto</a>
                             </div>
 
                             <div class="modal-line">
-                                <i class="fa-solid fa-circle-info"></i><a href="contacto.html">Contacto</a>
+                                <i class="fa-solid fa-circle-info"></i><a href="nosotros.html">Nosotros</a>
                             </div>
 
                             <div class="modal-line">
@@ -110,69 +123,103 @@
     </header>
 
     <main>
-        <div class="consulta-body">
-            <div class="consulta-container">
-                <div class="consulta-card">
-                    <div class="left-column background1-left-column">
-                        <h6>Veterinaria</h6>
-                        <h2>DoctorPet</h2>
-                        <i class="fa-sharp fa-solid fa-shield-dog"></i>
-                    </div>
-                    <div class="right-column">
-                        <div>
-                            <h4>Atención</h4>
-                            <h6>08:00 a.m. - 18:00 p.m.</h6>
+        <div class="Barra-main">
+            <nav>
+                <ul class="menu-horizontal">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li>
+                        <a href="#">Productos</a>
+                        <ul class="menu-vertical">
+                            <li><a href="CVestimenta.php">Vestimenta</a></li>
+                            <li><a href="CMedicamentos.php">Medicamentos</a></li>
+                            <li><a href="CAlimentos.php">Alimentos</a></li>
+                            <li><a href="CAccesorios.php">Accesorios</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servicios</a>
+                        <ul class="menu-vertical">
+                            <li><a href="CConsultas.php">Consultas</a></li>
+                            <li><a href="CBañosCortes.php">Baño y Corte</a></li>
+                            <li><a href="CCampañas.php">Campañas</a></li>
+                            <li><a href="CAnimalesPerdidos.php">Animales Perdidos</a></li>
+                            <li><a href="CAtencionDomicilio.php">Atencion a Domicilio</a></li>
+                            <li><a href="CConsultaInternet.php">Consultas online</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Adopciones</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+            <div class="consulta-body">
+                
+                <div class="consulta-container">
+                    <div class="consulta-card">
+                        <div class="left-column background1-left-column">
+                            <h6>Veterinaria</h6>
+                            <h2>DoctorPet</h2>
+                            <i class="fa-sharp fa-solid fa-shield-dog"></i>
                         </div>
-                        <h2>Consulta por Internet</h2>
-                        <p>Nuestros veterinarios están esperando por su consulta online. Registre sus datos y eliga un
-                        horario disponible para su atención online, y una vez hecho se le enviara un link de zoom
-                        15 minutos antes de su cita programada.</p>
-                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo registrar..." 
-                           target="_blank" class="button background1-left-column">Empezar</a>
+                        <div class="right-column">
+                            <div>
+                                <h4>Atención</h4>
+                                <h6>08:00 a.m. - 18:00 p.m.</h6>
+                            </div>
+                            <h2>SERVICIOS</h2>
+                            <p>Accede a los diversos servicios que ofrece nuestro local, para ello debes ubicar la barra despegable de arriba y buscar el servicio que desees...
+                                Si deseas separar una cita, da click en el boton de abajo </p>
+                            <a href="CConsultas.php" class="button background1-left-column">Consulta</a>
+                        </div>
                     </div>
-                </div>
-            </div> 
-        </div>    
-    </main>
+                </div> 
+            </div>    
+        </main>
 
-</body>
-<footer class="footer ">
-    <p class="copy">&copy;Todos los derechos reservados | DoctorPet 2023</p>
-    <div class="contenedor">
-        <div class="contenido-foot">
-            <div class="img-log foot-1">
-                <a href="index.html"><img src="estilos/img/DP-DoctorPet.png" alt="Logo"></a> 
-            </div>
-            <div class="foot-1">
-                <ul>
-                    <li class="title-foot">Datos de Contacto</li>
-                    <li><a href="#">Dirección</a></li>
-                    <li><a href="#">Teléfono</a></li>
-                    <li><a href="#">Email</a></li>
-                </ul>
-            </div>
-            <div class="foot-1">
-                <ul>
-                    <li class="title-foot">Centro de Ayuda</li>
-                    <li><a href="#">Preguntas Frecuentes.</a></li>
-                    <li><a href="#">Ubicación</a></li>
-                    <li><a href="#">Contactanos</a></li>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Política De Privacidad</a></li>
-                </ul>
-            </div>
-            <div class="foot-1">
-                <ul>
-                    <li class="title-foot">Redes sociales</li>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                </ul>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
+    "></script>
+
+    <footer class="footer ">
+        <p class="copy">&copy;Todos los derechos reservados | DoctorPet 2023</p>
+        <div class="contenedor">
+            <div class="contenido-foot">
+                <div class="img-log foot-1">
+                    <a href="index.html"><img src="estilos/img/DP-DoctorPet.png" alt="Logo"></a>
+                </div>
+                <div class="foot-1">
+                    <ul>
+                        <li class="title-foot">Datos de Contacto</li>
+                        <li><a href="#">Dirección</a></li>
+                        <li><a href="#">Teléfono</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+                <div class="foot-1">
+                    <ul>
+                        <li class="title-foot">Centro de Ayuda</li>
+                        <li><a href="#">Preguntas Frecuentes.</a></li>
+                        <li><a href="#">Ubicación</a></li>
+                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política De Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="foot-1">
+                    <ul>
+                        <li class="title-foot">Redes sociales</li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    
-    
-    
-</footer>
+
+    </footer>
+</body>
+
 </html>

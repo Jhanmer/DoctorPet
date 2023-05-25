@@ -7,7 +7,7 @@
 
 body {
   align-items: center;
-  background: #D8AA96;
+  background: #4f80b3;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
@@ -38,7 +38,7 @@ body {
   font-size: 24px;
 }
 .left-container h1 i {
-  background: #F7B1AB;
+  background: #c2d3f9;
   border-radius: 50%;
   color: #807182;
   font-size: 24px;
@@ -67,7 +67,7 @@ body {
 }
 
 .right-container {
-  background: #f9c7c2;
+  background: #c2d3f9;
   display: grid;
   grid-template-areas: "." ".";
   width: 500px;
@@ -183,6 +183,6 @@ body {
 }
 
 .radio-container input[type=radio]:checked + label {
-  background: #F7B1AB;
+  background: #c2d3f9;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
