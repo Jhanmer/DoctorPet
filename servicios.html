@@ -4,9 +4,175 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DrPet-Servicios</title>
+    <title>DrPet-Productos</title>
+
+    <link href="CSS/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
-    
+    <header>
+
+        <div class="container-fluid">
+
+            <div class="navb-logo">
+                <a href="index.html">
+                    <img src="estilos/img/DP-DoctorPet.png" alt="Logo">
+                </a>
+
+            </div>
+
+            <div class="navb-items d-none d-xl-flex">
+
+                <div class="item">
+                    <a href="index.html">Inicio</a>
+                </div>
+
+                <div class="item">
+                    <a href="servicios.html">Servicio</a>
+                </div>
+
+                <div class="item">
+                    <a href="productos.html">Productos</a>
+                </div>
+
+                <div class="item">
+                    <a href="contacto.html">Contactanos</a>
+                </div>
+
+                <div class="item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <div class="item-button">
+                    <a href="login.html" type="button">Iniciar Sesion</a>
+                </div>
+            </div>
+
+            <!-- Button trigger modal -->
+            <div class="mobile-toggler d-lg-none">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="navbModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <img src="estilos/img/DP-DoctorPet.png" alt="Logo">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                                    class="fa-solid fa-xmark"></i></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-house"></i><a href="index.html">Inicio</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-bell-concierge"></i><a href="servicios.html">Servicios</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-file-lines"></i> <a href="productos.html">Productos</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-circle-info"></i><a href="nosotros.html">Nosotros</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-circle-info"></i><a href="contacto.html">Contacto</a>
+                            </div>
+
+                            <div class="modal-line">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+
+                            <a href="login.html" class="navb-button" type="button">Iniciar sesion</a>
+                        </div>
+
+                        <div class="mobile-modal-footer">
+
+                            <a target="_blank" href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a target="_blank" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="consulta-body">
+            <div class="consulta-container">
+                <div class="consulta-card">
+                    <div class="left-column background1-left-column">
+                        <h6>Veterinaria</h6>
+                        <h2>DoctorPet</h2>
+                        <i class="fa-sharp fa-solid fa-shield-dog"></i>
+                    </div>
+                    <div class="right-column">
+                        <div>
+                            <h4>Atención</h4>
+                            <h6>08:00 a.m. - 18:00 p.m.</h6>
+                        </div>
+                        <h2>Consulta por Internet</h2>
+                        <p>Nuestros veterinarios están esperando por su consulta online. Registre sus datos y eliga un
+                        horario disponible para su atención online, y una vez hecho se le enviara un link de zoom
+                        15 minutos antes de su cita programada.</p>
+                        <a href="https://api.whatsapp.com/send?phone=958407045&text=Deseo registrar..." 
+                           target="_blank" class="button background1-left-column">Empezar</a>
+                    </div>
+                </div>
+            </div> 
+        </div>    
+    </main>
+
 </body>
+<footer class="footer ">
+    <p class="copy">&copy;Todos los derechos reservados | DoctorPet 2023</p>
+    <div class="contenedor">
+        <div class="contenido-foot">
+            <div class="img-log foot-1">
+                <a href="index.html"><img src="estilos/img/DP-DoctorPet.png" alt="Logo"></a> 
+            </div>
+            <div class="foot-1">
+                <ul>
+                    <li class="title-foot">Datos de Contacto</li>
+                    <li><a href="#">Dirección</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+            <div class="foot-1">
+                <ul>
+                    <li class="title-foot">Centro de Ayuda</li>
+                    <li><a href="#">Preguntas Frecuentes.</a></li>
+                    <li><a href="#">Ubicación</a></li>
+                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política De Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="foot-1">
+                <ul>
+                    <li class="title-foot">Redes sociales</li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</footer>
 </html>
