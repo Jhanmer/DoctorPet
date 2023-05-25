@@ -1,0 +1,108 @@
+.carrusel {
+    width: 100%;
+    height: 100vh;
+}
+
+.flecha {
+    border-radius: 100%;
+    padding: 20px;
+    background-color: #0d6efd;
+}
+
+.prueba {
+    background-color: #fd7e14;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .info-header {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* creamos 3 columnas - 3 fracciones - 1fr = 33.3% - repite 3veces fr repeat(3, 1fr)*/
+        column-gap: 5rem;
+        margin-top: 5rem;
+    }
+}
+
+.info-1 {
+    text-align: center;
+}
+
+.info-1 i {
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 3.5rem;
+    color: #0097A7;
+}
+
+i {
+    text-align: center;
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* creamos 3 columnas - 3 fracciones - 1fr = 33.3% - repite 3veces fr repeat(3, 1fr)*/
+    column-gap: 5rem;
+    margin-top: 5rem;
+    
+}
+@media (min-width: 768px) {
+    .producto {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* creamos 3 columnas - 3 fracciones - 1fr = 33.3% - repite 3veces fr repeat(3, 1fr)*/
+        column-gap: 1rem;
+        margin-top: 3rem;
+        
+    }
+}
+
+/* productos */
+
+.producto .producto-base {
+    max-width: 25rem;
+    max-height: 45rem;
+}
+
+.producto-base {
+    margin-bottom: 4rem;
+}
+
+.imagen img {
+    max-width: 40rem;
+    height: 20rem;
+}
+
+/* contenedor formulario */
+.contenedor-formulario{
+    width: 50%;
+    
+    margin: 0 auto;
+}
+
+.tema-producto{
+    margin: 5rem auto;
+}

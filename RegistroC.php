@@ -77,7 +77,7 @@ $ListaDist = mysqli_query($con, $consultaDist);
                 </div>
                 <div class="btn-field-RC">
                     <input type="submit" name="registro" value="Registrarse">
-                    <button type="button"><a href="#">Ingresar</a></button>
+                    <button type="button"><a href="login/index.php">Ingresar</a></button>
                 </div>
             </form>
         </div>
