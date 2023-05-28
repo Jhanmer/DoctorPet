@@ -7,7 +7,7 @@
         <div class="contenedor">
             <div class="contenido-foot">
                 <div class="img-log foot-1">
-                    <a href="index.html"><img src="/estilos/img/DP-DoctorPet.png" alt="Logo"></a>
+                    <a href="index.html"><img src="./estilos/img/DP-DoctorPet.png" alt="Logo"></a>
                 </div>
                 <div class="foot-1">
                     <ul>

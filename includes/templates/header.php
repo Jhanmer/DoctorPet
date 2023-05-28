@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr.Pet</title>
-    <link rel="stylesheet" href="/estilos/css/normalize.css">
-    <link rel="stylesheet" href="/estilos/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./estilos/css/normalize.css">
+    <link rel="stylesheet" href="./estilos/fontawesome/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/estilos/css/header.css">
-    <link rel="stylesheet" href="/estilos/css/footer.css">
-    <link rel="stylesheet" href="/estilos/css/contacto.css">
-    <link rel="stylesheet" href="/estilos/css/body.css">
-    <link rel="stylesheet" href="/estilos/css/formulario.css">
+    <link rel="stylesheet" href="./estilos/css/header.css">
+    <link rel="stylesheet" href="./estilos/css/footer.css">
+    <link rel="stylesheet" href="./estilos/css/contacto.css">
+    <link rel="stylesheet" href="./estilos/css/body.css">
+    <link rel="stylesheet" href="./estilos/css/formulario.css">
 </head>
 
 <body>
@@ -25,7 +24,7 @@
 
             <div class="navb-logo">
                 <a href="index.php">
-                    <img src="/estilos/img/DP-DoctorPet.png" alt="Logo">
+                    <img src="./estilos/img/DP-DoctorPet.png" alt="Logo">
                 </a>
 
             </div>
@@ -74,9 +73,8 @@
                     <div class="modal-content">
 
                         <div class="modal-header">
-                            <img src="/estilos/img/DP-DoctorPet.png" alt="Logo">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                                    class="fa-solid fa-xmark"></i></button>
+                            <img src="./estilos/img/DP-DoctorPet.png" alt="Logo">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                         </div>
 
                         <div class="modal-body">
@@ -121,5 +119,3 @@
 
         </div>
     </header>
-
-    
