@@ -11,7 +11,7 @@ include "Config/conexion.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Pet - Login</title>
+    <title>Doctor Pet - Iniciar Sessión</title>
     <link rel="stylesheet" href="estilos/css/normalize.css">
     <link rel="stylesheet" href="estilos/fontawesome/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ include "Config/conexion.php";
             <img src="estilos/img/undraw_medicine_b-1-ol.svg">
         </div>
         <div class="login-content">
-            <form action="../Controlador/controladorLogin.php" method="post">
+            <form action="/Controlador/controladorLogin.php" method="post">
                 <img class="avatar" src="estilos/img/undraw_welcome_cats_thqn.svg">
                 <h2 class="title">Inicar Sesion</h2>
                 <div class="input-div one">
@@ -38,8 +38,7 @@ include "Config/conexion.php";
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <h5>Email</h5>
-                        <input type="email" class="input"  name="txtEmail" id="txtEmail" required>
+                        <input type="email" class="input" placeholder="Email" name="txtEmail" id="txtEmail" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -47,11 +46,10 @@ include "Config/conexion.php";
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="div">
-                        <h5>Contraseña</h5>
-                        <input type="password" class="input" name="txtPassword" id="txtPassword" required>
+                        <input type="password" class="input" placeholder="Passoword"  name="txtPassword" id="txtPassword" required>
                     </div>
                 </div>
-                <a href="registro.html">¿No tienes una cuenta? Regístrate ahora</a>
+                <a href="registro.php">¿No tienes una cuenta? Regístrate ahora</a>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>

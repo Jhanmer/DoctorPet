@@ -10,6 +10,6 @@
 	<body>
 
 		<script>alert('Usted ha cerrado Sesion... Redireccionado a la pagina principal')</script>
-		<META http-equiv="Refresh" content="1; URL=../CAccesorios.php" >
+		<META http-equiv="Refresh" content="1; URL=/index.php" >
 	</body>
 	</html>

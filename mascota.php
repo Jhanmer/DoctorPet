@@ -97,7 +97,7 @@
                 </header>
                 <footer>
                     <div class='set'>
-                        <button id='back'>Regresar</button>
+                        <button id='back'><a href="index.php">Regresar</a></button>
                         <button id='next'>Registrar</button>
                     </div>
                 </footer>

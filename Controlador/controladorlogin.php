@@ -8,7 +8,7 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 		echo "Datos no definidos";
 		?>	
 		<!DOCTYPE html>
-		<META http-equiv="Refresh" content="2; URL=../login/index.php" >
+		<META http-equiv="Refresh" content="2; URL=../login.php" >
 		
 		<?php
 	}
@@ -25,14 +25,14 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 				//echo "El Usuario: ".$user." no esta registrado";
 				echo"<script>alert('El usuario [ ".$user." ]... no esta registrado')</script>";
 				?>
-				<META http-equiv="Refresh" content="1; URL=../login/index.php" >
+				<META http-equiv="Refresh" content="1; URL=../login.php" >
 				<?php
 			}
 			if ($file[0] == -2) {
 				//echo "Clave incorrecta para el usuario: ".$user;
 				echo"<script>alert('Clave incorrecta para el usuario: ".$user."')</script>";
 				?>
-				<META http-equiv="Refresh" content="2; URL=../login/index.php" >
+				<META http-equiv="Refresh" content="2; URL=../login.php" >
 				<?php
 			}
 			if ($file[0] > 0) {
@@ -42,7 +42,7 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 				echo"<script>alert('BIENVENIDO: ".$user." ')</script>";
 				?>
 
-				<META http-equiv="Refresh" content="2; URL=../CAnimalesPerdidos.php" >
+				<META http-equiv="Refresh" content="2; URL=../index.php" >
 				<?php
 			}
 		}
