@@ -181,6 +181,10 @@ CREATE TABLE comidap (
   `precio` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `comidap` (`idComidap`, `nombre`, `descripcion`, `imagen`, `precio`) VALUES
+(4, 'Rico cat', 'Alimento para gatos', '61f6f03f94c645373443fa853af27aa3', '75.00'),
+(5, 'Mi mascot Actualizado', 'MI mascot alimento', '9196bea909f21a7e7a9604eb73ede6a1', '100.00');
+
 /*
 PROCEDIMIENTOS ALMACENADOS
 */

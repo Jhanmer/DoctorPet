@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+include "Config/conexion.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +30,7 @@
             <img src="estilos/img/undraw_medicine_b-1-ol.svg">
         </div>
         <div class="login-content">
-            <form action="index.html">
+            <form action="../Controlador/controladorLogin.php" method="post">
                 <img class="avatar" src="estilos/img/undraw_welcome_cats_thqn.svg">
                 <h2 class="title">Inicar Sesion</h2>
                 <div class="input-div one">
@@ -33,7 +39,7 @@
                     </div>
                     <div class="div">
                         <h5>Email</h5>
-                        <input type="email" class="input" required>
+                        <input type="email" class="input"  name="txtEmail" id="txtEmail" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -42,7 +48,7 @@
                     </div>
                     <div class="div">
                         <h5>Contraseña</h5>
-                        <input type="password" class="input">
+                        <input type="password" class="input" name="txtPassword" id="txtPassword" required>
                     </div>
                 </div>
                 <a href="registro.html">¿No tienes una cuenta? Regístrate ahora</a>
