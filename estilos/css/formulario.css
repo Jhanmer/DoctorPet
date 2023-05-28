@@ -1,0 +1,18 @@
+table.propiedades{
+    margin-top: 4rem;
+    width: 100%;
+    border-spacing: 0;
+}
+thead{
+    background-color: chocolate;
+}
+th{
+    color: #FFF;
+    padding: 2rem;
+}
+tr{
+    text-align: center;
+}
+.imagen-tabla{
+    width: 10rem;
+}

@@ -172,6 +172,15 @@ INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, vist
 (7, 'Zapatito', '4 de marzo', 'Universidad utp', 944944944, '5cm', 'mi lorito se perdio en el baño');
 
 
+drop table if exists comidap;
+CREATE TABLE comidap (
+  `idComidap` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 /*
 PROCEDIMIENTOS ALMACENADOS
 */

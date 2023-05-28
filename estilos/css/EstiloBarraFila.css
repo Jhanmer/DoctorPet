@@ -1,38 +1,16 @@
-
-html {
-    font-size: 62.5%;
+@import url('https://fonts.googleapis.com/css2?family=Open+Snas&display=swap');
+*{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-.contenedor {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
-}
-
-body{
-
-    font-family: 'Urbanist', sans-serif;
-    overflow-x: hidden;
-}
-
-a{
-
-    text-decoration: none;
-    color: currentColor;
-}
-
-a:hover{
-
-    color: currentColor;
+    font-family: 'Open Sans';
+    justify-content: space-between ;
 }
 .Barra-main nav{
     width: 1150px;
     margin: auto;
     background-color: #333;
+    font-size: 18px;
     margin-top: 70px;
 }
 .menu-horizontal{
@@ -68,6 +46,7 @@ a:hover{
     display: block;
     color: white;
     padding: 15px 15px 15px 20px;
+    text-decoration: none;
 }
 @media(max-width: 915px){
     .menu-horizontal{
