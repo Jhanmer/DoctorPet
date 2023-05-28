@@ -74,7 +74,7 @@
                     <div class="modal-content">
 
                         <div class="modal-header">
-                            <img src="estilos/img/DP-DoctorPet.png" alt="Logo">
+                            <img src="/estilos/img/DP-DoctorPet.png" alt="Logo">
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
                                     class="fa-solid fa-xmark"></i></button>
                         </div>

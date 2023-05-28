@@ -154,7 +154,7 @@ foreign key (idCategoriaPro) references DP_Categoria_Producto(idCategoriaPro)
 );
 
 CREATE TABLE dp_mascota_perdida (
-  Id_perdidos int(10) NOT NULL,
+  Id_perdidos int NOT NULL auto_increment,
   nombre_perdido varchar(50) NOT NULL,
   fecha_perdido varchar(30) NOT NULL,
   visto_perdido varchar(50) NOT NULL,
@@ -174,7 +174,7 @@ INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, vist
 
 drop table if exists comidap;
 CREATE TABLE comidap (
-  `idComidap` int(11) NOT NULL,
+  `idComidap` int NOT NULL auto_increment,
   `nombre` varchar(100) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
   `imagen` varchar(250) DEFAULT NULL,
