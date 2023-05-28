@@ -5,6 +5,7 @@ if (isset ($_SESSION["cargo"])) {
 }else{
     $Cargo = null;
 }
+$nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
 
 include "Config/conexion.php";
 ?>
@@ -84,11 +85,20 @@ include "Config/conexion.php";
                     }
                 ?>
                 <?php
-                    if($Cargo == "Usuario"){
+                    if($Cargo == "Usuario"){                      
                         echo "
-                        <div class='item-button'>
-                            <a href='../Config/Salir.php' type='button'>Salir</a>
-                        </div>";
+                        <div class='nav-item dropdown'>
+                            <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown'aria-expanded='false'>
+                                <img class='rounded-circle me-lg-2' src='Imagenes/login.png' alt='' style='width: 40px; height: 40px;'>
+                                <span>$nombreUsuario</span>                               
+                            </a>
+                            <div class='dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0'>
+                                    <a href='#' class='dropdown-item'>Mi perfil</a>
+                                    <a href='#' class='dropdown-item'>Configuraciones</a>
+                                    <a href='/Config/Salir.php' class='dropdown-item'>Salir</a>
+                            </div>
+                        </div>                       
+                        ";
                     }
                 ?>
             </div>
