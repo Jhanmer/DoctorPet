@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
+a{
+
+    text-decoration: none;
+    color: currentColor;
+}
+
+a:hover{
+
+    color: currentColor;
+}
+
+header{
+
+    width: 100vw;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 25%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header .container-fluid{
+
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+@media(max-width:992px){
+
+    header .container-fluid{
+
+        padding: 0 5%;
+    }
+}
+
+header .navb-logo img{
+
+    width: 200px;
+    height: 66px;
+}
+
+header .navb-items{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    letter-spacing: 3px;
+}
+
+header .item{
+
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #102447;
+    padding: 5px 0;
+    transition: all .1s ease;
+    border-bottom: 0px solid #64d6f4;
+    border-top: 0px solid #64d6f4;
+    cursor: pointer;
+}
+
+header .item:hover{
+
+    border-bottom: 3px solid #64d6f4;
+    border-top: 3px solid #64d6f4;
+}
+
+header .item-button a{
+
+    background-color: #274d8a;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: all .5s ease;
+    text-align: center;
+}
+
+header .item-button a:hover{
+
+    background-color: #64d6f4;
+}
+
+header .mobile-toggler{
+
+    font-size: 20px;
+}
