@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset ($_SESSION["cargo"])) {
+    $Cargo = $_SESSION["cargo"];
+}else{
+    $Cargo = null;
+}
+
+include "Config/conexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +24,9 @@
     <link rel="stylesheet" href="/estilos/css/contacto.css">
     <link rel="stylesheet" href="/estilos/css/body.css">
     <link rel="stylesheet" href="/estilos/css/formulario.css">
+    <link href="CSS/EstiloRegistro_Cliente.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
 <body>
@@ -50,14 +63,34 @@
                 <div class="item">
                     <a href="nosotros.php">Nosotros</a>
                 </div>
-
+                <?php
+                    if($Cargo == "Usuario"){
+                            echo "
+                            <div class='item'>
+                                <a href='mascota.php'>Registrar Mascota</a>
+                            </div>";
+                        }
+                ?>
+                
                 <div class="item">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
-
-                <div class="item-button">
-                    <a href="login.php" type="button">Iniciar Sesion</a>
-                </div>
+                <?php
+                    if($Cargo != "Usuario"){
+                        echo "
+                        <div class='item-button'>
+                            <a href='../login.php' type='button'>Iniciar Sesion</a>
+                        </div>";
+                    }
+                ?>
+                <?php
+                    if($Cargo == "Usuario"){
+                        echo "
+                        <div class='item-button'>
+                            <a href='../Config/Salir.php' type='button'>Salir</a>
+                        </div>";
+                    }
+                ?>
             </div>
 
             <!-- Button trigger modal -->
