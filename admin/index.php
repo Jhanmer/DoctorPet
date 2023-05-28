@@ -42,7 +42,7 @@ incluirTemplate('header');
 
 <main class="contenedor">
     <br><br>
-    <h1>Administrador Doctor Pet</h1>
+    <h1>Administrador Doctor Pet Rey Perseo</h1>
     <?php if ($mensaje) : ?>
         <div class="alert alert-primary d-flex align-items-center" role="alert" style=" font-size: 20px; margin: auto; width: 70%; text-align:center; ">
             <svg class="bi flex-shrink-0 me-2"  height="24" role="img" aria-label="Info:">
