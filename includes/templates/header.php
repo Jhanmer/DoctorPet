@@ -10,7 +10,7 @@ $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] 
 include "Config/conexion.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -35,6 +35,31 @@ include "Config/conexion.php";
     <link rel="preload" href="/CSS/style.css" as="style" type="text/css">
     <link rel="stylesheet" href="/CSS/style.css" type="text/css">
 
+    <style>
+        .item:hover .submenu {
+            display: block;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .submenu a {
+            color: black;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .submenu a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -57,7 +82,15 @@ include "Config/conexion.php";
                 </div>
 
                 <div class="item">
-                    <a href="servicios.php">Servicio</a>
+                    <a>Servicio</a>
+                    <div class="submenu">
+                        <a href="#">Consultas</a>
+                        <a href="#">Baños y Cortes</a>
+                        <a href="#">Campañas</a>
+                        <a href="#">Animales Perdidos</a>
+                        <a href="#">Atencion a domicilio</a>
+                        <a href="#">Consultas online</a>
+                    </div>
                 </div>
 
                 <div class="item">
