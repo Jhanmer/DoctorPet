@@ -19,7 +19,7 @@
                 <div class="carousel-caption top-0 d-none d-md-block">
                     <h1 class="display-1 fw-bolder text-capitalize">Reserva tu cita</h1>
                     <h5 class="mt-5 fs-3 text-uppercase">ESTAMOS PARA SERVIRTE</h5>
-                    <button class="btn btn-primary px-4 f2-5 mt-5 boton">Ubícanos</button>
+                    <button class="btn btn-primary px-4 f2-5 mt-5 boton"><a href="Consulta.php">!Registra Cita Aquí!</a></button>
                 </div>
             </div>
             <div class="carousel-item c-item">
