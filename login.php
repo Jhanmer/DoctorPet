@@ -49,7 +49,7 @@ include "Config/conexion.php";
                         <input type="password" class="input" placeholder="Passoword"  name="txtPassword" id="txtPassword" required>
                     </div>
                 </div>
-                <a href="registro.php">¿No tienes una cuenta? Regístrate ahora</a>
+                <a href="RegistroUsuario.php">¿No tienes una cuenta? Regístrate ahora</a>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>
