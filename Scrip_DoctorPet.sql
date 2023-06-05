@@ -101,6 +101,8 @@ idEspecie int,
 idRaza  int, 
 SexoMasc varchar(10), 
 idCliente int,
+peso longblob,
+imgMascota varchar(250) DEFAULT NULL,
 foreign key (idCliente) references DP_Cliente(idCliente),
 foreign key (idEspecie) references DP_Especie(idEspecie),
 foreign key (idRaza) references DP_Raza(idRaza)

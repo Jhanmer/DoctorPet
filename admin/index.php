@@ -1,5 +1,6 @@
 <?php
-
+require_once('index.php');
+require_once('../Config/seguridad.php');
 // Importar la conexión
 require '../includes/config/database.php';
 $db = conectarDB();
@@ -40,12 +41,12 @@ $mensaje = $_GET['mensaje'] ?? null;
 $result = $_GET['resultado'] ?? null;
 
 require('../includes/funciones.php');
-incluirTemplate('header');
+incluirTemplate('headerAdmin');
 ?>
 
 <main class="contenedor">
     <br><br>
-    <h1>Administrador Doctor Pet Rey Perseo</h1>
+    <h1>Administrador Doctor Pet</h1>
 
     <?php if ($mensaje) : ?>
         <div class="alert alert-primary d-flex align-items-center" role="alert" style="font-size: 20px; margin: auto; width: 70%; text-align: center;">

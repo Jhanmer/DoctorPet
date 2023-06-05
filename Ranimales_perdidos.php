@@ -51,7 +51,7 @@ include "./Config/conexion.php";
                   </div>
                 </form>
                 <div class="boton-outline-info">
-                      <a href="CAnimalesPerdidos.php">Regresar página</a>
+                      <a href="index.php">Regresar página</a>
                 </div>
             </div>  
         </main>   

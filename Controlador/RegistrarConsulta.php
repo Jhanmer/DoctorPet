@@ -38,7 +38,7 @@ if($Result == 1){
 
 		<div class="main-content">
 			<i class="fa fa-check main-content__checkmark" id="checkmark"></i>
-			<p class="main-content__body" data-lead-id="main-content-body">Muchas gracias por llenar eso. ¡Significa mucho para nosotros, al igual que usted! Realmente te apreciamos giving us a moment of your time today. Thanks for being you.</p>
+			<p class="main-content__body" data-lead-id="main-content-body">Muchas gracias por llenar eso. ¡Significa mucho para nosotros, al igual que usted! Realmente te apreciamos.</p>
 		</div>
 
 		<footer class="site-footer" id="footer">

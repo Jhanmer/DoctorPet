@@ -11,7 +11,40 @@
         <section class="producto">
             <div class="producto-base">
                 <div class="imagen">
-                    <img src="/img/juguete/butterfly-25-x-10-x-2-cm.jpg" alt="">
+                    <img src="estilos/img/juguete/butterfly-25-x-10-x-2-cm.jpg" alt="">
+                </div>
+                <div class="texto">
+                    <h4>Juguete para gato</h4>
+                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
+                    <h4>S/.12.00</h4>
+                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto-base">
+                <div class="imagen">
+                    <img src="estilos/img/juguete/cat-wubba-caticorn.jpg" alt="">
+                </div>
+                <div class="texto">
+                    <h4>Peluche para gato</h4>
+                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
+                    <h4>S/.12.00</h4>
+                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto-base">
+                <div class="imagen">
+                    <img src="estilos/img/juguete/connects-switch-teaser-feathers.jpg" alt="">
+                </div>
+                <div class="texto">
+                    <h4>Peluche para gato</h4>
+                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
+                    <h4>S/.12.00</h4>
+                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto-base">
+                <div class="imagen">
+                    <img src="estilos/img/juguete/laser-stick-cat-toy.jpg" alt="">
                 </div>
                 <div class="texto">
                     <h4>Producto1</h4>
@@ -22,7 +55,7 @@
             </div>
             <div class="producto-base">
                 <div class="imagen">
-                    <img src="/img/juguete/cat-wubba-caticorn.jpg" alt="">
+                    <img src="estilos/img/juguete/arenero-1.jpg" alt="">
                 </div>
                 <div class="texto">
                     <h4>Producto1</h4>
@@ -33,7 +66,7 @@
             </div>
             <div class="producto-base">
                 <div class="imagen">
-                    <img src="/img/juguete/connects-switch-teaser-feathers.jpg" alt="">
+                    <img src="estilos/img/juguete/arenero-2.jpg" alt="">
                 </div>
                 <div class="texto">
                     <h4>Producto1</h4>
@@ -44,7 +77,7 @@
             </div>
             <div class="producto-base">
                 <div class="imagen">
-                    <img src="/img/juguete/laser-stick-cat-toy.jpg" alt="">
+                    <img src="estilos/img/juguete/arenero-3.jpg" alt="producto1">
                 </div>
                 <div class="texto">
                     <h4>Producto1</h4>
@@ -55,40 +88,7 @@
             </div>
             <div class="producto-base">
                 <div class="imagen">
-                    <img src="/img/juguete/arenero-1.jpg" alt="">
-                </div>
-                <div class="texto">
-                    <h4>Producto1</h4>
-                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
-                    <h4>S/.12.00</h4>
-                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-base">
-                <div class="imagen">
-                    <img src="/img/juguete/arenero-2.jpg" alt="">
-                </div>
-                <div class="texto">
-                    <h4>Producto1</h4>
-                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
-                    <h4>S/.12.00</h4>
-                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-base">
-                <div class="imagen">
-                    <img src="/img/juguete/arenero-3.jpg" alt="producto1">
-                </div>
-                <div class="texto">
-                    <h4>Producto1</h4>
-                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
-                    <h4>S/.12.00</h4>
-                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="producto-base">
-                <div class="imagen">
-                    <img src="/img/juguete/arenero-5.jpg" alt="">
+                    <img src="estilos/img/juguete/arenero-5.jpg" alt="">
                 </div>
                 <div class="texto">
                     <h4>Producto1</h4>

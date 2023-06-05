@@ -70,7 +70,7 @@ body {
   background: #c2d3f9;
   display: grid;
   grid-template-areas: "." ".";
-  width: 500px;
+  width: 700px;
 }
 .right-container h1:nth-of-type(1) {
   color: rgba(0, 0, 0, 0.8);
