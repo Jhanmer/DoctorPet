@@ -87,9 +87,7 @@ incluirTemplate('header');
         </div>
         <div class="col-lg-5">
             <div class="row px-3">
-                <div class="col-12 p-0">
-                    <img class="img-fluid w-100" src="Imagenes/nosotros/about-1.jpg" alt="">
-                </div>
+                
                 <div class="col-6 p-0">
                     <img class="img-fluid w-100" src="Imagenes/nosotros/about-2.jpg" alt="">
                 </div>

@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {;
 
 
 require('../../includes/funciones.php');
-incluirTemplate('header');
+incluirTemplate('headerAdmin');
 
 ?>
 <main class="contenedor">

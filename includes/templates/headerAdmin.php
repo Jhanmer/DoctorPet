@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if (isset ($_SESSION["cargo"])) {
     $Cargo = $_SESSION["cargo"];
 }else{
@@ -7,7 +7,7 @@ if (isset ($_SESSION["cargo"])) {
 }
 $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
 
-include "Config/conexion.php";
+include "../Config/conexion.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,7 +39,6 @@ include "Config/conexion.php";
     <link href="CSS/EstiloCCampañas.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
     <style>
         .item:hover .submenu {
             display: block;

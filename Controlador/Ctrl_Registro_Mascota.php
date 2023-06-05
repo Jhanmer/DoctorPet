@@ -20,6 +20,12 @@ $mensaje=null;
             $reg["genero_masc"] ="";
         }
         $consultaDuenio = $_POST['coreo_dueño'];
+        if(isset($_POST['peso'])){
+            $reg["peso"] = $_POST["peso"];;
+        }else{
+            $reg["peso"] ="";
+        }
+        
         $resultadoIDduenio = $con->query("select idCliente from dp_cliente where Email like '%$consultaDuenio%' ");
         while($row = $resultadoIDduenio->fetch_array()){
             $reg["idCliente"] = $row['idCliente'];  
@@ -31,8 +37,8 @@ $mensaje=null;
         $con = fnConnect($msg);
         mysqli_query($con, "start transaction");    
         if(isset($reg["idCliente"])){
-        $sqlinsert = "insert into dp_mascota(NomMasc,EdadMasc,idEspecie,idRaza,SexoMasc,idCliente)
-                values('{$reg["nom_masc"]}','{$reg["edad_masc"]}',{$reg["especie_masc"]},{$reg["raza_masc"]},'{$reg["genero_masc"]}',{$reg["idCliente"]});";
+        $sqlinsert = "insert into dp_mascota(NomMasc,EdadMasc,idEspecie,idRaza,SexoMasc,idCliente,peso)
+                values('{$reg["nom_masc"]}','{$reg["edad_masc"]}',{$reg["especie_masc"]},{$reg["raza_masc"]},'{$reg["genero_masc"]}',{$reg["idCliente"]},{$reg["peso"]});";
         $respuesta = mysqli_query($con, $sqlinsert);
         if($respuesta==0){
             echo '<div class="alerta">Ingrese los datos correctos a los campos</div>';
