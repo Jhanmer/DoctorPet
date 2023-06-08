@@ -99,7 +99,13 @@ include "Config/conexion.php";
                 </div>
 
                 <div class="item">
-                    <a href="productos.php">Productos</a>
+                    <a>Productos</a>
+                    <div class="submenu">
+                    <a href="#">Vestimentas</a>
+                    <a href="#">Medicamentos</a>
+                    <a href="#">Alimentos</a>
+                    <a href="#">Accesorios</a>
+                    </div>
                 </div>
 
                 <div class="item">
