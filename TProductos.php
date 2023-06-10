@@ -155,7 +155,7 @@ function InsertarCliente($reg, &$mensaje, &$error)
 </header>
 
 <br><br><br>
-<h1 Style="align='left'">Tabla Productos</h1>
+<h1 Style="align='left'">TABLA DE PRODUCTOS</h1>
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" _msthash="1940757" _msttexthash="381446">Registros</a>
@@ -181,7 +181,7 @@ function InsertarCliente($reg, &$mensaje, &$error)
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de Animales Perdidos</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de Animales Perdidos</a>
                     <ul class="dropdown-menu" _msthidden="3">
                         <li><a class="dropdown-item" href="TMascotasP.php">Animales Perdidos</a></li>
                     </ul>
@@ -206,6 +206,7 @@ function InsertarCliente($reg, &$mensaje, &$error)
         </tr>
     </thead>
     <tbody>
+        
         <?php
         $sql = "select p.idProducto, p.nombreProducto, p.idCategoriaPro, p.precio,
         p.fechaVencimiento from DP_Producto p;";

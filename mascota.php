@@ -80,9 +80,9 @@ require_once('Config/seguridad.php');
                             <label for='pet-gender-female'>Genero</label>
                             <div class='radio-container'>
                                 <input checked='' id='pet-gender-female' name="genero_masc" type='radio' value="Macho">
-                                <label for='pet-gender-female'>Hembra</label>
+                                <label for='pet-gender-female'>Macho</label>
                                 <input id='pet-gender-male' name="genero_masc" type='radio' value="Hembra">
-                                <label for='pet-gender-male'>Macho</label>
+                                <label for='pet-gender-male'>Hembra</label>
                             </div>
                         </div>
                         <div class='pets-spayed-neutered'>

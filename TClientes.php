@@ -46,7 +46,7 @@ $mensaje=null;
     }
 ?>
 
-
+<html>
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/IProductos/Inicio/LOGO.jpg">
@@ -64,7 +64,7 @@ $mensaje=null;
         <div class="container-fluid">
 
             <div class="navb-logo">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="estilos/img/DP-DoctorPet.png" alt="Logo">
                 </a>
 
@@ -73,23 +73,23 @@ $mensaje=null;
             <div class="navb-items d-none d-xl-flex">
 
                 <div class="item">
-                    <a href="index.html">Inicio</a>
+                    <a href="index.php">Inicio</a>
                 </div>
 
                 <div class="item">
-                    <a href="servicios.html">Servicio</a>
+                    <a href="#">Servicio</a>
                 </div>
 
                 <div class="item">
-                    <a href="productos.html">Productos</a>
+                    <a href="#">Productos</a>
                 </div>
 
                 <div class="item">
-                    <a href="contacto.html">Contactanos</a>
+                    <a href="#">Contactanos</a>
                 </div>
 
                 <div class="item">
-                    <a href="nosotros.html">Nosotros</a>
+                    <a href="#">Nosotros</a>
                 </div>
 
                 <div class="item">
@@ -177,21 +177,21 @@ $mensaje=null;
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registros de Usuarios</a>
                             <ul class="dropdown-menu" _msthidden="3">
                                 <li _msthidden="1"><a class="dropdown-item" href="TClientes.php" _msthash="1722032" _msttexthash="76466" _msthidden="2">Clientes</a></li>
-                                <li _msthidden="1"><a class="dropdown-item" href="#" _msthash="1722214" _msttexthash="232752" _msthidden="1">Trabajadores</a></li>
-                                <li _msthidden="1"><a class="dropdown-item" href="#" _msthash="1722214" _msttexthash="232752" _msthidden="1">Mascotas</a></li>
+                                <li _msthidden="1"><a class="dropdown-item" href="TEmpleados.php" _msthash="1722214" _msttexthash="232752" _msthidden="1">Trabajadores</a></li>
+                                <li _msthidden="1"><a class="dropdown-item" href="TMascotas.php" _msthash="1722214" _msttexthash="232752" _msthidden="1">Mascotas</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de Consultas</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="#">Consultas</a></li>
+                                <li><a class="dropdown-item" href="TConsultas.php">Consultas</a></li>
 
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="TReservas.php" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de Animales Perdidos</a>
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" _msthash="1150123" _msttexthash="300144">Registro de Animales Perdidos</a>
                             <ul class="dropdown-menu" _msthidden="3">
-                                <li><a class="dropdown-item" href="#">Animales Perdidos</a></li>
+                                <li><a class="dropdown-item" href="TMascotasP.php">Animales Perdidos</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -199,7 +199,10 @@ $mensaje=null;
             </div>
         </nav><br>
         
-        
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Cliente"><br>
+        </div>
+
         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
             <thead>
                 <tr class="Lineas">
@@ -222,9 +225,7 @@ $mensaje=null;
             </thead>    
             <tbody>
         <?php
-        $sql = "select t.idCliente, t.nombre, t.apellidos, t.Fecha_nacimiento,t.Genero,
-    t.direccion, t.IdDistrito, t.Telefono, t.Email, t.Password, t.cargo, t.Fecha_registro
-    from DP_Cliente t;";
+        
         $busc= mysqli_query($con, $sql);
 
         if($busc -> num_rows >0){
@@ -254,7 +255,7 @@ $mensaje=null;
 ?>
 
 </table>       
-
+<button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RegistroC.php"><b>Registrar Cliente</b></a> </button>  
   </body>
-        
+     <scrtipt src="js/buscador.js"></scrtipt>   
 </html>
