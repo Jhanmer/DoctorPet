@@ -54,7 +54,7 @@
                     <input type="text" name="edad_masc" required="">
                     <label>Edad</label>
                   </div>
-                  <div class="contenedor-select">
+                    <div class="contenedor-select">
                         <select name="especie_masc" class="select-box">
                             <option value="">Seleccione especie de la mascota</option>
                             <?php while($row = mysqli_fetch_assoc($ListaEspecie)){ ?>
@@ -63,10 +63,10 @@
                                 </option>
                             <?php } ?>    
                         </select>
-                      <div class="icon-contenedor">
+                        <div class="icon-contenedor">
                           <i class="fa-solid fa-caret-down"></i>
-                      </div>
-                  </div>
+                        </div>
+                    </div>
                     
                   <div class="contenedor-select">
                         <select name="raza_masc" class="select-box">
