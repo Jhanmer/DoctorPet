@@ -40,6 +40,33 @@ include "Config/conexion.php";
     <link href="CSS/EstiloCConsultaInternet.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
+    <!-- Icons font CSS-->
+    <link href="estilos/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="estilos/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="estilos/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="estilos/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="estilos/css/main.css" rel="stylesheet" media="all">
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+    
+
+	<!-- Google font 
+    CONSULTA PERSONALIDAZA
+    -->
+	
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="estilos/css/bootstrap.min.css" />
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="estilos/css/style-consulta.css" />
+
+
     <style>
         .item:hover .submenu {
             display: block;
@@ -120,7 +147,11 @@ include "Config/conexion.php";
                             echo "
                             <div class='item'>
                                 <a href='mascota.php'>Registrar Mascota</a>
-                            </div>";
+                            </div>
+                            <div class='item'>
+                                <a href='ConsultaPersonalizada.php'>Cita</a>
+                            </div>
+                            ";
                         }
                 ?>
                 

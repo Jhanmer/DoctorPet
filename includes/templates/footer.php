@@ -1,4 +1,12 @@
+ <!-- Jquery JS-->
+ <script src="estilos/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="estilos/vendor/select2/select2.min.js"></script>
+    <script src="estilos/vendor/datepicker/moment.min.js"></script>
+    <script src="estilos/vendor/datepicker/daterangepicker.js"></script>
 
+    <!-- Main JS-->
+    <script src="estilos/js/global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
     "></script>
 

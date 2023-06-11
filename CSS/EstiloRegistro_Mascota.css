@@ -2,7 +2,10 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
-  background: linear-gradient(black, #69bedf);
+  background: linear-gradient(rgb(211, 165, 165), #69bedf);
+  background-image: url('/Imagenes/registromascota.png');
+  background-size: cover;
+  background-position: center;
 }
 .ctn-masc{
     height: 125vh;
