@@ -66,23 +66,23 @@ $mensaje=null;
             <div class="navb-items d-none d-xl-flex">
 
                 <div class="item">
-                    <a href="index.html">Inicio</a>
+                    <a href="index.php">Inicio</a>
                 </div>
 
                 <div class="item">
-                    <a href="servicios.html">Servicio</a>
+                    <a href="#">Servicio</a>
                 </div>
 
                 <div class="item">
-                    <a href="productos.html">Productos</a>
+                    <a href="#">Productos</a>
                 </div>
 
                 <div class="item">
-                    <a href="contacto.html">Contactanos</a>
+                    <a href="#">Contactanos</a>
                 </div>
 
                 <div class="item">
-                    <a href="nosotros.html">Nosotros</a>
+                    <a href="#">Nosotros</a>
                 </div>
 
                 <div class="item">
@@ -159,7 +159,7 @@ $mensaje=null;
         <h1 align="left">TABLA DE CONSULTAS</h1>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#" _msthash="1940757" _msttexthash="381446">Registros</a>
+                <a class="navbar-brand" href="#" _msthash="1940757" _msttexthash="381446">TABLA DE REGISTROS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" _msthidden="A" _msthiddenattr="1813266" _mstaria-label="320099">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -191,7 +191,10 @@ $mensaje=null;
                 </div>
             </div>
         </nav><br>
-        
+
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Cliente"><br>
+        </div>
         
         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
             <thead>
@@ -209,8 +212,7 @@ $mensaje=null;
             </thead>    
             <tbody>
         <?php
-        $sql =  "select c.idConsulta, c.nombreCli, c.TelefonoCons,c.FechaCons,c.correoCli,
-   c.Motivo from DP_Consulta c;";
+        
         $busc= mysqli_query($con, $sql);
 
         if($busc -> num_rows >0){
@@ -236,7 +238,7 @@ $mensaje=null;
 </table>       
 
   </body>
-        
+      <script src="js/buscador.js" type="text/javascript"></script>      
 </html>
 
 

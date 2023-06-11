@@ -257,5 +257,5 @@ $mensaje=null;
 </table>       
 <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="RegistroC.php"><b>Registrar Cliente</b></a> </button>  
   </body>
-     <scrtipt src="js/buscador.js"></scrtipt>   
+  <script src="js/buscador.js" type="text/javascript"></script>   
 </html>

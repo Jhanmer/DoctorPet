@@ -192,7 +192,10 @@ $mensaje=null;
                 </div>
             </div>
         </nav><br>
-        
+
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Cliente"><br>
+        </div>
         
         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
             <thead>
@@ -211,8 +214,7 @@ $mensaje=null;
             </thead>    
             <tbody>
         <?php
-        $sql = "select m.idMascota, m.NomMasc, m.EdadMasc, m.idEspecie,m.idRaza,
-   m.SexoMasc, m.idCliente from DP_Mascota m;";
+        
         $busc= mysqli_query($con, $sql);
 
         if($busc -> num_rows >0){
@@ -237,9 +239,9 @@ $mensaje=null;
 ?>
 
 </table>       
-
+<button class="btn btn-outline-info" type="submit" name="enviar"> <a href="mascota.php"><b>Registrar Mascota</b></a> </button>  
   </body>
-        
+    <script src="js/buscador.js" type="text/javascript"></script>     
 </html>
 
 

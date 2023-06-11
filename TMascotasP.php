@@ -193,6 +193,10 @@ $mensaje=null;
             </div>
         </nav><br>
         
+        <div class="container-fluid">
+            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
+            
+        </div>
         
         <table class="table table-dark table-striped table-hover table_id" id="tblProductos">
             <thead>
@@ -239,7 +243,7 @@ $mensaje=null;
 </table>       
 
   </body>
-        
+  <script src="js/buscador.js" type="text/javascript"></script> 
 </html>
 
 
