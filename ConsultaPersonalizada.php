@@ -5,7 +5,8 @@
 <?php
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
-$consultaMascCliente = "select * from dp_mascota where idCliente  = '2'";
+$idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
+$consultaMascCliente = "select * from dp_mascota where idCliente  = '$idCliente'";
 $ListaMascCli = mysqli_query($con, $consultaMascCliente);
 ?>
 <body>
