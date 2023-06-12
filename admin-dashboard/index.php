@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset ($_SESSION["cargo"])) {
+if (isset($_SESSION["cargo"])) {
     $Cargo = $_SESSION["cargo"];
-}else{
+} else {
     $Cargo = null;
 }
 $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
@@ -10,7 +10,7 @@ $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 include "../Config/conexion.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -495,10 +495,8 @@ include "../Config/conexion.php";
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <svg class="bi text-primary" width="32" height="32" fill="blue"
-                                                        style="width:10px">
-                                                        <use
-                                                            xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                                    <svg class="bi text-primary" width="32" height="32" fill="blue" style="width:10px">
+                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
                                                     <h5 class="mb-0 ms-3">Europe</h5>
                                                 </div>
@@ -513,10 +511,8 @@ include "../Config/conexion.php";
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <svg class="bi text-success" width="32" height="32" fill="blue"
-                                                        style="width:10px">
-                                                        <use
-                                                            xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                                    <svg class="bi text-success" width="32" height="32" fill="blue" style="width:10px">
+                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
                                                     <h5 class="mb-0 ms-3">America</h5>
                                                 </div>
@@ -531,10 +527,8 @@ include "../Config/conexion.php";
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                                        style="width:10px">
-                                                        <use
-                                                            xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                                    <svg class="bi text-danger" width="32" height="32" fill="blue" style="width:10px">
+                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
                                                     </svg>
                                                     <h5 class="mb-0 ms-3">Indonesia</h5>
                                                 </div>
@@ -610,14 +604,17 @@ include "../Config/conexion.php";
                                     <div class="ms-3 name">
                                         <h5 class="font-bold">John Duck</h5>
                                         <h6 class="text-muted mb-0">@johnducky</h6>
-                                        <a class='dropdown-item d-flex align-items-center' href='/Config/Salir.php'>
-                                            <i class='bi bi-box-arrow-right'></i>
-                                            <span>Cerrar sesión</span>
-                                        </a>
                                     </div>
+                                </div>
+                                <div class="mt-3">
+                                    <a class="dropdown-item btn btn-info rounded text-white bg-info d-flex align-items-center w-75" href="/Config/Salir.php">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                        <span>Salir</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="card">
                             <div class="card-header">
                                 <h4>Recent Messages</h4>
@@ -674,8 +671,7 @@ include "../Config/conexion.php";
                         <p>2021 &copy; Mazer</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="http://ahmadsaugi.com">A. Saugi</a></p>
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="http://ahmadsaugi.com">A. Saugi</a></p>
                     </div>
                 </div>
             </footer>
