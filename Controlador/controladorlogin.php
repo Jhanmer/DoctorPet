@@ -40,11 +40,20 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 				$_SESSION["autenticado"] = "Si";
 				$_SESSION["cargo"] = $file[10];
 				$_SESSION["NombreUsuario"] = $user;
+				$_SESSION["idCliente"] = $file[0];
 				echo"<script>alert('BIENVENIDO: ".$user." ')</script>";
 				?>
-
-				<META http-equiv="Refresh" content="2; URL=../index.php" >
 				<?php
+				$Cargo = isset($_SESSION["cargo"]) ? $_SESSION["cargo"] : "";
+				if($Cargo == "Usuario"){
+					?>
+					<META http-equiv="Refresh" content="2; URL=../index.php" >
+					<?php
+				}else if ($Cargo == "Admin"){
+					?>
+				<META http-equiv="Refresh" content="2; URL=../admin-dashboard/index.php" >
+				<?php
+				}
 			}
 		}
 	}
