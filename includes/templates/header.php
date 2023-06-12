@@ -6,7 +6,7 @@ if (isset ($_SESSION["cargo"])) {
     $Cargo = null;
 }
 $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
-
+$idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 include "Config/conexion.php";
 ?>
 <!DOCTYPE html>
@@ -169,23 +169,55 @@ include "Config/conexion.php";
                 <?php
                     if($Cargo == "Usuario"){                      
                         echo "
-                        <div class='nav-item dropdown'>
-                            <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown'aria-expanded='false'>
-                                <img class='rounded-circle me-lg-2' src='Imagenes/login.png' alt='' style='width: 40px; height: 40px;'>
-                                <span>$nombreUsuario</span>                               
-                            </a>
-                            <div class='dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0'>
-                                    <a href='#' class='dropdown-item'>Mi perfil</a>
-                                    <a href='#' class='dropdown-item'>Configuraciones</a>
-                                    <a href='/Config/Salir.php' class='dropdown-item'>Salir</a>
-                            </div>
-                        </div>                       
+                        <nav class='header-nav ms-auto'>
+                            <li class='nav-item dropdown pe-3'>
+                                <a class='nav-link nav-profile d-flex align-items-center pe-0 show' href='#' data-bs-toggle='dropdown'>
+                                    <img src='Imagenes/login.png' alt='Profile' class='rounded-circle' style='width: 40px; height: 40px;'>
+                                    <span class='d-none d-md-block dropdown-toggle ps-3'>$nombreUsuario / $idCliente</span>
+                                </a>
+                                <ul class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile' data-popper-placement='bottom-end' style='position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-16px, 38px);'>
+                                    <li>
+                                        <a class='dropdown-item d-flex align-items-center' href='#'>
+                                            <i class='bi bi-person'></i>
+                                            <span>Mi perfil</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class='dropdown-divider'>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-item d-flex align-items-center' href='#'>
+                                            <i class='bi bi-gear'></i>
+                                            <span>Configuración</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class='dropdown-divider'>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-item d-flex align-items-center' href='#'>
+                                            <i class='bi bi-question-circle'></i>
+                                            <span>Mi lista de Citas</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <hr class='dropdown-divider'>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-item d-flex align-items-center' href='/Config/Salir.php'>
+                                            <i class='bi bi-box-arrow-right'></i>
+                                            <span>Cerrar sesión</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </nav>   
                         ";
                     }
                 ?>
             </div>
-
-            <!-- Button trigger modal -->
+            <!-- 
+            Button trigger modal -->
             <div class="mobile-toggler d-lg-none">
                 <a href="#" data-bs-toggle="modal" data-bs-target="#navbModal">
                     <i class="fa-solid fa-bars"></i>

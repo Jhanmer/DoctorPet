@@ -6,11 +6,12 @@
 .container{
     width: 100%;
     max-width: 2100px;
+    /*justify-content: center;
+    display: flex;*/
 }
 .container-baniocorte{
     width: 100%;
     max-width: 2100px;
-    
     display: flex;
     justify-content: center;
 }

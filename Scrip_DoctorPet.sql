@@ -87,7 +87,7 @@ IdDistrito int,
 Telefono varchar(20),
 Email varchar(100) not null, 
 Password varchar(50) not null, 
-cargo varchar(20) default 'Usuario'not null,
+cargo varchar(20) default 'Usuario' not null,
 Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
 foreign key (IdDistrito) references DP_Distrito(IdDistrito)
 ); 
@@ -154,7 +154,7 @@ precio Decimal(10,2) not null,
 fechaVencimiento date not null,
 foreign key (idCategoriaPro) references DP_Categoria_Producto(idCategoriaPro)
 );
-
+drop table if exists dp_mascota_perdida;
 CREATE TABLE dp_mascota_perdida (
   Id_perdidos int NOT NULL PRIMARY KEY auto_increment,
   nombre_perdido varchar(50) NOT NULL,
@@ -164,6 +164,24 @@ CREATE TABLE dp_mascota_perdida (
   tamanio_perdido varchar(50) NOT NULL,
   descripcion_perdido varchar(200) NOT NULL
 );
+
+drop table if exists dp_ConsultaPersonalizada;
+CREATE TABLE dp_ConsultaPersonalizada (
+idConsultaPer int NOT NULL PRIMARY KEY auto_increment,
+motivo varchar(255) NOT NULL,
+estado int NOT NULL,
+fechaCita date not null,
+HoraCita time not null,
+idMascota int NOT NULL,
+imgCita varchar(255) NULL,
+dispo int not null,
+FechaUltRe date NOT NULL,
+Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
+foreign key (idMascota) references DP_Mascota(idMascota)
+);
+
+
+
 INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido) VALUES
 (1, 'Carlos', '14 de mayo', 'Mall del sur', 992992992, '60cm', 'De estatura pequeña, con manchitas rojas'),
 (2, 'Panchito', '15 de mayo', 'Mall del sur, junto con las gatitas ', 993993993, 'aproximado de 50 cm de altura', 'Estatura pequeña, manchita en su cola'),
@@ -187,9 +205,20 @@ INSERT INTO `comidap` (`idComidap`, `nombre`, `descripcion`, `imagen`, `precio`)
 (4, 'Rico cat', 'Alimento para gatos', '61f6f03f94c645373443fa853af27aa3', '75.00'),
 (5, 'Mi mascot Actualizado', 'MI mascot alimento', '9196bea909f21a7e7a9604eb73ede6a1', '100.00');
 
+
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) VALUES ('Admin','Administracion','2000-02-02','1','Icaros','11','987456321','admin@doctorpet.pe','123456','Admin','2023-06-05 00:28:01'); 
+
 /*
 PROCEDIMIENTOS ALMACENADOS
 */
+/*
+drop procedure if exists SP_ObtenerMascotasPorCliente(IN idUsuario INT)
+BEGIN
+  SELECT idMascota, NomMasc
+  FROM DP_Mascota
+  WHERE idCliente = idUsuario;
+END*/
+
 drop procedure if exists SP_InsertarConsulta;
 	delimiter $$
 	create procedure SP_InsertarConsulta

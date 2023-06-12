@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (isset ($_SESSION["cargo"])) {
+    $Cargo = $_SESSION["cargo"];
+}else{
+    $Cargo = null;
+}
+$nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
+$idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
+include "../Config/conexion.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -599,6 +610,10 @@
                                     <div class="ms-3 name">
                                         <h5 class="font-bold">John Duck</h5>
                                         <h6 class="text-muted mb-0">@johnducky</h6>
+                                        <a class='dropdown-item d-flex align-items-center' href='/Config/Salir.php'>
+                                            <i class='bi bi-box-arrow-right'></i>
+                                            <span>Cerrar sesión</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
