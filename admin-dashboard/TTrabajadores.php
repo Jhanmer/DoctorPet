@@ -1,37 +1,69 @@
 <?php
-session_start();
-if (isset($_SESSION["cargo"])) {
-    $Cargo = $_SESSION["cargo"];
-} else {
-    $Cargo = null;
-}
-$nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
-$idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
-include "../Config/conexion.php";
+require '../Config/conexion_bd.php';
+$con = fnConnect($msg);
+$sql = "select t.idPersonal, t.NomPers, t.ApePers, t.CorreoPers,t.NumeroPers,
+    t.IdDistrito, t.CargoPers from DP_Personal t;";
+$lista= mysqli_query($con, $sql);
+$numeracion=0; //contador de registros
+
+$error=null;
+$mensaje=null;
+    if(isset($_POST["enviar"])){
+        //capturando datos
+        $reg["idPersonal"] = $_POST["idPersonal"];
+        $reg["NomPers"] = $_POST["NomPers"];
+        $reg["ApePers"] = $_POST["ApePers"];
+        $reg["CorreoPers"] = $_POST["CorreoPers"];
+        $reg["NumeroPers"] = $_POST["NumeroPers"];
+        $reg["IdDistrito"] = $_POST["IdDistrito"];
+        $reg["CargoPers"] = $_POST["CargoPers"];
+        InsertarCliente($reg, $mensaje, $error);
+    }
+    function InsertarCliente($reg, &$mensaje, &$error){
+        $con = fnConnect($msg);
+        mysqli_query($con, "start transaction");
+        $sqlinsert = "insert into DP_Cliente(idPersonal, nombre, apellidos, Fecha_nacimiento,Genero,
+    direccion, IdDistrito, Telefono, Email, Password, cargo, Fecha_registro) values ('{$reg["idPersonal"]}','{$reg["NomPers"]}','{$reg["ApePers"]}',"
+                . "'{$reg["CorreoPers"]}','{$reg["NumeroPers"]}','{$reg["IdDistrito"]}','{$reg["CargoPers"]}';";
+                 //ejecutamos la consulta
+        $respuesta = mysqli_query($con, $sqlinsert);
+        if(!$respuesta){
+            mysqli_query($con,"rollback");
+            $error = "<p>Datos ingresados no son correctos...</p>";
+            $error .= "<p>SQL: $sqlinsert </p>";
+            return;
+        }
+        //hacemos permanente los cambios
+        mysqli_query($con, "commit");
+        $mensaje = "<p>Cliente registrado correctamente..</p>";
+    }
 ?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>Tabla Empleados - Admin Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 
-    <link rel="stylesheet" href="assets/vendors/iconly/bold.css">
-
     <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+
+
+    
 </head>
 
 <body>
     <div id="app">
-        <div id="sidebar" class="active">
+    <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
@@ -416,8 +448,7 @@ include "../Config/conexion.php";
             </div>
         </div>
 
-
-        
+        <!-- Contenido -->
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
@@ -426,280 +457,100 @@ include "../Config/conexion.php";
             </header>
 
             <div class="page-heading">
-                <h3>Profile Statistics</h3>
-            </div>
-            <div class="page-content">
-                <section class="row">
-                    <div class="col-12 col-lg-9">
-                        <div class="row">
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon purple">
-                                                    <i class="iconly-boldShow"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Profile Views</h6>
-                                                <h6 class="font-extrabold mb-0">112.000</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon blue">
-                                                    <i class="iconly-boldProfile"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Followers</h6>
-                                                <h6 class="font-extrabold mb-0">183.000</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon green">
-                                                    <i class="iconly-boldAdd-User"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Following</h6>
-                                                <h6 class="font-extrabold mb-0">80.000</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6 col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body px-3 py-4-5">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="stats-icon red">
-                                                    <i class="iconly-boldBookmark"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h6 class="text-muted font-semibold">Saved Post</h6>
-                                                <h6 class="font-extrabold mb-0">112</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>Tablas de Datos</h3>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Profile Visit</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="chart-profile-visit"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-xl-4">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Profile Visit</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="d-flex align-items-center">
-                                                    <svg class="bi text-primary" width="32" height="32" fill="blue" style="width:10px">
-                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                                    </svg>
-                                                    <h5 class="mb-0 ms-3">Europe</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <h5 class="mb-0">862</h5>
-                                            </div>
-                                            <div class="col-12">
-                                                <div id="chart-europe"></div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="d-flex align-items-center">
-                                                    <svg class="bi text-success" width="32" height="32" fill="blue" style="width:10px">
-                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                                    </svg>
-                                                    <h5 class="mb-0 ms-3">America</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <h5 class="mb-0">375</h5>
-                                            </div>
-                                            <div class="col-12">
-                                                <div id="chart-america"></div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="d-flex align-items-center">
-                                                    <svg class="bi text-danger" width="32" height="32" fill="blue" style="width:10px">
-                                                        <use xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                                    </svg>
-                                                    <h5 class="mb-0 ms-3">Indonesia</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <h5 class="mb-0">1025</h5>
-                                            </div>
-                                            <div class="col-12">
-                                                <div id="chart-indonesia"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-8">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Latest Comments</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-lg">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Name</th>
-                                                        <th>Comment</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="col-3">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="avatar avatar-md">
-                                                                    <img src="assets/images/faces/5.jpg">
-                                                                </div>
-                                                                <p class="font-bold ms-3 mb-0">Si Cantik</p>
-                                                            </div>
-                                                        </td>
-                                                        <td class="col-auto">
-                                                            <p class=" mb-0">Congratulations on your graduation!</p>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="col-3">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="avatar avatar-md">
-                                                                    <img src="assets/images/faces/2.jpg">
-                                                                </div>
-                                                                <p class="font-bold ms-3 mb-0">Si Ganteng</p>
-                                                            </div>
-                                                        </td>
-                                                        <td class="col-auto">
-                                                            <p class=" mb-0">Wow amazing design! Can you make another
-                                                                tutorial for
-                                                                this design?</p>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Table</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3">
-                        <div class="card">
-                            <div class="card-body py-4 px-5">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-xl">
-                                        <img src="assets/images/faces/1.jpg" alt="Face 1">
-                                    </div>
-                                    <div class="ms-3 name">
-                                        <h5 class="font-bold">John Duck</h5>
-                                        <h6 class="text-muted mb-0">@johnducky</h6>
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <a class="dropdown-item btn btn-info rounded text-white bg-info d-flex align-items-center w-75" href="/Config/Salir.php">
-                                        <i class="bi bi-box-arrow-right"></i>
-                                        <span>Salir</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                </div>
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Recent Messages</h4>
-                            </div>
-                            <div class="card-content pb-4">
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/4.jpg">
+                
+         
+                
+
+                
+
+                <!-- Hoverable rows start -->
+                <section class="section">
+                    <div class="row" id="table-hover-row">
+                        <div class="col-14">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">TABLA DE TRABAJADORES</h4>
+                                </div>
+                                <div class="card-content">
+                                    <!-- table hover -->
+                                    <div class="table-responsive">
+
+                                    <div class="container-fluid">
+                                        <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
                                     </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">Hank Schrader</h5>
-                                        <h6 class="text-muted mb-0">@johnducky</h6>
+
+                                        <table class="table table-hover mb-0 table_id" id="tblProductos">
+                                            <thead>
+                                            <tr>
+                                                <th class="colorCabecera">ID</th>
+                                                <th class="colorCabecera">NOMBRE</th>
+                                                <th class="colorCabecera">APELLIDO</th>
+                                                <th class="colorCabecera">EMAIL</th>
+                                                <th class="colorCabecera">TELEFONO</th>
+                                                <th class="colorCabecera">DISTRITO</th> 
+                                                <th class="colorCabecera">CARGO</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php
+        
+                                                $busc= mysqli_query($con, $sql);
+
+                                                if($busc -> num_rows >0){
+                                                    while($row= mysqli_fetch_array($busc)){
+                                                
+                                                
+                                                ?> 
+                                                <tr>
+                                                    <td ><?php echo $row['idPersonal']; ?></td>
+                                                    <td ><?php echo $row['NomPers']; ?></td>
+                                                    <td ><?php echo $row['ApePers']; ?></td>
+                                                    <td ><?php echo $row['CorreoPers']; ?></td>
+                                                    <td ><?php echo $row['NumeroPers']; ?></td>
+                                                    <td ><?php echo $row['IdDistrito']; ?></td>
+                                                    <td ><?php echo $row['CargoPers']; ?></td>
+                                                </tr>
+                                               <?php
+                                                }
+                                                }
+
+                                                ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/5.jpg">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">Dean Winchester</h5>
-                                        <h6 class="text-muted mb-0">@imdean</h6>
-                                    </div>
-                                </div>
-                                <div class="recent-message d-flex px-4 py-3">
-                                    <div class="avatar avatar-lg">
-                                        <img src="assets/images/faces/1.jpg">
-                                    </div>
-                                    <div class="name ms-4">
-                                        <h5 class="mb-1">John Dodol</h5>
-                                        <h6 class="text-muted mb-0">@dodoljohn</h6>
-                                    </div>
-                                </div>
-                                <div class="px-4">
-                                    <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
-                                        Conversation</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Visitors Profile</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-visitors-profile"></div>
                             </div>
                         </div>
                     </div>
                 </section>
+                <!-- Hoverable rows end -->
+
+                
             </div>
 
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
-                    <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
-                    </div>
+                    
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="http://ahmadsaugi.com">A. Saugi</a></p>
+                    <div class="float-start">
+                        <p>2023 &copy; DoctorPet</p>
+                    </div>
                     </div>
                 </div>
             </footer>
@@ -708,10 +559,7 @@ include "../Config/conexion.php";
     <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/vendors/apexcharts/apexcharts.js"></script>
-    <script src="assets/js/pages/dashboard.js"></script>
-
     <script src="assets/js/main.js"></script>
 </body>
-
+<script src="js/buscador.js" type="text/javascript"></script>   
 </html>
