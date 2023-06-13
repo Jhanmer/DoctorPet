@@ -3,40 +3,41 @@ require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
 $sql = "select c.idConsulta, c.nombreCli, c.TelefonoCons,c.FechaCons,c.correoCli,
    c.Motivo from DP_Consulta c;";
-$lista= mysqli_query($con, $sql);
-$numeracion=0; //contador de registros
+$lista = mysqli_query($con, $sql);
+$numeracion = 0; //contador de registros
 
-$error=null;
-$mensaje=null;
-    if(isset($_POST["enviar"])){
-        //capturando datos
-        $reg["idConsulta"] = $_POST["idConsulta"];
-        $reg["nombreCli"] = $_POST["nombreCli"];
-        $reg["TelefonoCons"] = $_POST["TelefonoCons"];
-        $reg["FechaCons"] = $_POST["FechaCons"];
-        $reg["correoCli"] = $_POST["correoCli"];
-        $reg["Motivo"] = $_POST["Motivo"];
-        InsertarCliente($reg, $mensaje, $error);
-    }
-    function InsertarCliente($reg, &$mensaje, &$error){
-        $con = fnConnect($msg);
-        mysqli_query($con, "start transaction");
-        $sqlinsert = "insert into DP_Cliente(idConsulta, nombreCli, TelefonoCons, FechaCons,
+$error = null;
+$mensaje = null;
+if (isset($_POST["enviar"])) {
+    //capturando datos
+    $reg["idConsulta"] = $_POST["idConsulta"];
+    $reg["nombreCli"] = $_POST["nombreCli"];
+    $reg["TelefonoCons"] = $_POST["TelefonoCons"];
+    $reg["FechaCons"] = $_POST["FechaCons"];
+    $reg["correoCli"] = $_POST["correoCli"];
+    $reg["Motivo"] = $_POST["Motivo"];
+    InsertarCliente($reg, $mensaje, $error);
+}
+function InsertarCliente($reg, &$mensaje, &$error)
+{
+    $con = fnConnect($msg);
+    mysqli_query($con, "start transaction");
+    $sqlinsert = "insert into DP_Cliente(idConsulta, nombreCli, TelefonoCons, FechaCons,
     correoCli, Motivo) values ('{$reg["idConsulta"]}',"
-    . "             '{$reg["nombreCli"]}','{$reg["TelefonoCons"]}','{$reg["FechaCons"]}',"
-    . "             '{$reg["correoCli"]}','{$reg["Motivo"]}';";
-                 //ejecutamos la consulta
-        $respuesta = mysqli_query($con, $sqlinsert);
-        if(!$respuesta){
-            mysqli_query($con,"rollback");
-            $error = "<p>Datos ingresados no son correctos...</p>";
-            $error .= "<p>SQL: $sqlinsert </p>";
-            return;
-        }
-        //hacemos permanente los cambios
-        mysqli_query($con, "commit");
-        $mensaje = "<p>Cliente registrado correctamente..</p>";
+        . "             '{$reg["nombreCli"]}','{$reg["TelefonoCons"]}','{$reg["FechaCons"]}',"
+        . "             '{$reg["correoCli"]}','{$reg["Motivo"]}';";
+    //ejecutamos la consulta
+    $respuesta = mysqli_query($con, $sqlinsert);
+    if (!$respuesta) {
+        mysqli_query($con, "rollback");
+        $error = "<p>Datos ingresados no son correctos...</p>";
+        $error .= "<p>SQL: $sqlinsert </p>";
+        return;
     }
+    //hacemos permanente los cambios
+    mysqli_query($con, "commit");
+    $mensaje = "<p>Cliente registrado correctamente..</p>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,12 +59,12 @@ $mensaje=null;
 
 
 
-    
+
 </head>
 
 <body>
     <div id="app">
-    <div id="sidebar" class="active">
+        <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
@@ -473,11 +474,11 @@ $mensaje=null;
                     </div>
                 </div>
 
-                
-         
-                
 
-                
+
+
+
+
 
                 <!-- Hoverable rows start -->
                 <section class="section">
@@ -491,41 +492,41 @@ $mensaje=null;
                                     <!-- table hover -->
                                     <div class="table-responsive">
 
-                                    <div class="container-fluid">
-                                        <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Consulta"><br>
-                                    </div>
+                                        <div class="container-fluid">
+                                            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Consulta"><br>
+                                        </div>
 
                                         <table class="table table-hover mb-0 table_id" id="tblProductos">
                                             <thead>
-                                            <tr>
-                                                <th class="colorCabecera">ID</th>
-                                                <th class="colorCabecera">CLIENTE</th>
-                                                <th class="colorCabecera">TELEFONO</th>
-                                                <th class="colorCabecera">FECHA</th>
-                                                <th class="colorCabecera">CORREO</th>
-                                                <th class="colorCabecera">MOTIVO</th> 
-                                            </tr>
+                                                <tr>
+                                                    <th class="colorCabecera">ID</th>
+                                                    <th class="colorCabecera">CLIENTE</th>
+                                                    <th class="colorCabecera">TELEFONO</th>
+                                                    <th class="colorCabecera">FECHA</th>
+                                                    <th class="colorCabecera">CORREO</th>
+                                                    <th class="colorCabecera">MOTIVO</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <?php
-        
-                                                $busc= mysqli_query($con, $sql);
+                                                <?php
 
-                                                if($busc -> num_rows >0){
-                                                    while($row= mysqli_fetch_array($busc)){
-                                                
-                                                
-                                                ?> 
-                                                <tr>
-                                                    <td ><?php echo $row['idConsulta']; ?></td>
-                                                    <td ><?php echo $row['nombreCli']; ?></td>
-                                                    <td ><?php echo $row['TelefonoCons']; ?></td>
-                                                    <td ><?php echo $row['FechaCons']; ?></td>
-                                                    <td ><?php echo $row['correoCli']; ?></td>
-                                                    <td ><?php echo $row['Motivo']; ?></td>
-                                                </tr>
-                                               <?php
-                                                }
+                                                $busc = mysqli_query($con, $sql);
+
+                                                if ($busc->num_rows > 0) {
+                                                    while ($row = mysqli_fetch_array($busc)) {
+
+
+                                                ?>
+                                                        <tr>
+                                                            <td><?php echo $row['idConsulta']; ?></td>
+                                                            <td><?php echo $row['nombreCli']; ?></td>
+                                                            <td><?php echo $row['TelefonoCons']; ?></td>
+                                                            <td><?php echo $row['FechaCons']; ?></td>
+                                                            <td><?php echo $row['correoCli']; ?></td>
+                                                            <td><?php echo $row['Motivo']; ?></td>
+                                                        </tr>
+                                                <?php
+                                                    }
                                                 }
 
                                                 ?>
@@ -539,16 +540,16 @@ $mensaje=null;
                 </section>
                 <!-- Hoverable rows end -->
 
-                
+
             </div>
 
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
-                    
+
                     <div class="float-end">
-                    <div class="float-start">
-                        <p>2023 &copy; DoctorPet</p>
-                    </div>
+                        <div class="float-start">
+                            <p>2023 &copy; DoctorPet</p>
+                        </div>
                     </div>
                 </div>
             </footer>
@@ -559,5 +560,6 @@ $mensaje=null;
 
     <script src="assets/js/main.js"></script>
 </body>
-<script src="js/buscador.js" type="text/javascript"></script>   
+<script src="../js/buscador.js" type="text/javascript"></script>
+
 </html>

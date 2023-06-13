@@ -562,5 +562,5 @@ $mensaje=null;
 
     <script src="assets/js/main.js"></script>
 </body>
-<script src="js/buscador.js" type="text/javascript"></script>   
+<script src="../js/buscador.js" type="text/javascript"></script>   
 </html>
