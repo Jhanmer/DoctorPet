@@ -6,7 +6,11 @@ if (isset ($_SESSION["cargo"])) {
     $Cargo = null;
 }
 $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
+
 $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
+$nombreUser = isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "";
+$apeUser = isset($_SESSION["apellidos"]) ? $_SESSION["apellidos"] : "";
+
 include "Config/conexion.php";
 ?>
 <!DOCTYPE html>
@@ -66,7 +70,7 @@ include "Config/conexion.php";
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="estilos/css/style-consulta.css" />
 
-
+    <link href="CSS/tabla.css" rel="stylesheet" type="text/css" />
     <style>
         .item:hover .submenu {
             display: block;
@@ -149,7 +153,11 @@ include "Config/conexion.php";
                                 <a href='mascota.php'>Registrar Mascota</a>
                             </div>
                             <div class='item'>
-                                <a href='ConsultaPersonalizada.php'>Cita</a>
+                            <a>Citas</a>
+                                <div class='submenu'>
+                                <a href='ConsultaPersonalizada.php'>Cita Personal - No</a>
+                                <a href='ReservarCita.php'>Lista de Veterinarios</a>
+                                </div>
                             </div>
                             ";
                         }
@@ -173,7 +181,7 @@ include "Config/conexion.php";
                             <li class='nav-item dropdown pe-3'>
                                 <a class='nav-link nav-profile d-flex align-items-center pe-0 show' href='#' data-bs-toggle='dropdown'>
                                     <img src='Imagenes/login.png' alt='Profile' class='rounded-circle' style='width: 40px; height: 40px;'>
-                                    <span class='d-none d-md-block dropdown-toggle ps-3'>$nombreUsuario / $idCliente</span>
+                                    <span class='d-none d-md-block dropdown-toggle ps-3'>$nombreUser $apeUser</span>
                                 </a>
                                 <ul class='dropdown-menu dropdown-menu-end dropdown-menu-arrow profile' data-popper-placement='bottom-end' style='position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-16px, 38px);'>
                                     <li>
