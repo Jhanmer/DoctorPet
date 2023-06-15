@@ -144,7 +144,7 @@ include "Config/conexion.php";
                 </div>
 
                 <div class="item">
-                    <!-- <a href="nosotros.php">Nosotros</a> -->
+                     <a href="nosotros.php">Nosotros</a> 
                 </div>
                 <?php
                     if($Cargo == "Usuario"){
