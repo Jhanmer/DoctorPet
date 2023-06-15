@@ -23,6 +23,8 @@
                         <li><a href="#">Dirección</a></li>
                         <li><a href="#">Teléfono</a></li>
                         <li><a href="#">Email</a></li>
+                        <li><a href="contacto.php">Contactanos</a></li>
+                        <li><a href="nosotros.php">Nosotros</a></li>
                     </ul>
                 </div>
                 <div class="foot-1">
