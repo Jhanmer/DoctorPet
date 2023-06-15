@@ -181,6 +181,22 @@ foreign key (idMascota) references DP_Mascota(idMascota)
 );
 
 
+drop table if exists dp_Veterinarios;
+CREATE TABLE dp_Veterinarios (
+idVeterinario int NOT NULL PRIMARY KEY auto_increment,
+nombreVet varchar(50) NOT NULL,
+apellidoVet varchar(50) NOT NULL,
+direccion varchar(50) NOT NULL,
+telefono varchar(20) NOT NULL,
+correo varchar(100) NOT NULL,
+especialidad varchar(100) NOT NULL,
+experiencia int NOT NULL,
+fechaContra date NOT NULL,
+disponibilidad varchar(100) NOT NULL,
+Salario decimal(10,2) not null
+);
+
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad, Salario) VALUES ('Carlos', 'Messi Lopez', 'Av. Calamar', '992992992', 'carlos@doctorpet.pe', 'Medicina Interna', 5, '2023-06-14', 'Lunes a Viernes: 9:00 AM - 2:00 PM', '1600'); 
 
 INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido) VALUES
 (1, 'Carlos', '14 de mayo', 'Mall del sur', 992992992, '60cm', 'De estatura pequeña, con manchitas rojas'),

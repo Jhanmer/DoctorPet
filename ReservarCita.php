@@ -3,14 +3,40 @@
     incluirTemplate('header');
 ?>
 
+<?php
+require 'Config/conexion_bd.php';
+$con = fnConnect($msg);
+$sql = "select idVeterinario, nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad from dp_veterinarios;";
+$listaVet= mysqli_query($con, $sql);
+$numeracion=0; //contador de registros
+
+?>
+
 <style>
-  .btn {
-    padding: 6px 10px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
+  .css-button-3d--blue {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
     cursor: pointer;
-  }
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #3d348b;
+    box-shadow: 0 5px #2fff;
+    }
+    .css-button-3d--blue:hover {
+    box-shadow: 0 3px #2c0b8e;
+    top: 1px;
+    }
+    .css-button-3d--blue:active {
+    box-shadow: 0 0 #2c0b8e;
+    top: 5px;
+    }
 
   .modal {
     display: none;
@@ -62,17 +88,44 @@
                     <table class="responsive-table">
                         <thead>
                         <tr>
-                            <th scope="col">Film Title</th>
-                            <th scope="col">Released</th>
-                            <th scope="col">Studio</th>
-                            <th scope="col">Worldwide Gross</th>
-                            <th scope="col">Domestic Gross</th>
-                            <th scope="col">International Gross</th>
-                            <th scope="col">Budget</th>
-                            
+                            <th scope="col">Código</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Especialidad</th>
+                            <th scope="col">Experiencia</th>
+                            <th scope="col">Fecha Contratación</th>
+                            <th scope="col">Disponibilidad</th>
                         </tr>
                         </thead>
+                        
                         <tbody>
+                        <?php
+                            $busc= mysqli_query($con, $sql);
+                            if($busc -> num_rows >0){
+                                    while($row= mysqli_fetch_array($busc)){                                                  
+                                ?> 
+                                <tr>
+                                    <td><?php echo $row['idVeterinario']; ?></td>
+                                    <td><?php echo $row['nombreVet']; ?></td>
+                                    <td><?php echo $row['apellidoVet']; ?></td>
+                                    <td><?php echo $row['direccion']; ?></td>
+                                    <td><?php echo $row['telefono']; ?></td>
+                                    <td><?php echo $row['correo']; ?></td>
+                                    <td><?php echo $row['especialidad']; ?></td>
+                                    <td><?php echo $row['experiencia']; ?></td>
+                                    <td><?php echo $row['fechaContra']; ?></td>
+                                    <td><?php echo $row['disponibilidad']; ?></td>
+                                    <td><a href="#!" class="css-button-3d--blue" onclick="openModal()">Seleccionar</a></td>
+                                </tr>
+                                <?php
+                            }
+                            }
+
+                        ?>
+                        <!--
                         <tr>
                             <th scope="row">The Lion King (2019 remake)</th>
                             <td data-title="Released">2019</td>
@@ -82,7 +135,7 @@
                             <td data-title="International Gross" data-type="currency">$1,114,232,943</td>
                             <td data-title="Budget" data-type="currency">$260,000,000</td>
                             <td><button class="btn" onclick="openModal()">Botón</button></td>
-                        </tr>                        
+                        </tr>    -->                    
                         </tbody>
                     </table>
                     </div>
