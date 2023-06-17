@@ -6,10 +6,17 @@
 <?php
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select idVeterinario, nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad from dp_veterinarios;";
+$sql = "select idVeterinario, nombreVet, apellidoVet, telefono, correo, especialidad, experiencia, disponibilidad from dp_veterinarios;";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
+?>
+
+<?php
+$con = fnConnect($msg);
+$idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
+$consultaMascCliente = "select * from dp_mascota where idCliente  = '$idCliente'";
+$ListaMascCli = mysqli_query($con, $consultaMascCliente);
 ?>
 
 <style>
@@ -88,15 +95,13 @@ $numeracion=0; //contador de registros
                     <table class="responsive-table">
                         <thead>
                         <tr>
-                            <th scope="col">Código</th>
+                            <th scope="col" hidden>Código</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellidos</th>
-                            <th scope="col">Dirección</th>
                             <th scope="col">Telefono</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Especialidad</th>
                             <th scope="col">Experiencia</th>
-                            <th scope="col">Fecha Contratación</th>
                             <th scope="col">Disponibilidad</th>
                         </tr>
                         </thead>
@@ -108,17 +113,17 @@ $numeracion=0; //contador de registros
                                     while($row= mysqli_fetch_array($busc)){                                                  
                                 ?> 
                                 <tr>
-                                    <td><?php echo $row['idVeterinario']; ?></td>
+                                    <td hidden><?php echo $row['idVeterinario']; ?></td>
                                     <td><?php echo $row['nombreVet']; ?></td>
                                     <td><?php echo $row['apellidoVet']; ?></td>
-                                    <td><?php echo $row['direccion']; ?></td>
                                     <td><?php echo $row['telefono']; ?></td>
                                     <td><?php echo $row['correo']; ?></td>
                                     <td><?php echo $row['especialidad']; ?></td>
-                                    <td><?php echo $row['experiencia']; ?></td>
-                                    <td><?php echo $row['fechaContra']; ?></td>
+                                    <td><?php echo $row['experiencia']; ?> años</td>
                                     <td><?php echo $row['disponibilidad']; ?></td>
-                                    <td><a href="#!" class="css-button-3d--blue" onclick="openModal()">Seleccionar</a></td>
+                                    <td style="background-color: #3d348b;"><a href="#!" class="css-button-3d--blue"  onclick="openModal()">Seleccionar</a></td>
+                                    <!-- <td style="background-color: #3d348b;"><a href="#!" class="css-button-3d--blue" data-id="<?php echo $row['idVeterinario']; ?>" >Seleccionar</a></td> -->
+                                    <!-- <td><button class="btn-abrir-modal" data-id="<?php echo $row['idVeterinario']; ?>">Abrir modal</button></td> -->
                                 </tr>
                                 <?php
                             }
@@ -152,17 +157,17 @@ $numeracion=0; //contador de registros
     <div class="card-body">
                     <form action="/Controlador/RegistrarConsulta.php" method="post">
                         <div class="form-row m-b-55">
-                            <div class="name">Nombre</div>
+                            <div class="name">Motivo</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-7">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" name="txtNom" type="text" required="">
-                                            <label class="label--desc">Tus nombres</label>
+                                            <label class="label--desc">Describa un motivo breve para la consulta*</label>
                                         </div>
-                                    </div>
+                                    </div>                                  
                                 </div>
-                            </div>
+                            </div>                           
                         </div>
                         <div class="form-row m-b-55">
                             <div class="name">Telefono</div>
@@ -170,8 +175,18 @@ $numeracion=0; //contador de registros
                                 <div class="row row-refine">                           
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="txtTelefono" pattern="[0-9]+" maxlength="9">
-                                            <label class="label--desc">Número de telefono</label>
+                                            <input class="input--style-5" onkeypress="return soloNumeros(event)" type="text" name="txtTelefono" pattern="[0-9]+" maxlength="9"  style="width: 130px;">
+                                            <label  class="label--desc">Número de telefono</label>
+                                            <script>
+                                                function soloNumeros(event) {
+                                                    var charCode = event.which ? event.which : event.keyCode;
+                                                    if (charCode < 48 || charCode > 57) {
+                                                        event.preventDefault();
+                                                        return false;
+                                                    }
+                                                    return true;
+                                                    }
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -190,29 +205,39 @@ $numeracion=0; //contador de registros
                                 </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                         <div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="txtCorreo">
-                                </div>
+                            <div class="name">Seleccione su mascota</div>                          
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="mascotaCli" requerid>
+                                                <option disabled="disabled" selected="selected">Seleccione</option>
+                                                <?php while ($row = mysqli_fetch_assoc($ListaMascCli)) { ?>
+												<option value="<?php echo $row["idMascota"] ?>">
+													<?php echo $row["NomMasc"] ?>
+												</option>
+											    <?php } ?>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="txtCorreo">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="name">Email</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="email" name="txtCorreo">
-                                </div>
+                            <div class="name">Horario</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+                                            <select name="subject">
+                                                <option disabled="disabled" selected="selected">Seleccione Horario</option>
+                                                <option>Subject 1</option>
+                                                <option>Subject 2</option>
+                                                <option>Subject 3</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         <!--
@@ -265,7 +290,6 @@ $numeracion=0; //contador de registros
                 </div>
   </div>
 </div>
-
 <script>
   function openModal() {
     document.getElementById("myModal").style.display = "block";
@@ -275,7 +299,16 @@ $numeracion=0; //contador de registros
     document.getElementById("myModal").style.display = "none";
   }
 </script>
-
+<script>
+    $(document).ready(function() {
+    $('.btn-abrir-modal').click(function() {
+        var veterinarioId = $(this).data('idVeterinario');
+        // Aquí puedes utilizar el ID para hacer lo que necesites, como enviarlo a través de AJAX o mostrarlo en el modal.
+        // Por ejemplo, puedes asignarlo al atributo "data-id" de un botón "Grabar" en el modal.
+        $('#myModal').data('idVeterinario', veterinarioId);
+    });
+});
+</script>
 <?php 
     include './includes/templates/footer.php';
 
