@@ -185,13 +185,13 @@ tbody tr.hide td img {
 }
 
 .status.delivered {
-    background-color: #86e49d;
+    background-color: #ffffff85;
     color: #006b21;
 }
 
 .status.cancelled {
-    background-color: #d893a3;
-    color: #b30021;
+    background-color: #0653a6;
+    color: #fffbfc;;
 }
 
 .status.pending {
