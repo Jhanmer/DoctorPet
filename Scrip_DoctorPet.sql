@@ -92,6 +92,7 @@ Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
 foreign key (IdDistrito) references DP_Distrito(IdDistrito)
 ); 
 
+
 drop table if exists DP_Mascota;
 Create table DP_Mascota( 
 idMascota int primary key auto_increment not null, 
@@ -119,6 +120,8 @@ IdDistrito int,
 CargoPers varchar(200),
 foreign key (IdDistrito) references DP_Distrito(IdDistrito)
 ); 
+
+
 
 
 drop table if exists DP_Camapania;
@@ -226,7 +229,29 @@ INSERT INTO `comidap` (`idComidap`, `nombre`, `descripcion`, `imagen`, `precio`)
 (5, 'Mi mascot Actualizado', 'MI mascot alimento', '9196bea909f21a7e7a9604eb73ede6a1', '100.00');
 
 
-INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) VALUES ('Admin','Administracion','2000-02-02','1','Icaros','11','987456321','admin@doctorpet.pe','123456','Admin','2023-06-05 00:28:01'); 
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Admin','Administracion','2000-02-02','1','Icaros','11','987456321','admin@doctorpet.pe','123456','Admin','2023-06-05 00:28:01'); 
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Efren','HR','2023-06-08','1','AV CENTRAL','10','963598623','efrenhuamanreyna@gmail.com','123','Usuario','2023-06-12 18:02:10'); 
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Ryan', 'Juarez Perez', '2004-07-29', '1', '#711', '7', '962563262', 'Ryan@gmail.com', '123456', 'Usuario', '2023-06-17 21:22:24'); 
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Maria', 'Alves Alvis', '2008-06-11', '1', '#251', '4', '963256895', 'Juana@gmail.com', 'juana123', 'Usuario', '2023-06-17 21:23:16'); 				
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Berta', 'Perez Vasquez', '2005-06-15', '1', '#125', '4', '986523562', 'Berta@gmail.com', '123456', 'Usuario', '2023-06-17 21:24:01'); 	
+INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
+				VALUES ('Diego', 'Cortez Quispe', '2002-05-29', '1', 'Av Revolucion', '10', '986235741', 'Diego@gmail.com', '156', 'Usuario', '2023-06-17 21:24:47'); 	
+
+---------------------------------------------
+--------------------------------------------
+INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
+				VALUES ('Juan Carlos', 'Rojas Azules', 'juan@gmail.com', '986523759', '5', 'Estilista'); 	
+INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
+				VALUES ('Carlos Juan', 'Suarez Messi', 'Carlos@gmail.com', '986523546', '4', 'Recepcionista'); 
+INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
+				VALUES ('Julian ', 'Alvis Alvarez', 'julian@gmail.com', '985236456', '7', 'recepcionista'); 
+
+
 
 /*
 PROCEDIMIENTOS ALMACENADOS

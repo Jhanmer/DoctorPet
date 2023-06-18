@@ -67,7 +67,9 @@ $mensaje=null;
 
                 
          
-                
+                <div class="container-fluid">
+                     <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Mascota"><br>
+                </div>
 
                 
 
@@ -83,9 +85,7 @@ $mensaje=null;
                                     <!-- table hover -->
                                     <div class="table-responsive">
 
-                                    <div class="container-fluid">
-                                        <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Mascota"><br>
-                                    </div>
+                                    
 
                                         <table class="table table-hover mb-0 table_id" id="tblProductos">
                                             <thead>
