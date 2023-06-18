@@ -428,7 +428,6 @@
      #DATE PICKER
      ========================================================================== */
   td.active {
-    background-color: #2c6ed5;
   }
   
   input[type="date" i] {

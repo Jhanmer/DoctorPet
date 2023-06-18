@@ -96,13 +96,13 @@ require_once('Config/seguridad.php');
                     <div class='pets-weight'>
                         <label for='pet-weight-0-25'>Peso</label>
                         <div class='radio-container'>
-                            <input checked='' id='pet-weight-0-25' name="peso" type='radio' value="10">
+                            <input checked='' id='pet-weight-0-25' name="peso" type='radio' value="'0-10'">
                             <label for='pet-weight-0-25'>0-10 Kg</label>
-                            <input id='pet-weight-25-50' name="peso" type='radio' value="20">
+                            <input id='pet-weight-25-50' name="peso" type='radio' value="'10-20'">
                             <label for='pet-weight-25-50'>10-20 Kg</label>
-                            <input id='pet-weight-50-100' name="peso" type='radio' value="30">
+                            <input id='pet-weight-50-100' name="peso" type='radio' value="'20-30'">
                             <label for='pet-weight-50-100'>20-30 Kg</label>
-                            <input id='pet-weight-100-plus' name="peso" type='radio' value="31">
+                            <input id='pet-weight-100-plus' name="peso" type='radio' value="'30+'">
                             <label for='pet-weight-100-plus'>30+ Kg</label>
                         </div>
                     </div>

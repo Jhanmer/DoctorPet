@@ -71,6 +71,8 @@ include "Config/conexion.php";
 	<link type="text/css" rel="stylesheet" href="estilos/css/style-consulta.css" />
 
     <link href="CSS/tabla.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/style-tabla.css">
     <style>
         .item:hover .submenu {
             display: block;
@@ -150,13 +152,18 @@ include "Config/conexion.php";
                     if($Cargo == "Usuario"){
                             echo "
                             <div class='item'>
-                                <a href='mascota.php'>Registrar Mascota</a>
+                            <a>Mascotas</a>
+                                <div class='submenu'>
+                                    <a href='MisMascotas.php'>Ver Mis Mascota</a>
+                                    <a href='mascota.php'>Registrar Mascota</a>
+                                </div>
+                                
                             </div>
                             <div class='item'>
                             <a>Citas</a>
                                 <div class='submenu'>
-                                <a href='ConsultaPersonalizada.php'>Cita Personal - No</a>
-                                <a href='ReservarCita.php'>Lista de Veterinarios</a>
+                                <a hidden href='ConsultaPersonalizada.php'>Cita Personal - No</a>
+                                <a href='CReservarCita.php'>Lista de Veterinarios</a>
                                 </div>
                             </div>
                             ";
