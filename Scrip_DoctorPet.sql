@@ -102,8 +102,8 @@ idEspecie int,
 idRaza  int, 
 SexoMasc varchar(10), 
 idCliente int,
-peso longblob,
-imgMascota varchar(250) DEFAULT NULL,
+peso varchar(250) DEFAULT NULL,
+imgMascota LONGBLOB,
 foreign key (idCliente) references DP_Cliente(idCliente),
 foreign key (idEspecie) references DP_Especie(idEspecie),
 foreign key (idRaza) references DP_Raza(idRaza)
@@ -250,7 +250,18 @@ INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdD
 				VALUES ('Carlos Juan', 'Suarez Messi', 'Carlos@gmail.com', '986523546', '4', 'Recepcionista'); 
 INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
 				VALUES ('Julian ', 'Alvis Alvarez', 'julian@gmail.com', '985236456', '7', 'recepcionista'); 
-
+--------------------------------------------
+--------------------------------------------
+INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
+				VALUES ('Wilson', '4', '2', '17', 'Macho', '2', '10', NULL);
+INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
+				VALUES ('Drako', '5', '1', '5', 'Macho', '6', '20', NULL);				
+INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
+				VALUES ('Drako', '5', '1', '5', 'Macho', '6', '20', NULL);
+INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
+				VALUES ('Lisa', '4', '2', '15', 'Hembra', '4', '10', NULL);
+INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
+				VALUES ('Monty', '3', '1', '4', 'Macho', '5', '10', NULL);
 
 
 /*

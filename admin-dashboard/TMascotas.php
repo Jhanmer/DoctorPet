@@ -2,7 +2,7 @@
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
 $sql = "select m.idMascota, m.NomMasc, m.EdadMasc, m.idEspecie,m.idRaza,
-   m.SexoMasc, m.idCliente from DP_Mascota m;";
+   m.SexoMasc, m.idCliente,m.peso,m.imgMascota from DP_Mascota m;";
 $lista= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -17,15 +17,17 @@ $mensaje=null;
         $reg["idRaza"] = $_POST["idRaza"];
         $reg["SexoMasc"] = $_POST["SexoMasc"];
         $reg["idCliente"] = $_POST["idCliente"];
+        $reg["peso"] = $_POST["peso"];
+        $reg["imgMascota"] = $_POST["imgMascota"];
         InsertarCliente($reg, $mensaje, $error);
     }
     function InsertarCliente($reg, &$mensaje, &$error){
         $con = fnConnect($msg);
         mysqli_query($con, "start transaction");
-        $sqlinsert = "insert into DP_Cliente(idMascota, NomPers, apellidos, Fecha_nacimiento,Genero,
-    direccion, IdDistrito, Telefono, Email, Password, cargo, Fecha_registro) values ('{$reg["idMascota"]}',"
+        $sqlinsert = "insert into DP_Cliente(idMascota, NomMasc, EdadMasc, idEspecie,idRaza,
+        SexoMasc, idCliente, peso,imgMascota) values ('{$reg["idMascota"]}',"
     . "             '{$reg["NomMasc"]}','{$reg["EdadMasc"]}','{$reg["idEspecie"]}',"
-    . "             '{$reg["idRaza"]}','{$reg["SexoMasc"]}','{$reg["idCliente"]}';";
+    . "             '{$reg["idRaza"]}','{$reg["SexoMasc"]}','{$reg["idCliente"]}','{$reg["peso"]}','{$reg["imgMascota"]}';";
                  //ejecutamos la consulta
         $respuesta = mysqli_query($con, $sqlinsert);
         if(!$respuesta){
@@ -97,6 +99,8 @@ $mensaje=null;
                                                 <th class="colorCabecera">RAZA</th>
                                                 <th class="colorCabecera">SEXO</th> 
                                                 <th class="colorCabecera">CLIENTE</th>
+                                                <th class="colorCabecera">PESO</th>
+                                                <th class="colorCabecera">IMAGEN</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -117,6 +121,8 @@ $mensaje=null;
                                                     <td ><?php echo $row['idRaza']; ?></td>
                                                     <td ><?php echo $row['SexoMasc']; ?></td>
                                                     <td ><?php echo $row['idCliente']; ?></td>
+                                                    <td ><?php echo $row['peso']; ?></td>
+                                                    <td ><?php echo $row['imgMascota']; ?></td>
                                                 </tr>
                                                <?php
                                                 }
