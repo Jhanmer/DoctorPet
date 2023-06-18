@@ -95,42 +95,13 @@
             <h2>PARA LOS ENGREIDOS DEL HOGAR</h2>
         </div>
 
-        <section class="producto">
-            <div class="producto-base">
-                <div class="imagen">
-                    <img src="estilos/img/perro/can1.jpg" alt="">
-                </div>
-                <div class="texto">
-                    <h4>Producto1</h4>
-                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
-                    <h4>S/.12.00</h4>
-                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
-                </div>
-            </div>
-            
-
-        </section><!-- fin de productos para gatos -->
+        <?php 
+        $limite = 4;
+        include 'parce-alimento.php';
+        
+        ?>
 
         <!-- Productos para Gatos -->
-        <div class="tema-producto">
-            <h2>ALIMENTO PARA TUS FELINOS</h2>
-        </div>
-
-        <section class="producto">
-            <div class="producto-base">
-                <div class="imagen">
-                    <img src="estilos/img/gato/5.jpg" alt="">
-                </div>
-                <div class="texto">
-                    <h4>Producto1</h4>
-                    <p>Alimenta a tu explorador con una dieta alta en proteínas para alimentar sus aventuras.</p>
-                    <h4>S/.12.00</h4>
-                    <button type="button" class="btn btn-danger boton">Agregar al carrito</button>
-                </div>
-            </div>
-            
-
-        </section><!-- fin de productos para gatos -->
 
 
     </main>
