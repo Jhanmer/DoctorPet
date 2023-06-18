@@ -1,4 +1,8 @@
+
 <?php
+require ('includes/funciones.php');
+incluirTemplate('header');
+
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
 $consultaDist = "select * from dp_distrito;";
@@ -15,15 +19,11 @@ $ListaDist = mysqli_query($con, $consultaDist);
   <title>Registro de trabajadores</title>
   <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
   <link href="CSS/EstiloRTrabajadores.css" rel="stylesheet" type="text/css" />
-  <link href="CSS/EstiloPiePagina.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
 <body>
-  <header>
-    <a href="#" class="logo"><img src="./Imagenes/LOGO.jpg" alt="Logo"></a>
-    <a href="./CAnimalesPerdidos.php" class="back-button"><i class="fas fa-arrow-left"></i> Regresar</a>
-  </header>
+  
   <br><br>
   <h2>Registrar Trabajador</h2>
   <br>
@@ -66,36 +66,10 @@ $ListaDist = mysqli_query($con, $consultaDist);
   </form>
   <br><br><br>
 
-  <footer class="footer">
-    <div class="container-f">
-      <div class="footer-row">
-        <div class="footer-links">
-          <h4>Veterinaria</h4>
-          <ul>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Nuestra tienda</a></li>
-            <li><a href="#">Trabaja con nosotros</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Ayuda</h4>
-          <ul>
-            <li><a href="#">Medios de pagos</a></li>
-            <li><a href="#">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Redes Sociales</h4>
-          <div class="social-link">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 
 </body>
+<?php 
+    include './includes/templates/footer.php';
 
+?>
 </html>
