@@ -7,7 +7,9 @@
 <?php
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select idVeterinario, nombreVet, apellidoVet, telefono, correo, especialidad, experiencia, disponibilidad from dp_veterinarios;";
+$sql = "select dp_Vet.idVeterinario, dp_Vet.nombreVet, dp_Vet.apellidoVet,dp_Vet.telefono,dp_Vet.correo,dp_Vet.especialidad, dp_Vet.experiencia, dp_VetHorario.diaSemana, dp_VetHorario.horaInicio, dp_VetHorario.horaFin
+FROM dp_veterinarios dp_Vet
+INNER JOIN dp_VetHorario ON dp_Vet.idHorario = dp_VetHorario.idHorario;";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -94,7 +96,9 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                         <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Especialidad <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Experiencia <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Disponibilidad <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Dia de Semana <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Hora de Inicio <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Hora de Fin <span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -110,9 +114,15 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                         <td> <?php echo $row['telefono']; ?> </td>
                         <td> <?php echo $row['correo']; ?> </td>
                         <td> <?php echo $row['especialidad']; ?> </td>
-                        <td> <?php echo $row['experiencia']; ?> </td>
+                        <td> <?php echo $row['experiencia']; ?> años</td>
                         <td>
-                            <p class="status delivered"><?php echo $row['disponibilidad']; ?></p>
+                            <p class="status delivered"><?php echo $row['diaSemana']; ?></p>
+                        </td>
+                        <td>
+                            <p class="status cancelled"><?php echo $row['horaInicio']; ?></p>
+                        </td>
+                        <td>
+                            <p class="status pending"><?php echo $row['horaFin']; ?></p>
                         </td>
                         <td>
                             <a href="#" class="status shipped"  onclick="openModal()"> Seleccionar </a>

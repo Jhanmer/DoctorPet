@@ -184,6 +184,17 @@ foreign key (idMascota) references DP_Mascota(idMascota)
 );
 
 
+drop table if exists dp_VetHorario;
+CREATE TABLE dp_VetHorario (
+idHorario int NOT NULL PRIMARY KEY auto_increment,
+diaSemana VARCHAR(20),
+horaInicio TIME,
+horaFin TIME
+);
+
+INSERT INTO dp_VetHorario (diaSemana, horaInicio, horaFin) VALUES ('Lunes', '09:00:00', '18:00:00'), ('Martes', '09:00:00', '18:00:00'), ('Miércoles', '09:00:00', '18:00:00'), ('Jueves', '09:00:00', '18:00:00'), ('Viernes', '09:00:00', '18:00:00'), ('Sábado', '09:00:00', '13:00:00'), ('Domingo', '09:00:00', '13:00:00'); 
+
+
 drop table if exists dp_Veterinarios;
 CREATE TABLE dp_Veterinarios (
 idVeterinario int NOT NULL PRIMARY KEY auto_increment,
@@ -195,14 +206,17 @@ correo varchar(100) NOT NULL,
 especialidad varchar(100) NOT NULL,
 experiencia int NOT NULL,
 fechaContra date NOT NULL,
-disponibilidad varchar(100) NOT NULL,
-Salario decimal(10,2) not null
+idHorario int,
+Salario decimal(10,2) not null,
+foreign key (idHorario) references dp_VetHorario(idHorario)
 );
 
-INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad, Salario) VALUES ('Carlos', 'Messi Lopez', 'Av. Calamar', '992992992', 'carlos@doctorpet.pe', 'Medicina Interna', 5, '2023-06-14', 'Lunes a Martes: 9:00 AM - 2:00 PM', '1600'); 
-INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad, Salario) VALUES ('Maria', 'Perez Castillo', 'Av. Sarita', '992992992', 'maria@doctorpet.pe', 'Cirugía veterinaria', 8, '2023-06-14', 'Lunes a Martes: 12:00 AM - 6:00 PM', '1600'); 
-INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad, Salario) VALUES ('Carla', 'Maita Puma', 'Av. Los Andes', '992992992', 'carla@doctorpet.pe', 'Dermatología veterinaria', 9, '2023-06-14', ' Miercoles a Viernes: 9:00 AM - 11:00 PM', '1600'); 
-INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, disponibilidad, Salario) VALUES ('Carmen', 'Condor Paza', 'Av. Los Cielos', '992992992', 'carmen@doctorpet.pe', 'Oftalmología veterinaria', 3, '2023-06-14', 'Miercoles a Viernes: 9:00 AM - 6:00 PM', '1600'); 
+
+
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carlos', 'Messi Lopez', 'Av. Calamar', '992992992', 'carlos@doctorpet.pe', 'Medicina Interna', 5, '2023-06-14', 2, '1600'); 
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Maria', 'Perez Castillo', 'Av. Sarita', '992992992', 'maria@doctorpet.pe', 'Cirugía veterinaria', 8, '2023-06-14', 1, '1600'); 
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carla', 'Maita Puma', 'Av. Los Andes', '992992992', 'carla@doctorpet.pe', 'Dermatología veterinaria', 9, '2023-06-14', 4, '1600'); 
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carmen', 'Condor Paza', 'Av. Los Cielos', '992992992', 'carmen@doctorpet.pe', 'Oftalmología veterinaria', 3, '2023-06-14', 5, '1600'); 
 
 
 INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido) VALUES
