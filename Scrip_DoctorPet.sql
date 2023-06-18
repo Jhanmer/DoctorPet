@@ -102,8 +102,8 @@ idEspecie int,
 idRaza  int, 
 SexoMasc varchar(10), 
 idCliente int,
-peso varchar(250) DEFAULT NULL,
-imgMascota LONGBLOB,
+peso varchar(20),
+imgMascota LONGBLOB null,
 foreign key (idCliente) references DP_Cliente(idCliente),
 foreign key (idEspecie) references DP_Especie(idEspecie),
 foreign key (idRaza) references DP_Raza(idRaza)
@@ -242,16 +242,14 @@ INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `d
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
 				VALUES ('Diego', 'Cortez Quispe', '2002-05-29', '1', 'Av Revolucion', '10', '986235741', 'Diego@gmail.com', '156', 'Usuario', '2023-06-17 21:24:47'); 	
 
----------------------------------------------
---------------------------------------------
+
 INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
 				VALUES ('Juan Carlos', 'Rojas Azules', 'juan@gmail.com', '986523759', '5', 'Estilista'); 	
 INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
 				VALUES ('Carlos Juan', 'Suarez Messi', 'Carlos@gmail.com', '986523546', '4', 'Recepcionista'); 
 INSERT INTO `DP_Personal`(`NomPers`, `ApePers`, `CorreoPers`, `NumeroPers`, `IdDistrito`, `CargoPers`) 
 				VALUES ('Julian ', 'Alvis Alvarez', 'julian@gmail.com', '985236456', '7', 'recepcionista'); 
---------------------------------------------
---------------------------------------------
+
 INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
 				VALUES ('Wilson', '4', '2', '17', 'Macho', '2', '10', NULL);
 INSERT INTO `DP_Mascota`(`NomMasc`, `EdadMasc`, `idEspecie`, `idRaza`, `SexoMasc`, `idCliente`, `peso`, `imgMascota`) 
