@@ -21,7 +21,7 @@ include "./Config/conexion.php";
             <div class="login-box">
                 <h2>Registro de animales perdidos</h2>
                 <?php include 'Controlador/Ctrl_MascotaPerdida.php';?> 
-                <form action="#" method="POST">
+                <form action="#" enctype="multipart/form-data" method="POST">
                   <div class="user-box">
                     <input type="text" name="nom_lost" required="">
                     <label>Nombre de mascota desaparecida</label>
@@ -45,6 +45,10 @@ include "./Config/conexion.php";
                   <div class="user-box">
                     <input type="text" name="descrip_lost" required="">
                     <label>Descripción de mascota desaparecida</label>
+                  </div>
+                  <div class="box-upload">
+                    <label for="subirImagen"><i class="fa-solid fa-upload"></i>Subir imagen</label>
+                    <input type="file" id="subirImagen" name="imagenlost" required="">
                   </div> 
                   <div class="boton-box">
                       <input type="submit" name="enviar" value="Registrar desaparición" id="enviar">

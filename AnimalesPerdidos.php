@@ -28,7 +28,7 @@
             ?>
             <div class="card">
                 <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/meperdi.jpg" alt="" />
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($mostrarlost['imagen_perdido']); ?>"/>
                 </figure>
                 <div class="contenido">
                     <h3>Nombre: <?php echo $mostrarlost['nombre_perdido'] ?> </h3>
@@ -54,7 +54,7 @@
             ?>
             <div class="card">
                 <figure>
-                    <img src="Imagenes/Servicios/AnimalesPerdidos/meperdi.jpg" alt="" />
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen_perdido']); ?>"/>
                 </figure>
                 <div class="contenido">
                     <h3>Nombre: <?php echo $row['nombre_perdido'] ?> </h3>

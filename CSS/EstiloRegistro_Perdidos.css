@@ -121,3 +121,26 @@ body {
     text-align: center;
     margin-bottom: 10px;
 }
+.box-upload input{
+  display: none;
+}
+.box-upload label{
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  background: #3c7fe0;
+  text-align: center;
+  padding: 15px 40px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+}
+.box-upload label i{
+      font-size: 20px;
+      margin-right: 10px;
+}
+.box-upload label:active{
+  transform: scale(0.9);
+}
