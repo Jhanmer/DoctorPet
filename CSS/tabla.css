@@ -169,8 +169,8 @@
   }
   @media (min-width: 48em) {
     .responsive-table tbody td {
-      border-left: 1px solid #0e0230;
-      border-bottom: 1px solid #100431;
+      border-left: 1px solid #aca2ca;
+      border-bottom: 1px solid #bdb7ce;
       text-align: center;
     }
   }

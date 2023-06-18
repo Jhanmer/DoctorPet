@@ -1,3 +1,4 @@
+
 <?php 
     require ('includes/funciones.php');
     incluirTemplate('header');
@@ -20,30 +21,6 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
 ?>
 
 <style>
-  .css-button-3d--blue {
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-    background: #3d348b;
-    box-shadow: 0 5px #2fff;
-    }
-    .css-button-3d--blue:hover {
-    box-shadow: 0 3px #2c0b8e;
-    top: 1px;
-    }
-    .css-button-3d--blue:active {
-    box-shadow: 0 0 #2c0b8e;
-    top: 5px;
-    }
 
   .modal {
     display: none;
@@ -84,78 +61,78 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
   }
 </style>
 
-<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
-        <div class="wrapper wrapper--w790">
-            <div class="card card-5">
-                <div class="card-heading">
-                <h2 class="title">Lista de Veterinarios Disponibles</h2>
-                </div>
-                <div class="card-body">
-                <div class="container">
-                    <table class="responsive-table">
-                        <thead>
-                        <tr>
-                            <th scope="col" hidden>Código</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Especialidad</th>
-                            <th scope="col">Experiencia</th>
-                            <th scope="col">Disponibilidad</th>
-                        </tr>
-                        </thead>
-                        
-                        <tbody>
-                        <?php
-                            $busc= mysqli_query($con, $sql);
-                            if($busc -> num_rows >0){
-                                    while($row= mysqli_fetch_array($busc)){                                                  
-                                ?> 
-                                <tr>
-                                    <td hidden><?php echo $row['idVeterinario']; ?></td>
-                                    <td><?php echo $row['nombreVet']; ?></td>
-                                    <td><?php echo $row['apellidoVet']; ?></td>
-                                    <td><?php echo $row['telefono']; ?></td>
-                                    <td><?php echo $row['correo']; ?></td>
-                                    <td><?php echo $row['especialidad']; ?></td>
-                                    <td><?php echo $row['experiencia']; ?> años</td>
-                                    <td><?php echo $row['disponibilidad']; ?></td>
-                                    <td style="background-color: #3d348b;"><a href="#!" class="css-button-3d--blue"  onclick="openModal()">Seleccionar</a></td>
-                                    <!-- <td style="background-color: #3d348b;"><a href="#!" class="css-button-3d--blue" data-id="<?php echo $row['idVeterinario']; ?>" >Seleccionar</a></td> -->
-                                    <!-- <td><button class="btn-abrir-modal" data-id="<?php echo $row['idVeterinario']; ?>">Abrir modal</button></td> -->
-                                </tr>
-                                <?php
-                            }
-                            }
+<div class="cuerpo-tabla">
 
-                        ?>
-                        <!--
-                        <tr>
-                            <th scope="row">The Lion King (2019 remake)</th>
-                            <td data-title="Released">2019</td>
-                            <td data-title="Studio">Disney</td>
-                            <td data-title="Worldwide Gross" data-type="currency">$1,657,870,986</td>
-                            <td data-title="Domestic Gross" data-type="currency">$543,638,043</td>
-                            <td data-title="International Gross" data-type="currency">$1,114,232,943</td>
-                            <td data-title="Budget" data-type="currency">$260,000,000</td>
-                            <td><button class="btn" onclick="openModal()">Botón</button></td>
-                        </tr>    -->                    
-                        </tbody>
-                    </table>
-                    </div>
+
+    <main class="table">
+        <section class="table__header">
+            <h1>Lista de Veterinarios</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Nombre <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Apellidos <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Telefono <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Especialidad <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Experiencia <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Disponibilidad <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    $busc= mysqli_query($con, $sql);
+                    if($busc -> num_rows >0){
+                        while($row= mysqli_fetch_array($busc)){                                                  
+                ?>    
+                    <tr>
+                        <td><?php echo $row['idVeterinario']; ?></td>
+                        <td><?php echo $row['nombreVet']; ?> </td>
+                        <td> <?php echo $row['apellidoVet']; ?> </td>
+                        <td> <?php echo $row['telefono']; ?> </td>
+                        <td> <?php echo $row['correo']; ?> </td>
+                        <td> <?php echo $row['especialidad']; ?> </td>
+                        <td> <?php echo $row['experiencia']; ?> </td>
+                        <td>
+                            <p class="status delivered"><?php echo $row['disponibilidad']; ?></p>
+                        </td>
+                        <td>
+                            <a href="#" class="status shipped"  onclick="openModal()"> Seleccionar </a>
+                        </td>
+                    </tr>
+                    <?php
+                        }
+                    }
 
-  
-
+                    ?>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="card-body">
-                    <form action="/Controlador/RegistrarConsulta.php" method="post">
+        <form action="/Controlador/RegistrarConsulta.php" method="post">
                         <div class="form-row m-b-55">
                             <div class="name">Motivo</div>
                             <div class="value">
@@ -286,8 +263,8 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit">Enviar Consulta</button>
                         </div>
-                    </form>
-                </div>
+    </form>
+    </div>
   </div>
 </div>
 <script>
@@ -299,17 +276,7 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
     document.getElementById("myModal").style.display = "none";
   }
 </script>
-<script>
-    $(document).ready(function() {
-    $('.btn-abrir-modal').click(function() {
-        var veterinarioId = $(this).data('idVeterinario');
-        // Aquí puedes utilizar el ID para hacer lo que necesites, como enviarlo a través de AJAX o mostrarlo en el modal.
-        // Por ejemplo, puedes asignarlo al atributo "data-id" de un botón "Grabar" en el modal.
-        $('#myModal').data('idVeterinario', veterinarioId);
-    });
-});
-</script>
-<?php 
-    include './includes/templates/footer.php';
 
+<?php 
+include './includes/templates/footer.php';
 ?>

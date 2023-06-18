@@ -68,7 +68,9 @@ include ('barra-lateral.php');
 
 
 
-
+                <div class="container-fluid">
+                    <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
+                </div>
 
 
                 <!-- Hoverable rows start -->
@@ -83,9 +85,7 @@ include ('barra-lateral.php');
                                     <!-- table hover -->
                                     <div class="table-responsive">
 
-                                        <div class="container-fluid">
-                                            <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
-                                        </div>
+                                        
 
                                         <table class="table table-hover mb-0 table_id" id="tblProductos">
                                             <thead>
