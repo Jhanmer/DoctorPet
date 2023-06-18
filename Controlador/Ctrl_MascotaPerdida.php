@@ -4,22 +4,21 @@ $con = fnConnect($msg);
 
 $error=null;
 $mensaje=null;
+
     if(isset($_POST["enviar"])){
         //capturando datos
-        $reg["nom_lost"] = $_POST["nom_lost"];
-        $reg["dia_lost"] = $_POST["dia_lost"];
-        $reg["lugar_lost"] = $_POST["lugar_lost"];
-        $reg["numero_duenio"] = $_POST["numero_duenio"];
-        $reg["tamanio_lost"] = $_POST["tamanio_lost"];
-        $reg["descrip_lost"] = $_POST["descrip_lost"];
-        InsertarPerdido($reg, $mensaje, $error);
-    }
-    function InsertarPerdido($reg, &$mensaje, &$error){
+        $nom_lost = $_POST["nom_lost"];
+        $dia_lost = $_POST["dia_lost"];
+        $lugar_lost = $_POST["lugar_lost"];
+        $numero_duenio = $_POST["numero_duenio"];
+        $tamanio_lost = $_POST["tamanio_lost"];
+        $descrip_lost = $_POST["descrip_lost"];
+        $imagen = addslashes(file_get_contents($_FILES['imagenlost']['tmp_name']));
+        
         $con = fnConnect($msg);
         mysqli_query($con, "start transaction");
-        $sqlinsert = "insert into dp_mascota_perdida(nombre_perdido,fecha_perdido,visto_perdido,contacto_perdido,tamanio_perdido,descripcion_perdido)
-                values('{$reg["nom_lost"]}','{$reg["dia_lost"]}',
-                '{$reg["lugar_lost"]}',{$reg["numero_duenio"]},'{$reg["tamanio_lost"]}','{$reg["descrip_lost"]}');";
+        $sqlinsert = "insert into dp_mascota_perdida(nombre_perdido,fecha_perdido,visto_perdido,contacto_perdido,tamanio_perdido,descripcion_perdido,imagen_perdido)
+                values('$nom_lost','$dia_lost','$lugar_lost',$numero_duenio,'$tamanio_lost','$descrip_lost','$imagen');";
                  //ejecutamos la consulta
         $respuesta = mysqli_query($con, $sqlinsert);
         if($respuesta==0){
@@ -35,5 +34,5 @@ $mensaje=null;
         //hacemos permanente los cambios
         mysqli_query($con, "commit");
         $mensaje = "<p>Trabajador registrado correctamente..</p>";
-    }
+    }      
 ?>
