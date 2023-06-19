@@ -193,6 +193,22 @@ tbody tr.hide td img {
     background-color: #0653a6;
     color: #fffbfc;;
 }
+.status.especialidad {
+    background-color: #6d0fc500;
+    color: #70041f;;
+}
+.status.nombre {
+    background-color: #6d0fc500;
+    color: #70041f;;
+}
+.status.ape {
+    background-color: #6d0fc500;
+    color: #70041f;;
+}
+.status.hora {
+    background-color: #131fd7f7;
+    color: #fff;;
+}
 
 .status.pending {
     background-color: #ebc474;

@@ -163,7 +163,8 @@ include "Config/conexion.php";
                             <a>Citas</a>
                                 <div class='submenu'>
                                 <a hidden href='ConsultaPersonalizada.php'>Cita Personal - No</a>
-                                <a href='CReservarCita.php'>Lista de Veterinarios</a>
+                                <a href='CReservarCita.php'>Reservar Cita</a>
+                                <a href='ListaReseva.php'>Lista de Reservas</a>
                                 </div>
                             </div>
                             ";
