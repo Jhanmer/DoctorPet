@@ -198,22 +198,6 @@ Salario decimal(10,2) not null,
 foreign key (idHorario) references dp_VetHorario(idHorario)
 );
 
-drop table if exists dp_ConsultaPersonalizada;
-CREATE TABLE dp_ConsultaPersonalizada (
-idConsultaPer int NOT NULL PRIMARY KEY auto_increment,
-idVeterinario int NOT NULL,
-idCliente int not null,
-motivo varchar(255) not null,
-fechaAtencion date not null,
-idMascota int,
-idHora int,
-Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
-foreign key (idMascota) references DP_Mascota(idMascota),
-foreign key (idCliente) references DP_Cliente(idCliente),
-foreign key (idHora) references dp_Hora(idHora),
-foreign key (idVeterinario) references dp_Veterinarios(idVeterinario)
-);
-
 drop table if exists dp_Hora;
 CREATE TABLE dp_Hora (
 idHora int NOT NULL PRIMARY KEY auto_increment,
@@ -240,6 +224,24 @@ INSERT INTO dp_Hora (hora, estado)
 VALUES ('17:00:00', 1); 
 INSERT INTO dp_Hora (hora, estado) 
 VALUES ('18:00:00', 1);
+
+drop table if exists dp_ConsultaPersonalizada;
+CREATE TABLE dp_ConsultaPersonalizada (
+idConsultaPer int NOT NULL PRIMARY KEY auto_increment,
+idVeterinario int NOT NULL,
+idCliente int not null,
+motivo varchar(255) not null,
+fechaAtencion date not null,
+idMascota int,
+idHora int,
+Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
+foreign key (idMascota) references DP_Mascota(idMascota),
+foreign key (idCliente) references DP_Cliente(idCliente),
+foreign key (idHora) references dp_Hora(idHora),
+foreign key (idVeterinario) references dp_Veterinarios(idVeterinario)
+);
+
+
 
 
 INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carlos', 'Messi Lopez', 'Av. Calamar', '992992992', 'carlos@doctorpet.pe', 'Medicina Interna', 5, '2023-06-14', 2, '1600'); 
