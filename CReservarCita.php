@@ -22,6 +22,12 @@ $consultaMascCliente = "select * from dp_mascota where idCliente  = '$idCliente'
 $ListaMascCli = mysqli_query($con, $consultaMascCliente);
 ?>
 
+<?php
+$con = fnConnect($msg);
+$consultaHora = "select * FROM `dp_hora` where estado = '1'";
+$ListaHora = mysqli_query($con, $consultaHora);
+?>
+
 <style>
 
   .modal {
@@ -60,6 +66,7 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
     color: black;
     text-decoration: none;
     cursor: pointer;
+
   }
 </style>
 
@@ -68,11 +75,13 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
 
     <main class="table">
         <section class="table__header">
-            <h1>Lista de Veterinarios</h1>
+            <h1>Disponibilidad de Veterinarios</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
             </div>
+            <div class="status hora" id="fecha-hora"></div>
+
             <div class="export__file">
                 <label for="export-file" class="export__file-btn" title="Export File"></label>
                 <input type="checkbox" id="export-file">
@@ -96,9 +105,9 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                         <th> Correo <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Especialidad <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Experiencia <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Dia de Semana <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Hora de Inicio <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Hora de Fin <span class="icon-arrow">&UpArrow;</span></th>
+                        <th hidden> Dia de Semana <span class="icon-arrow">&UpArrow;</span></th>
+                        <th > Hora de Inicio <span class="icon-arrow">&UpArrow;</span></th>
+                        <th > Hora de Fin <span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -109,23 +118,23 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                 ?>    
                     <tr>
                         <td><?php echo $row['idVeterinario']; ?></td>
-                        <td><?php echo $row['nombreVet']; ?> </td>
-                        <td> <?php echo $row['apellidoVet']; ?> </td>
+                        <td class="status nombre"><?php echo $row['nombreVet']; ?> </td>
+                        <td class="status ape"> <?php echo $row['apellidoVet']; ?> </td>
                         <td> <?php echo $row['telefono']; ?> </td>
                         <td> <?php echo $row['correo']; ?> </td>
-                        <td> <?php echo $row['especialidad']; ?> </td>
+                        <td class="status especialidad"> <?php echo $row['especialidad']; ?> </td>
                         <td> <?php echo $row['experiencia']; ?> años</td>
-                        <td>
+                        <td hidden>
                             <p class="status delivered"><?php echo $row['diaSemana']; ?></p>
                         </td>
-                        <td>
+                        <td >
                             <p class="status cancelled"><?php echo $row['horaInicio']; ?></p>
-                        </td>
-                        <td>
+                        </td >
+                        <td >
                             <p class="status pending"><?php echo $row['horaFin']; ?></p>
                         </td>
                         <td>
-                            <a href="#" class="status shipped"  onclick="openModal()"> Seleccionar </a>
+                            <a href="#" class="status shipped"  onclick="openModal()" data-id="<?php echo $row['idVeterinario']; ?>"> Seleccionar </a>
                         </td>
                     </tr>
                     <?php
@@ -142,42 +151,60 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <div class="card-body">
-        <form action="/Controlador/RegistrarConsulta.php" method="post">
-                        <div class="form-row m-b-55">
+        <form action="/Controlador/RegistrarReserva.php" method="post">
+            <?php
+            $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
+            ?>
+                <div hidden  class="form-row">
+                    <div class="name">Veterinario</div>
+                        <div class="">
+                            <input hidden type="text" id="idVeterinario" name="idVeterinario">
+                            <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+
+                        </div>
+                </div> 
+                <div class="form-row">
+                    <div class="name">Especialidad</div>
+                        <div class="">
+                            <p class="status especialidad" id="especialidad" name="especialidad" ></p>
+                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Nombre</div>
+                        <div class="">
+                            <p class="status nombre" id="nombreVet" name="nombreVet" ></p>
+                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Apellido</div>
+                        <div class="">
+                            <p class="status ape" id="apellidoVet" name="apellidoVet" ></p>
+                        </div>
+                </div>   
+                <div class="form-row">
+                    <div class="name">Hora de Inicio Atención</div>
+                        <div class="">
+                            <p class="status cancelled" id="horaInicio"></p>
+                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="name">Hora de Fin Atención</div>
+                        <div class="">
+                            <p class="status pending" id="horaFin"></p>
+                        </div>
+                </div>
+                            <div class="form-row m-b-55">
                             <div class="name">Motivo</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-7">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" name="txtNom" type="text" required="">
+                                            <input class="input--style-5" name="txtMotivo" type="text" required="">
                                             <label class="label--desc">Describa un motivo breve para la consulta*</label>
                                         </div>
                                     </div>                                  
                                 </div>
                             </div>                           
-                        </div>
-                        <div class="form-row m-b-55">
-                            <div class="name">Telefono</div>
-                            <div class="value">
-                                <div class="row row-refine">                           
-                                    <div class="col-9">
-                                        <div class="input-group-desc">
-                                            <input class="input--style-5" onkeypress="return soloNumeros(event)" type="text" name="txtTelefono" pattern="[0-9]+" maxlength="9"  style="width: 130px;">
-                                            <label  class="label--desc">Número de telefono</label>
-                                            <script>
-                                                function soloNumeros(event) {
-                                                    var charCode = event.which ? event.which : event.keyCode;
-                                                    if (charCode < 48 || charCode > 57) {
-                                                        event.preventDefault();
-                                                        return false;
-                                                    }
-                                                    return true;
-                                                    }
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Fecha Atención</div>
@@ -212,15 +239,17 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Horario</div>
+                            <div class="name">Hora</div>
                                 <div class="value">
                                     <div class="input-group">
                                         <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="subject">
-                                                <option disabled="disabled" selected="selected">Seleccione Horario</option>
-                                                <option>Subject 1</option>
-                                                <option>Subject 2</option>
-                                                <option>Subject 3</option>
+                                            <select name="txtHora" requerid>
+                                                <option disabled="disabled" selected="selected">Seleccione una Hora</option>
+                                                <?php while ($row = mysqli_fetch_assoc($ListaHora)) { ?>
+												<option value="<?php echo $row["idHora"] ?>">
+													<?php echo $row["hora"] ?>
+												</option>
+											    <?php } ?>
                                             </select>
                                             <div class="select-dropdown"></div>
                                         </div>
@@ -259,17 +288,6 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
                         </div>
                          -->
                         
-                        <div class="form-row">
-                            <div class="name">Motivo de Cita</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <textarea name="txtMotivo" class="input-text" required="" placeholder="Cuéntanos tu asunto..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit">Enviar Consulta</button>
                         </div>
@@ -278,13 +296,44 @@ $ListaMascCli = mysqli_query($con, $consultaMascCliente);
   </div>
 </div>
 <script>
-  function openModal() {
-    document.getElementById("myModal").style.display = "block";
-  }
+function actualizarFechaHora() {
+  var fechaHoraActual = new Date();
+  var fecha = fechaHoraActual.toLocaleDateString();
+  var hora = fechaHoraActual.toLocaleTimeString();
 
-  function closeModal() {
+  var fechaHoraElemento = document.getElementById("fecha-hora");
+  fechaHoraElemento.innerHTML = "Fecha y hora actual: " + fecha + " " + hora;
+}
+
+actualizarFechaHora();
+
+
+function openModal() {
+
+    var btn = event.target;
+    var idVeterinario = btn.getAttribute("data-id");
+
+    document.getElementById("idVeterinario").value = idVeterinario;
+    var horaInicio = btn.parentNode.parentNode.querySelector('.status.cancelled').textContent;
+    var horaFin = btn.parentNode.parentNode.querySelector('.status.pending').textContent;
+
+    var especialidad = btn.parentNode.parentNode.querySelector('.status.especialidad').textContent;
+    var nombreVet = btn.parentNode.parentNode.querySelector('.status.nombre').textContent;
+    var apellidoVet = btn.parentNode.parentNode.querySelector('.status.ape').textContent;
+    
+    document.getElementById("horaInicio").textContent = horaInicio;
+    document.getElementById("horaFin").textContent = horaFin;
+    document.getElementById("especialidad").textContent = especialidad;
+    document.getElementById("nombreVet").textContent = nombreVet;
+    document.getElementById("apellidoVet").textContent = apellidoVet;
+    document.getElementById("myModal").style.display = "block";
+}
+
+
+
+function closeModal() {
     document.getElementById("myModal").style.display = "none";
-  }
+}
 </script>
 
 <?php 
