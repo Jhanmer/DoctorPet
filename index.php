@@ -98,10 +98,30 @@
         <?php 
         $limite = 4;
         include 'parce-alimento.php';
-        
         ?>
 
         <!-- Productos para Gatos -->
+
+        
+        <div class="tema-producto">
+            <h2>Cuida a tus mascotas</h2>
+        </div>
+
+        <?php 
+        $limite = 4;
+        include 'parce-medicamento.php';
+        ?>
+        <!-- Productos medicamento -->
+
+        <div class="tema-producto">
+            <h2>Accesorio Pet</h2>
+        </div>
+
+        <?php 
+        $limite = 4;
+        include 'parce-accesorio.php';
+        ?>
+        <!-- Productos accesorio -->
 
 
     </main>

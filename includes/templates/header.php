@@ -134,7 +134,7 @@ include "Config/conexion.php";
                 <div class="item">
                     <a>Productos</a>
                     <div class="submenu">
-                    <a href="CVestimenta.php">Vestimentas</a>
+                    <a hidden href="CVestimenta.php">Vestimentas</a>
                     <a href="CMedicamentos.php">Medicamentos</a>
                     <a href="CAlimentos.php">Alimentos</a>
                     <a href="CAccesorios.php">Accesorios</a>
