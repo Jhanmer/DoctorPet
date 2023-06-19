@@ -172,22 +172,6 @@ CREATE TABLE dp_mascota_perdida (
 );
 
 
-drop table if exists dp_ConsultaPersonalizada;
-CREATE TABLE dp_ConsultaPersonalizada (
-idConsultaPer int NOT NULL PRIMARY KEY auto_increment,
-motivo varchar(255) NOT NULL,
-estado int NOT NULL,
-fechaCita date not null,
-HoraCita time not null,
-idMascota int NOT NULL,
-imgCita varchar(255) NULL,
-dispo int not null,
-FechaUltRe date NOT NULL,
-Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
-foreign key (idMascota) references DP_Mascota(idMascota)
-);
-
-
 drop table if exists dp_VetHorario;
 CREATE TABLE dp_VetHorario (
 idHorario int NOT NULL PRIMARY KEY auto_increment,
@@ -196,8 +180,7 @@ horaInicio TIME,
 horaFin TIME
 );
 
-INSERT INTO dp_VetHorario (diaSemana, horaInicio, horaFin) VALUES ('Lunes', '09:00:00', '18:00:00'), ('Martes', '09:00:00', '18:00:00'), ('Miércoles', '09:00:00', '18:00:00'), ('Jueves', '09:00:00', '18:00:00'), ('Viernes', '09:00:00', '18:00:00'), ('Sábado', '09:00:00', '13:00:00'), ('Domingo', '09:00:00', '13:00:00'); 
-
+INSERT INTO dp_VetHorario (diaSemana, horaInicio, horaFin) VALUES ('Lunes', '09:00:00', '18:00:00'), ('Martes', '09:00:00', '18:00:00'), ('Miércoles', '09:00:00', '18:00:00'), ('Jueves', '09:00:00', '18:00:00'), ('Viernes', '09:00:00', '18:00:00'), ('Sábado', '09:00:00', '18:00:00'), ('Domingo', '09:00:00', '18:00:00'); 
 
 drop table if exists dp_Veterinarios;
 CREATE TABLE dp_Veterinarios (
@@ -215,12 +198,61 @@ Salario decimal(10,2) not null,
 foreign key (idHorario) references dp_VetHorario(idHorario)
 );
 
+drop table if exists dp_ConsultaPersonalizada;
+CREATE TABLE dp_ConsultaPersonalizada (
+idConsultaPer int NOT NULL PRIMARY KEY auto_increment,
+idVeterinario int NOT NULL,
+idCliente int not null,
+motivo varchar(255) not null,
+fechaAtencion date not null,
+idMascota int,
+idHora int,
+Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
+foreign key (idMascota) references DP_Mascota(idMascota),
+foreign key (idCliente) references DP_Cliente(idCliente),
+foreign key (idHora) references dp_Hora(idHora),
+foreign key (idVeterinario) references dp_Veterinarios(idVeterinario)
+);
+
+drop table if exists dp_Hora;
+CREATE TABLE dp_Hora (
+idHora int NOT NULL PRIMARY KEY auto_increment,
+hora varchar(25),
+estado TINYINT(1)
+);
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('09:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('10:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('11:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('12:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('13:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('14:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('15:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('16:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('17:00:00', 1); 
+INSERT INTO dp_Hora (hora, estado) 
+VALUES ('18:00:00', 1);
 
 
 INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carlos', 'Messi Lopez', 'Av. Calamar', '992992992', 'carlos@doctorpet.pe', 'Medicina Interna', 5, '2023-06-14', 2, '1600'); 
 INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Maria', 'Perez Castillo', 'Av. Sarita', '992992992', 'maria@doctorpet.pe', 'Cirugía veterinaria', 8, '2023-06-14', 1, '1600'); 
 INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carla', 'Maita Puma', 'Av. Los Andes', '992992992', 'carla@doctorpet.pe', 'Dermatología veterinaria', 9, '2023-06-14', 4, '1600'); 
 INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) VALUES ('Carmen', 'Condor Paza', 'Av. Los Cielos', '992992992', 'carmen@doctorpet.pe', 'Oftalmología veterinaria', 3, '2023-06-14', 5, '1600'); 
+
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) 
+VALUES ('Lucas', 'Macanaki Gutierres', 'Av. Los especiales', '992992992', 'maca@doctorpet.pe', 'Oftalmología veterinaria', 2, '2023-06-14', 3, '1600');
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) 
+VALUES ('Marta', 'Suarez Mark', 'Av. Los Pulpo', '992992992', 'maca@doctorpet.pe', 'Oftalmología veterinaria', 2, '2023-06-14', 6, '1600');
+INSERT INTO dp_Veterinarios (nombreVet, apellidoVet, direccion, telefono, correo, especialidad, experiencia, fechaContra, idHorario, Salario) 
+VALUES ('Carmen', 'Condor Paza', 'Av. Los Cielos', '992992992', 'carmen@doctorpet.pe', 'Oftalmología veterinaria', 3, '2023-06-14', 2, '1600'); 
 
 
 INSERT INTO dp_mascota_perdida (Id_perdidos, nombre_perdido, fecha_perdido, visto_perdido, contacto_perdido, tamanio_perdido, descripcion_perdido, imagen_perdido) VALUES
@@ -310,6 +342,23 @@ drop procedure if exists SP_InsertarConsulta;
 	values(nombreCli,TelefonoCons,FechaCons,correoCli,Motivo);
 	end $$
 	delimiter ;
+
+drop procedure if exists SP_InsertarReserva;
+	delimiter $$
+	create procedure SP_InsertarReserva
+	(in 
+	idVeterinario int,
+	idCliente int,
+	motivo  varchar(255),
+	fechaAtencion  date,
+	idMascota  int,
+   idHoraP int)
+	begin
+	insert into dp_ConsultaPersonalizada(idVeterinario,idCliente,motivo,fechaAtencion,idMascota,idHora) 
+	values(idVeterinario,idCliente,motivo,fechaAtencion,idMascota,idHoraP);
+   update dp_Hora set estado = 0 where idHora=idHoraP;
+	end $$
+	delimiter ;		
 
 drop procedure if exists SP_Login;
 DELIMITER $$
