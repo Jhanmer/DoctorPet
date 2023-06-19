@@ -1,6 +1,6 @@
 <?php
-include('barra-lateral.php');
 
+include('up-barraMe.php');
 ?>
 <div id="main">
     <header class="mb-3">
@@ -14,12 +14,25 @@ include('barra-lateral.php');
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Actualizar Medicamento</h3>
-                    
+                    <?php 
+                    /* echo '<pre>';
+                    var_dump($propiedad);
+                    echo '</pre>'; */
+                    ?>
+                    <?php if (!$id) : ?>
+
+                    <div class="alert alert-warning"><i class="bi bi-exclamation-triangle"></i> 
+                        <?php echo 'Error al inyectar código en la URL'; 
+                         var_dump($id)   
+                        ?>
+                    </div>
+                    <?php endif; ?>
+
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            
+
                         </ol>
                     </nav>
                 </div>
@@ -28,10 +41,10 @@ include('barra-lateral.php');
 
         <!-- Basic Horizontal form layout section start -->
         <section id="basic-horizontal-layouts">
-           
-                
-                   
-            
+
+
+
+
         </section>
         <!-- // Basic Horizontal form layout section end -->
 
@@ -44,42 +57,50 @@ include('barra-lateral.php');
                         </div>
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form form-vertical">
+                                <?php foreach ($errores as $error) : ?>
+                                    <div class="alert alert-danger alert-dismissible show fade">
+                                        <?php echo $error; ?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php endforeach ?>
+                                <!-- Formulario -->
+                                <form class="form form-vertical" method="POST" enctype="multipart/form-data">
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="first-name-vertical">Nombre</label>
-                                                    <input type="text" id="first-name-vertical" class="form-control" name="fname" placeholder="First Name">
+                                                    <label for="nombre">Nombre</label>
+                                                    <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $nombre; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="email-id-vertical">Precio</label>
-                                                    <input type="number" id="email-id-vertical" class="form-control" name="email-id" placeholder="S/0.00" min="0">
+                                                    <label for="precio">Precio</label>
+                                                    <input type="number" id="precio" class="form-control" name="precio" placeholder="S/0.00" min="0" value="<?php echo $precio; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="contact-info-vertical">Imagen</label>
-                                                    <input type="file" id="contact-info-vertical" class="form-control" name="contact" placeholder="Mobile">
+                                                    <label for="imagen">Imagen</label>
+                                                    <input type="file" id="imagen" class="form-control" name="imagen" accept="image/jpeg, image/jpg, image/png"><br>
+                                                    <img src="/imagenes3/<?php echo $imagenPropiedad.".jpg"; ?>" alt="imagen" class="update-imagen">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="password-vertical">Descripción</label>
-                                                    <textarea name="" id="" cols="30" rows="10" placeholder="Agrega una descripción" class="form-control"></textarea>
+                                                    <label for="descripcion">Descripción</label>
+                                                    <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Agrega una descripción" class="form-control"><?php echo $descripcion; ?></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="email-id-vertical">Stock</label>
-                                                    <input type="number" id="email-id-vertical" class="form-control" name="email-id" placeholder="0" min="0">
+                                                    <label for="stock">Stock</label>
+                                                    <input type="number" id="stock" class="form-control" name="stock" min="0" value="<?php echo $stock; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary me-1 mb-1">Actualizar</button>
-                                                
+                                                <input type="submit" class="btn btn-outline-warning btn-lg btn-block" value="Actualizar Medicamento"></input>
+
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +111,7 @@ include('barra-lateral.php');
                 </div>
                 <div class="col-md-6 col-12">
                     <div class="card">
-                        <!-- <div class="card-header">
+                        <div class="card-header">
                             <h4 class="card-title">Nuestras Marcas:</h4>
                         </div>
                         <div class="card-header">
@@ -100,26 +121,26 @@ include('barra-lateral.php');
                             <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> PROPLAN</h4>
                             <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> PEDIGREE</h4>
                         </div>
-                        
+
                         <div class="card-header">
                             <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> RICO CAT </h4>
                             <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> CAT CHOW</h4>
                             <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> PURINA</h4>
                             <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> EQUILIBRIO</h4>
                             <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> ROYAL CANIN</h4>
-                        </div> -->
+                        </div>
 
                     </div>
                 </div>
             </div>
             <?php
-include('footer-lateral.php');
-?>
+            include('footer-lateral.php');
+            ?>
         </section>
         <!-- // Basic Vertical form layout section end -->
 
 
-        
+
         <!-- // Basic multiple Column Form section end -->
     </div>
 

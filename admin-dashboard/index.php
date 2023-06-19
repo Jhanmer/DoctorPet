@@ -1,7 +1,5 @@
 <?php  
 include ('barra-lateral.php');
-require ('../includes/config/database.php');
-    $db = conectarDB();
 
 ?>
 <!-- contenido -->
@@ -88,7 +86,7 @@ require ('../includes/config/database.php');
                                 </div>
                             </div>
                         </div>
-        <!--                <div class="row">
+                        <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
@@ -99,217 +97,7 @@ require ('../includes/config/database.php');
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
-            <div class="GraficaBarras">
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                    google.charts.load("current", {packages:['corechart']});
-                    google.charts.setOnLoadCallback(drawChart);
-                    function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                        ["Distrito", "Cantidad", { role: "style" } ],
-                    <?php 
-                        $SQL = "SELECT dp_distrito.Nombre, dp_distrito.color, COUNT(*) AS Total FROM dp_cliente INNER JOIN dp_distrito ON dp_cliente.IdDistrito=dp_distrito.idDistrito GROUP BY dp_cliente.IdDistrito HAVING COUNT(*) >0";
-                        $consultita = mysqli_query($db,$SQL);
-                        while($resultado1 = mysqli_fetch_assoc($consultita)){
-                            echo "['" .$resultado1['Nombre']."', " .$resultado1['Total'].", '" .$resultado1['color']."' ],";
-                        }
-                    ?>    
-                    ]);
-
-                    var view = new google.visualization.DataView(data);
-                    view.setColumns([0, 1,
-                                    { calc: "stringify",
-                                        sourceColumn: 1,
-                                        type: "string",
-                                        role: "annotation" },
-                                    2]);
-
-                    var options = {
-                        title: "Distritos Por Cliente",
-                        titleTextStyle: {
-                                        color: '#25396f',
-                                        fontSize: 20,
-                                        bold: true
-                                        },
-                        width: 600,
-                        height: 400,
-                        bar: {groupWidth: "80%"},
-                        legend: { position: "none" },
-                    };
-                    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-                    chart.draw(view, options);
-                }
-                </script>
-                <div id="columnchart_values"></div>
-            </div>
-
-            <div class="GraficaBarras2">
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                    ['Especie', 'Cantidad'],
-                    <?php 
-                        $SQL2 = "SELECT dp_especie.nombreEspe, COUNT(*) AS Total FROM dp_mascota INNER JOIN dp_especie ON dp_mascota.idEspecie=dp_especie.idEspecie GROUP BY dp_especie.nombreEspe HAVING COUNT(*) >0";
-                        $consultita2 = mysqli_query($db,$SQL2);
-                        while($resultado2 = mysqli_fetch_assoc($consultita2)){
-                            echo "['" .$resultado2['nombreEspe']."', " .$resultado2['Total']."],";
-                        }
-                    ?>    
-                    ]);
-
-                    var options = {
-                    title: 'Cantidad de especies',
-                    is3D: true,
-                    pieHole:0.01964436917866215,
-                    fontSize:15,
-                    width: 600,
-                    height: 400,
-                    titleTextStyle: {
-                                    color: '#25396f',
-                                    fontSize: 20,
-                                    bold: true
-                                    },
-                    };
-
-                    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-                    chart.draw(data, options);
-                }
-                </script>
-                <div id="piechart_3d"></div>
-            </div>
-
-            <div class="GraficaBarras3">
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                    ['Género', 'Cantidad'],
-                    <?php 
-                        $SQL3 = "SELECT dp_mascota.SexoMasc, COUNT(*) AS Total FROM dp_mascota INNER JOIN dp_especie ON dp_mascota.idEspecie=dp_especie.idEspecie GROUP BY dp_mascota.SexoMasc HAVING COUNT(*) >0";
-                        $consultita3 = mysqli_query($db,$SQL3);
-                        while($resultado3 = mysqli_fetch_assoc($consultita3)){
-                            echo "['" .$resultado3['SexoMasc']."', " .$resultado3['Total']."],";
-                        }
-                    ?>    
-                    ]);
-
-                    var options = {
-                    title: 'Género de mascota',
-                    is3D: true,
-                    pieHole:0.01964436917866215,
-                    fontSize:15,
-                    width: 600,
-                    height: 400,
-                    colors:["#4dc152","#4832d1","#e0921d","#c8d626","#dd35dd"],
-                    titleTextStyle: {
-                                    color: '#25396f',
-                                    fontSize: 20,
-                                    bold: true
-                                    },
-                    };
-
-                    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d2'));
-                    chart.draw(data, options);
-                }
-                </script>
-                <div id="piechart_3d2"></div>
-            </div>
-
-            <div class="GraficaBarras4">
-                <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
-                function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ["Cargo", "Cantidad", { role: "style" } ],
-                    <?php 
-                        $SQL4 = "SELECT dp_distrito.color, CargoPers, COUNT(*) AS Total FROM dp_personal INNER JOIN dp_distrito ON dp_personal.IdDistrito=dp_distrito.idDistrito GROUP BY CargoPers HAVING COUNT(*) >0";
-                        $consultita4 = mysqli_query($db,$SQL4);
-                        while($resultado4 = mysqli_fetch_assoc($consultita4)){
-                            echo "['" .$resultado4['CargoPers']."', " .$resultado4['Total'].", '" .$resultado4['color']."' ],";
-                        }
-                    ?> 
-                ]);
-
-                var view = new google.visualization.DataView(data);
-                view.setColumns([0, 1,
-                                { calc: "stringify",
-                                    sourceColumn: 1,
-                                    type: "string",
-                                    role: "annotation" },
-                                2]);
-
-                var options = {
-                    title: "Cargos de Personal",
-                    width: 600,
-                    height: 400,
-                    bar: {groupWidth: "80%"},
-                    legend: { position: "none" },
-                    titleTextStyle: {
-                                    color: '#25396f',
-                                    fontSize: 20,
-                                    bold: true
-                                    },
-                    
-                };
-                var chart = new google.visualization.BarChart(document.getElementById("barchart_values2"));
-                chart.draw(view, options);
-                }
-                </script>
-                <div id="barchart_values2"></div>
-            </div>
-
-            <div class="GraficaBarras5">
-                <script type="text/javascript">
-                    google.charts.load("current", {packages:["corechart"]});
-                    google.charts.setOnLoadCallback(drawChart);
-                    function drawChart() {
-                    var data = google.visualization.arrayToDataTable([
-                        ['Especialidad', 'Cantidad', { role: "style" } ],
-                        <?php 
-                        $SQL5 = "SELECT color, especialidad, COUNT(*) AS Total FROM dp_veterinarios INNER JOIN dp_distrito ON dp_veterinarios.idHorario=dp_distrito.idDistrito GROUP BY especialidad HAVING COUNT(*) >0";
-                        $consultita5 = mysqli_query($db,$SQL5);
-                        while($resultado5 = mysqli_fetch_assoc($consultita5)){
-                            echo "['" .$resultado5['especialidad']."', " .$resultado5['Total'].", '" .$resultado5['color']."' ],";
-                        }
-                        ?>
-                    ]);
-
-                    var view = new google.visualization.DataView(data);
-                    view.setColumns([0, 1,
-                                    { calc: "stringify",
-                                        sourceColumn: 1,
-                                        type: "string",
-                                        role: "annotation" },
-                                    2]);
-
-                    var options = {
-                        title: "Especialidad de Veterinarios",
-                        width: 600,
-                        height: 400,
-                        bar: {groupWidth: "80%"},
-                        legend: { position: "none" },
-                        titleTextStyle: {
-                                    color: '#25396f',
-                                    fontSize: 20,
-                                    bold: true
-                                    },         
-                        
-                    };
-                    var chart = new google.visualization.BarChart(document.getElementById("barchart_values3"));
-                    chart.draw(view, options);
-                    }
-                    </script>
-                    <div id="barchart_values3"></div>
-            </div>
-
-
+                        </div>
                         <div class="row">
                             <div class="col-12 col-xl-4">
                                 <div class="card">
@@ -489,7 +277,6 @@ require ('../includes/config/database.php');
                     </div>
                 </section>
             </div>
-
 
 <?php 
 include('footer-lateral.php');

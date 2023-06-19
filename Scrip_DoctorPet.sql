@@ -272,6 +272,26 @@ CREATE TABLE alimento (
   `stock` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+drop table if exists accesorio;
+CREATE TABLE accesorio (
+  `idAccesorio` int NOT NULL PRIMARY KEY auto_increment,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+drop table if exists medicamento;
+CREATE TABLE medicamento (
+  `idMedicamento` int NOT NULL PRIMARY KEY auto_increment,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `imagen` varchar(250) DEFAULT NULL,
+  `precio` decimal(10,2) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 drop table if exists comidap;
 CREATE TABLE comidap (
   `idComidap` int NOT NULL PRIMARY KEY auto_increment,
