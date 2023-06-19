@@ -16,20 +16,22 @@ Motivo varchar(200) not null
 drop table if exists DP_Distrito;
 Create table DP_Distrito( 
 idDistrito int primary key auto_increment not null, 
-Nombre varchar(100) 
+Nombre varchar(100),
+color varchar(10)
 ); 
-INSERT INTO DP_Distrito (idDistrito, Nombre) VALUES
-(1, 'Chorrillos'),
-(2, 'Pachacamac'),
-(3, 'Pucusana'),
-(4, 'San Juan de Miraflores'),
-(5, 'San Bartolo'),
-(6, 'Punta Hermosa'),
-(7, 'Punta Negra'),
-(8, 'Lurín'),
-(9, 'Santa María del Mar'),
-(10, 'Villa El Salvador'),
-(11, 'Villa María del Triunfo');
+
+INSERT INTO DP_Distrito (idDistrito, Nombre, color) VALUES
+(1, 'Chorrillos', '#E74C3C'),
+(2, 'Pachacamac', '#8E44AD'),
+(3, 'Pucusana', '#3498DB'),
+(4, 'San Juan de Miraflores', '#16A085'),
+(5, 'San Bartolo', '#2ECC71'),
+(6, 'Punta Hermosa', '#F39C12'),
+(7, 'Punta Negra', '#D35400'),
+(8, 'Lurín', '#BDC3C7'),
+(9, 'Santa María del Mar', '#7F8C8D'),
+(10, 'Villa El Salvador', '#2C3E50'),
+(11, 'Villa María del Triunfo', '#148F77');
 
 drop table if exists DP_Categoria_Producto;
 Create table DP_Categoria_Producto(
