@@ -8,17 +8,14 @@
 require 'Config/conexion_bd.php';
 $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 $con = fnConnect($msg);
-$sql = "select cp.idConsultaPer,vet.nombreVet, vet.apellidoVet, cp.motivo, cp.fechaAtencion, hor.hora from dp_consultapersonalizada cp inner join dp_veterinarios vet on cp.idConsultaPer=vet.idVeterinario  inner join dp_hora hor on cp.idConsultaPer=hor.idHora where idCliente = '$idCliente'";
+$sql = "select cp.idConsultaPer,mas.NomMasc,vet.nombreVet, vet.apellidoVet, vet.especialidad,cp.motivo, cp.fechaAtencion,cp.monto, Case cp.estadoPago WHEN 0 THEN 'Pendiente de Validar' WHEN 1 THEN 'Pago pendiente' WHEN 2 THEN 'Pago atrasado' END AS EstadoPagoTexto, Case cp.estadoAtencion WHEN 0 THEN 'Pendiente' WHEN 1 THEN 'En curso' WHEN 2 THEN 'Atendido' END AS EstadoAtencionTexto, hor.hora from dp_consultapersonalizada cp inner join dp_veterinarios vet on cp.idConsultaPer=vet.idVeterinario inner join dp_mascota mas on mas.idMascota=cp.idConsultaPer inner join dp_hora hor on cp.idConsultaPer=hor.idHora where cp.idCliente = '$idCliente';";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 ?>
-
 <div class="cuerpo-tabla">
-
-
     <main class="table">
         <section class="table__header">
-            <h1>MIS RESERVAS</h1>
+            <h1>Mis Reservas</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
@@ -40,11 +37,16 @@ $numeracion=0; //contador de registros
                 <thead>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Nombre Mascota<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nombre Veterinario <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Apellido Veterinario <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Especialidad<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Razón Principal <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Fecha Registrada <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Hora de Atencion <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Monto<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Estado de Pago<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Estado de Atención<span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,12 +57,16 @@ $numeracion=0; //contador de registros
                 ?>    
                     <tr>
                         <td><?php echo $row['idConsultaPer']; ?></td>
+                        <td><?php echo $row['NomMasc']; ?> </td>
                         <td><?php echo $row['nombreVet']; ?> </td>
                         <td> <?php echo $row['apellidoVet']; ?> años</td>
+                        <td> <?php echo $row['especialidad']; ?></td>
                         <td> <?php echo $row['motivo']; ?> </td>
                         <td> <?php echo $row['fechaAtencion']; ?> </td>
                         <td class="status cancelled"> <?php echo $row['hora']; ?> </td>
-                        <td class="status pending">PENDIENTE</td>
+                        <td> S/. <?php echo $row['monto']; ?> </td>
+                        <td class="status pending"><a href="pago.php?idConsultaPer=<?php echo $row['idConsultaPer']; ?>"><?php echo $row['EstadoPagoTexto']; ?></a></td>
+                        <td class="status pending"><?php echo $row['EstadoAtencionTexto']; ?></td>
                     </tr>
                     <?php
                         }

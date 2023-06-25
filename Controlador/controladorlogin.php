@@ -43,6 +43,7 @@ if (isset($_POST['txtEmail']) && isset($_POST['txtPassword'])) {
 				$_SESSION["idCliente"] = $file[0];
 				$_SESSION["nombre"] = $file[1];
 				$_SESSION["apellidos"] = $file[2];
+				$_SESSION["Telefono"] = $file[7];
 				echo"<script>alert('BIENVENIDO: ".$user." ')</script>";
 				?>
 				<?php
