@@ -1,10 +1,10 @@
 <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>Perseo &copy; Cardenas</p>
+                        <p>Doctor &copy; Pet</p>
                     </div>
                     <div class="float-end">
-                        <p>Perseo <span class="text-danger"><i class="bi bi-heart"></i></span> Cardenas <!-- <a href="http://ahmadsaugi.com">A. Saugi</a> --></p>
+                        <p>Doctor <span class="text-danger"><i class="bi bi-heart"></i></span> Pet <!-- <a href="http://ahmadsaugi.com">A. Saugi</a> --></p>
                     </div>
                 </div>
             </footer>

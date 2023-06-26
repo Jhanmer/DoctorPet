@@ -131,6 +131,9 @@ include "../Config/conexion.php";
                                 <li class="submenu-item ">
                                     <a href="TConsultas.php">Consultas</a>
                                 </li>
+                                <li class="submenu-item ">
+                                    <a href="TReservarCitas.php">Reservas de Citas</a>
+                                </li>
                             </ul>
                         </li>
                         
