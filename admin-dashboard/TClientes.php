@@ -1,9 +1,9 @@
 <?php
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select t.idCliente, t.nombre, t.apellidos, t.Fecha_nacimiento,t.Genero,
-    t.direccion, t.IdDistrito, t.Telefono, t.Email, t.Password, t.cargo, t.Fecha_registro
-    from DP_Cliente t;";
+$sql = "select t.idCliente, t.nombre, t.apellidos, t.Fecha_nacimiento, CASE t.Genero WHEN 1 then 'Hombre' when 2 then 'Mujer' end as genero,
+t.direccion, dis.Nombre, t.Telefono, t.Email, t.Password, t.cargo, t.Fecha_registro
+from DP_Cliente t inner join dp_distrito dis on  dis.idDistrito=t.idCliente;";
 $lista= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -107,10 +107,9 @@ $mensaje=null;
                                                     <th>DISTRITO</th> 
                                                     <th>TELEFONO</th>
                                                     <th>EMAIL</th>
-                                                    <th>CONTRASEÑA</th>
+                                                    <th hidden>CONTRASEÑA</th>
                                                     <th>CARGO</th>
                                                     <th>FECHA DE REGISTRO</th>
-                                                    <th>ACCION</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -128,12 +127,12 @@ $mensaje=null;
                                                     <td ><?php echo $row['nombre']; ?></td>
                                                     <td ><?php echo $row['apellidos']; ?></td>
                                                     <td ><?php echo $row['Fecha_nacimiento']; ?></td>
-                                                    <td ><?php echo $row['Genero']; ?></td>
+                                                    <td ><?php echo $row['genero']; ?></td>
                                                     <td ><?php echo $row['direccion']; ?></td>
-                                                    <td ><?php echo $row['IdDistrito']; ?></td>
+                                                    <td ><?php echo $row['Nombre']; ?></td>
                                                     <td ><?php echo $row['Telefono']; ?></td>
                                                     <td ><?php echo $row['Email']; ?></td>
-                                                    <td ><?php echo $row['Password']; ?></td>
+                                                    <td hidden><?php echo $row['Password']; ?></td>
                                                     <td ><?php echo $row['cargo']; ?></td>
                                                     <td ><?php echo $row['Fecha_registro']; ?></td>
                                                 </tr>

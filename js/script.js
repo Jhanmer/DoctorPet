@@ -57,8 +57,8 @@ const customers_table = document.querySelector('#customers_table');
 
 const toPDF = function (customers_table) {
     const html_code = `
-    <link rel="stylesheet" href="style.css">
-    <main class="table" >${customers_table.innerHTML}</main>
+    <link rel="stylesheet" href="CSS/style-tabla.css">
+    <main class="table">${customers_table.innerHTML}</main>
     `;
 
     const new_window = window.open();
