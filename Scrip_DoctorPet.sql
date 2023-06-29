@@ -244,6 +244,14 @@ foreign key (idHora) references dp_Hora(idHora),
 foreign key (idVeterinario) references dp_Veterinarios(idVeterinario)
 );
 
+drop table if exists Comentarios;
+CREATE TABLE Comentarios (
+idComentario int NOT NULL PRIMARY KEY auto_increment,
+nombre varchar(255) not null,
+comentario varchar(255) not null
+);
+
+
 
 
 
