@@ -170,6 +170,9 @@ include "Config/conexion.php";
                                 <a href='ListaReseva.php'>Lista de Reservas</a>
                                 </div>
                             </div>
+                            <div class='item'>
+                            <a href='comentario.php'>Comentarios</a>                                
+                            </div>
                             ";
                         }
                 ?>

@@ -128,6 +128,9 @@ include "Config/conexion.php";
                                 <a href='ListaReseva.php'>Lista de Reservas</a>
                                 </div>
                             </div>
+                            <div class='item'>
+                            <a href='comentario.php'>Comentarios</a>                                
+                            </div>
                             ";
                         }
                 ?>
@@ -256,67 +259,65 @@ include "Config/conexion.php";
     <!-- Comentario -->
     <section>
         
-        <form class="formulario">
-            <fieldset>
+        <form class="formulario" method="post"> 
+        <?php include 'Controlador/Ctrl_Comentario.php';?> 
+        <fieldset>
                 <legend>DEJANOS TU COMENTARIO!</legend>
 
                 <div class="contenedor-campos">
                     <div class="campo">
                         <label>Nombre</label>
-                        <input class="input-text" type="text" placeholder="Tu Nombre" readonly value="<?php echo $_SESSION['nombre']; ?>" required>
+                        <input class="input-text" type="text"  name="nombre" readonly value="<?php echo $_SESSION['nombre']; ?>" required>
                     </div> 
 
                     <div class="campo">
                         <label>Mensaje</label>
-                        <textarea class="input-text" placeholder="¿Que te parece nuestro servicio?"></textarea>
+                        <textarea class="input-text" name="comentario" placeholder="¿Que te parece nuestro servicio?"></textarea>
                     </div>
                 </div> <!-- .contenedor-campos --> 
                 <div class="alinear-derecha flex">
-                    <input class="btn btn-danger boton" type="submit" value="Agregar Comentario">
+                    <input class="btn btn-danger boton" type="submit" name="enviar" value="Registrar" id="enviar">
                 </div>
 
             </fieldset>
         </form>
     </section>
- 
-    <footer class="footer ">
-        <p class="copy">&copy;Todos los derechos reservados | DoctorPet <?php echo date('Y'); ?></p>
-        <div class="contenedor">
-            <div class="contenido-foot">
-                <div class="img-log foot-1">
-                    <a href="index.html"><img src="/estilos/img/DP-DoctorPet.png" alt="Logo"></a>
-                </div>
-                <div class="foot-1">
-                    <ul>
-                        <li class="title-foot">Datos de Contacto</li>
-                        <li><a href="#">Dirección</a></li>
-                        <li><a href="#">Teléfono</a></li>
-                        <li><a href="#">Email</a></li>
-                        <li><a href="contacto.php">Contactanos</a></li>
-                        <li><a href="nosotros.php">Nosotros</a></li>
-                    </ul>
-                </div>
-                <div class="foot-1">
-                    <ul>
-                        <li class="title-foot">Centro de Ayuda</li>
-                        <li><a href="#">Preguntas Frecuentes.</a></li>
-                        <li><a href="comentario.php">Comentarios</a></li>
-                        <li><a href="#">Términos y condiciones</a></li>
-                        <li><a href="#">Política De Privacidad</a></li>
-                    </ul>
-                </div>
-                <div class="foot-1">
-                    <ul>
-                        <li class="title-foot">Redes sociales</li>
-                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                
 
-    </footer>
+
+    <table class="table table-hover mb-0 table_id" id="tblProductos">
+            <thead>
+                <tr class="Lineas">
+                    <th colspan="7" class="colorCabecera"> COMENTARIOS </th>                   
+                </tr>
+                <tr>
+                    <td class="colorCabecera">NOMBRE</td>
+                    <td class="colorCabecera">COMENTARIO</td>
+                </tr>
+            </thead>    
+            <tbody>
+        <?php
+
+        $busc= mysqli_query($con, $sql);
+
+        if($busc -> num_rows >0){
+            while($row= mysqli_fetch_array($busc)){
+          
+        
+        ?> 
+        <tr>
+            <td ><?php echo $row['nombre']; ?></td>
+            <td ><?php echo $row['comentario']; ?></td>
+        </tr>
+            
+        <?php
+}
+}
+
+?>
+
+ 
+    
 </body>
 
 </html>
