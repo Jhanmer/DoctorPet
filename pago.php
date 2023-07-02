@@ -34,7 +34,7 @@ $tele = isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : "";
                     <span>App | Monto</span>
                     <div class="expiration">
                         <span class="exp-month">App</span>
-                        <span class="exp-year">Monto</span>
+                        <span class="exp-year">S/. 55.00</span>
                     </div>
                 </div>
             </div>
@@ -51,24 +51,25 @@ $tele = isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : "";
 
     </div>
 
-    <form action="">
+    <form action="/Controlador/RegistrarPago.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>" >
+        <input type="hidden" name="idConsultaPer" value="<?php echo $idConsultaPer;?>" >
         <div class="contador">
             <span id="minutos">02</span>:<span id="segundos">00</span>
             <h1 class="yape">Destino: <strong>944028451</strong> - Doctor Pet</h1>
         </div>
         <div class="inputBox">
             <span>Celular de Origen</span>
-            <input type="text" maxlength="9" value="<?php echo $tele; ?>" readonly>
+            <input type="text" maxlength="9" name="txtcelular" value="<?php echo $tele; ?>" readonly>
         </div>
         <div class="inputBox">
             <span>Celular Alternativo de Origen para realizar el pago</span>
-            <input type="text" maxlength="9" class="card-number-input">
+            <input type="text" maxlength="9" class="card-number-input" name="txtcelularAl">
         </div>
         <div class="flexbox">
             <div class="inputBox">
                 <span>Ingrese su DNI:</span>
-                <input type="text" class="card-holder-input" id="documento" required=""/>             
+                <input type="text" class="card-holder-input" id="documento" name="txtdni" required=""/>             
             </div>
             <div class="inputBox">
                 
@@ -80,6 +81,14 @@ $tele = isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : "";
             </div>
         </div>
         <div class="flexbox">
+            <div class="inputBox">
+                <span>Ingrese evidencia:</span>
+                <input type="file" class="card-holder-input" required="" name="txtevidencia"/>             
+            </div>
+            <div class="inputBox">
+            </div>
+        </div>
+        <div hidden class="flexbox">
                 <div class="inputBox">
                     <input type="text" class="card-holder-name" id="apellidoP" disabled>
                 </div>
@@ -93,18 +102,15 @@ $tele = isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : "";
         <div class="flexbox">
             <div class="inputBox">
                 <span>Cartera de App</span>
-                <select name="" id="" class="month-input" required="">
+                <select name="txtaplicacion" id="" class="month-input" required="">
                     <option value="month" selected disabled>Cartera</option>
                     <option value="Yape">Yape</option>
                     <option value="Plin">Plin</option>
                 </select>
             </div>
             <div class="inputBox">
-                <span>Seleccione Monto</span>
-                <select name="" id="" class="year-input" required="">
-                    <option value="year" selected disabled>Monto</option>
-                    <option value="S/. 55.00">S/. 55.00</option>
-                </select>
+                <span>Monto</span>
+                <input type="text" class="card-holder-name" id="" name="txtmonto" value="55.00" readonly> 
             </div>
         </div>
         <input type="submit" value="Validar" class="submit-btn">

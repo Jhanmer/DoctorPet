@@ -36,6 +36,21 @@ class cUsuario
 
 		return  $Result;
 	}
+	function RegistrarPago($Data)
+	{
+
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="call SP_RegistrarPagoReserva('".$Data[0]."','".$Data[1]."','".$Data[2]."','".$Data[3]."','".$Data[4]."','".$Data[5]."','".$Data[6]."','".$Data[7]."');";
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
 	function Login($user,$pass)
 	{
 		require_once('../Config/conexion.php');

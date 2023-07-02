@@ -251,6 +251,21 @@ nombre varchar(255) not null,
 comentario varchar(255) not null
 );
 
+drop table if exists dp_PagoConsultaPersonalizada;
+CREATE TABLE dp_PagoConsultaPersonalizada (
+idPagoConsultaPer int NOT NULL PRIMARY KEY auto_increment,
+idCliente int not null,
+idConsultaPer int not null,
+celular varchar(25) not null,
+celularAl varchar(25) not null,
+dni char(8) not null,
+evidenciaPago longblob NOT NULL,
+cartera varchar(25) not null,
+monto float not null,
+Fecha_registro Datetime not null default CURRENT_TIMESTAMP,
+foreign key (idCliente) references DP_Cliente(idCliente),
+foreign key (idConsultaPer) references dp_ConsultaPersonalizada(idConsultaPer)
+);
 
 
 
@@ -391,7 +406,27 @@ drop procedure if exists SP_InsertarReserva;
 	values(idVeterinario,idCliente,motivo,fechaAtencion,idMascota,idHoraP);
    update dp_Hora set estado = 0 where idHora=idHoraP;
 	end $$
-	delimiter ;		
+	delimiter ;
+
+drop procedure if exists SP_RegistrarPagoReserva;
+	delimiter $$
+	create procedure SP_RegistrarPagoReserva
+	(in 
+	idCliente int,
+	idConsultaPerS int,
+	celular varchar(25),
+	celularAl varchar(25),
+	dni char(8),
+	evidenciaPago  longblob,
+	cartera  varchar(25),
+	montoP float
+	)
+	begin
+	insert into dp_PagoConsultaPersonalizada(idCliente,idConsultaPer,celular,celularAl,dni,evidenciaPago,cartera,monto) 
+	values(idCliente,idConsultaPerS,celular,celularAl,dni,evidenciaPago,cartera,montoP);
+   	update dp_ConsultaPersonalizada set estadoPago = 1, monto = monto - montoP where idConsultaPer=idConsultaPerS;
+	end $$
+	delimiter ;				
 
 drop procedure if exists SP_Login;
 DELIMITER $$

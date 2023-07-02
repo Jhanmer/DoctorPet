@@ -1,6 +1,7 @@
 <?php
 require_once('mascota.php');
 require_once('Config/seguridad.php');
+$nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] : "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +89,7 @@ require_once('Config/seguridad.php');
                         <div class='pets-spayed-neutered'>
                             <div class='pets-birthday'>
                                 <label for='pets-birthday'>Correo</label>
-                                <input id='pets-breed' name="coreo_dueño" placeholder="Correo del dueño" type='text'  required="">
+                                <input id='pets-breed' name="coreo_dueño" value="<?php echo $nombreUsuario  ?>" placeholder="Correo del dueño" type='text'  required="" readonly>
                             </div>
                         </div>
                     </div>
