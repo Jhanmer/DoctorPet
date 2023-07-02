@@ -2,16 +2,14 @@
 require ('includes/funciones.php');
 incluirTemplate('header');
 ?>
-
-
 <html>
-    <head>
+    <head>       
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="Imagenes/LOGO.jpg">
         <title>Doctor Pet - Animales Perdidos</title>
         <link href="CSS/EstiloRegistro_Perdidos.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-        
+
     </head>
     <body>
         <main>
@@ -48,14 +46,13 @@ incluirTemplate('header');
                   </div>
                 </form>
                 <div class="boton-outline-info">
-                      <a href="index.php">Regresar página</a>
+                      <a href="AnimalesPerdidos.php">Regresar página</a>
                 </div>
             </div>  
         </main>
     </body>
     <?php 
-    include './includes/templates/footer.php';
-
 ?>
 </html>
+
 
