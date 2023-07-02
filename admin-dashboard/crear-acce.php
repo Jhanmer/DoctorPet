@@ -1,5 +1,6 @@
 <?php
-include('barra-lateral.php');
+//incluimos el encabezado donde estan sus funciones
+include('b-accesorio.php');
 
 ?>
 <div id="main">
@@ -14,12 +15,12 @@ include('barra-lateral.php');
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Registrar Accesorio</h3>
-                    
+
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            
+
                         </ol>
                     </nav>
                 </div>
@@ -28,10 +29,10 @@ include('barra-lateral.php');
 
         <!-- Basic Horizontal form layout section start -->
         <section id="basic-horizontal-layouts">
-           
-                
-                   
-            
+
+
+
+
         </section>
         <!-- // Basic Horizontal form layout section end -->
 
@@ -44,42 +45,49 @@ include('barra-lateral.php');
                         </div>
                         <div class="card-content">
                             <div class="card-body">
-                                <form class="form form-vertical">
+                                <?php foreach ($errores as $error) : ?>
+                                    <div class="alert alert-danger alert-dismissible show fade">
+                                        <?php echo $error; ?>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                <?php endforeach ?>
+                                <!-- Formulario -->
+                                <form class="form form-vertical" method="POST" action="/admin-dashboard/crear-acce.php" enctype="multipart/form-data">
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="nombre">Nombre</label>
-                                                    <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre">
+                                                    <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $nombre; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="precio">Precio</label>
-                                                    <input type="number" id="precio" class="form-control" name="precio" placeholder="S/0.00" min="0">
+                                                    <input type="number" id="precio" class="form-control" name="precio" placeholder="S/0.00" min="0" value="<?php echo $precio; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="imagen" >Imagen</label>
-                                                    <input type="file" id="imagen" class="form-control" name="imagen">
+                                                    <label for="imagen">Imagen</label>
+                                                    <input type="file" id="imagen" class="form-control" name="imagen" accept="image/jpeg, image/jpg, image/png" >
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="descripcion">Descripción</label>
-                                                    <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Agrega una descripción" class="form-control"></textarea>
+                                                    <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Agrega una descripción" class="form-control"><?php echo $descripcion; ?></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label for="stock">Stock</label>
-                                                    <input type="number" id="stock" class="form-control" name="stock" min="0">
+                                                    <input type="number" id="stock" class="form-control" name="stock" min="0" value="<?php echo $stock; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex justify-content-end">
-                                                <button type="submit"  class="btn btn-outline-warning btn-lg btn-block">Agregar</button>
-                                                
+                                                <input type="submit" class="btn btn-outline-warning btn-lg btn-block" value="Registrar Accesorio"></input>
+
                                             </div>
                                         </div>
                                     </div>
@@ -91,22 +99,36 @@ include('barra-lateral.php');
                 <div class="col-md-6 col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"></h4>
+                            <h4 class="card-title">Nuestras Marcas:</h4>
                         </div>
-                        
+                        <div class="card-header">
+                            <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> RICO CAN </h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> THOR</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> CANBO</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> PROPLAN</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-dog" style="color: blue;"></i> PEDIGREE</h4>
+                        </div>
+
+                        <div class="card-header">
+                            <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> RICO CAT </h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> CAT CHOW</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> PURINA</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> EQUILIBRIO</h4>
+                            <h4 class="card-title"><i class="fa-solid fa-shield-cat" style="color: yellowgreen;"></i> ROYAL CANIN</h4>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <?php
-include('footer-lateral.php');
-?>
+            include('footer-lateral.php');
+            ?>
         </section>
         <!-- // Basic Vertical form layout section end -->
 
 
-        
+
         <!-- // Basic multiple Column Form section end -->
     </div>
 
 </div>
-

@@ -133,7 +133,7 @@ include ('barra-lateral.php');
                     </div>
                 </section>
                 <!-- Hoverable rows end -->
-
+                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="../Ranimales_perdidos.php" target="blank"><b>Registrar Mascota Perdida</b></a> </button> 
 
             </div>
 

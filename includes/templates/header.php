@@ -10,7 +10,7 @@ $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] 
 $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 $nombreUser = isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "";
 $apeUser = isset($_SESSION["apellidos"]) ? $_SESSION["apellidos"] : "";
-
+$tele = isset($_SESSION["Telefono"]) ? $_SESSION["Telefono"] : "";
 include "Config/conexion.php";
 ?>
 <!DOCTYPE html>
@@ -73,6 +73,9 @@ include "Config/conexion.php";
     <link href="CSS/tabla.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="css/style-tabla.css">
+
+    <link rel="stylesheet" href="CSS/style-pago.css">
+
     <style>
         .item:hover .submenu {
             display: block;
@@ -134,7 +137,7 @@ include "Config/conexion.php";
                 <div class="item">
                     <a>Productos</a>
                     <div class="submenu">
-                    <a href="CVestimenta.php">Vestimentas</a>
+                    <a hidden href="CVestimenta.php">Vestimentas</a>
                     <a href="CMedicamentos.php">Medicamentos</a>
                     <a href="CAlimentos.php">Alimentos</a>
                     <a href="CAccesorios.php">Accesorios</a>
@@ -163,7 +166,8 @@ include "Config/conexion.php";
                             <a>Citas</a>
                                 <div class='submenu'>
                                 <a hidden href='ConsultaPersonalizada.php'>Cita Personal - No</a>
-                                <a href='CReservarCita.php'>Lista de Veterinarios</a>
+                                <a href='CReservarCita.php'>Reservar Cita</a>
+                                <a href='ListaReseva.php'>Lista de Reservas</a>
                                 </div>
                             </div>
                             ";

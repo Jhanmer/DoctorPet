@@ -31,8 +31,7 @@
                     <ul>
                         <li class="title-foot">Centro de Ayuda</li>
                         <li><a href="#">Preguntas Frecuentes.</a></li>
-                        <li><a href="#">Ubicación</a></li>
-                        <li><a href="#">Contactanos</a></li>
+                        <li><a href="comentario.php">Comentarios</a></li>
                         <li><a href="#">Términos y condiciones</a></li>
                         <li><a href="#">Política De Privacidad</a></li>
                     </ul>

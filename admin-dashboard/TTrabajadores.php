@@ -69,7 +69,8 @@ include ('barra-lateral.php');
 
 
                 <div class="container-fluid">
-                    <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador"><br>
+                    <input class="form-control me-2 light-table-filter" data-table="table_id" placeholder="Buscar Trabajador">
+                    <br>
                 </div>
 
 
@@ -132,7 +133,7 @@ include ('barra-lateral.php');
                     </div>
                 </section>
                 <!-- Hoverable rows end -->
-
+                <button class="btn btn-outline-info" type="submit" name="enviar"> <a href="../RTrabajadores.php" target="blank"><b>Registrar Trabajador</b></a> </button> 
 
             </div>
 
