@@ -101,7 +101,7 @@ body{
     background-color: transparent;
     font-size: 30px;
     color: #ffffff;
-		background: #03549a;
+		background: #4d0f77;
 		border-radius: 100%;
 		width: 40px;
 		height: 40px;
@@ -117,6 +117,18 @@ body{
     text-align: justify;
     margin: 20px 0;
     line-height: 25px;
+}
+.buton{
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0f72e5;
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
 }
 .modala{
     display: block;
@@ -138,10 +150,12 @@ body{
     <main class="table">
         <div class="popup">
                 <button id="close">&times;</button>
-                <h2>Paga aquí</h2>
+                <h2>¿Ya registrastes a tu Mascota?</h2>
                 <p>
-                    Puedes Cancelar tu Reserva Aquí o acercandote a nuestras instalaciones.
+                    Puedes registrar su mascota Aquí!!.
+                    
                 </p>
+                <a class="buton" href="mascota.php">Registrar Mascota</a>
         </div>    
         <section class="table__header">
             <h1>Disponibilidad de Veterinarios</h1>

@@ -8,7 +8,7 @@
 require 'Config/conexion_bd.php';
 $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 $con = fnConnect($msg);
-$sql = "select cp.idConsultaPer,mas.NomMasc,vet.nombreVet, vet.apellidoVet, vet.especialidad,cp.motivo, cp.fechaAtencion,cp.monto, Case cp.estadoPago WHEN 0 THEN 'Pendiente de Validar' WHEN 1 THEN 'Pago pendiente' WHEN 2 THEN 'Pago atrasado' END AS EstadoPagoTexto, Case cp.estadoAtencion WHEN 0 THEN 'Pendiente' WHEN 1 THEN 'En curso' WHEN 2 THEN 'Atendido' END AS EstadoAtencionTexto, hor.hora from dp_consultapersonalizada cp inner join dp_veterinarios vet on cp.idConsultaPer=vet.idVeterinario inner join dp_mascota mas on mas.idMascota=cp.idConsultaPer inner join dp_hora hor on cp.idConsultaPer=hor.idHora where cp.idCliente = '$idCliente';";
+$sql = "select cp.idConsultaPer,mas.NomMasc,vet.nombreVet, vet.apellidoVet, vet.especialidad,cp.motivo, cp.fechaAtencion,cp.estadoPago,cp.monto, Case cp.estadoPago WHEN 0 THEN 'Pago pendiente' WHEN 1 THEN 'Pendiente de Validar' WHEN 2 THEN 'Pago atrasado' END AS EstadoPagoTexto, Case cp.estadoAtencion WHEN 0 THEN 'Pendiente' WHEN 1 THEN 'En curso' WHEN 2 THEN 'Atendido' END AS EstadoAtencionTexto, hor.hora from dp_consultapersonalizada cp inner join dp_veterinarios vet on cp.idConsultaPer=vet.idVeterinario inner join dp_mascota mas on mas.idMascota=cp.idConsultaPer inner join dp_hora hor on cp.idConsultaPer=hor.idHora where cp.idCliente = '$idCliente';";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 ?>
@@ -36,10 +36,10 @@ $numeracion=0; //contador de registros
             <table>
                 <thead>
                     <tr>
-                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th hidden> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Nombre Mascota<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Nombre Veterinario <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Apellido Veterinario <span class="icon-arrow">&UpArrow;</span></th>
+                        <th hidden> Apellido Veterinario <span class="icon-arrow">&UpArrow;</span></th>
                         <th>Especialidad<span class="icon-arrow">&UpArrow;</span></th>
                         <th> Razón Principal <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Fecha Registrada <span class="icon-arrow">&UpArrow;</span></th>
@@ -56,16 +56,25 @@ $numeracion=0; //contador de registros
                         while($row= mysqli_fetch_array($busc)){                                                  
                 ?>    
                     <tr>
-                        <td><?php echo $row['idConsultaPer']; ?></td>
-                        <td><?php echo $row['NomMasc']; ?> </td>
+                        <td hidden><?php echo $row['idConsultaPer']; ?></td>
+                        <td ><?php echo $row['NomMasc']; ?> </td>
                         <td><?php echo $row['nombreVet']; ?> </td>
-                        <td> <?php echo $row['apellidoVet']; ?> años</td>
+                        <td hidden> <?php echo $row['apellidoVet']; ?> años</td>
                         <td> <?php echo $row['especialidad']; ?></td>
                         <td> <?php echo $row['motivo']; ?> </td>
                         <td> <?php echo $row['fechaAtencion']; ?> </td>
                         <td class="status cancelled"> <?php echo $row['hora']; ?> </td>
                         <td> S/. <?php echo $row['monto']; ?> </td>
-                        <td class="status pending"><a href="pago.php?idConsultaPer=<?php echo $row['idConsultaPer']; ?>"><?php echo $row['EstadoPagoTexto']; ?></a></td>
+                        <td class="status pending">
+                            <?php 
+                            if($row['estadoPago'] == 0){
+                                echo '<a href="pago.php?idConsultaPer=' . $row['idConsultaPer'] . '">' . $row['EstadoPagoTexto'] . '</a>';    
+                            }else{
+                                echo $row['EstadoPagoTexto'];     
+                            }
+                            ?>
+                            
+                        </td>
                         <td class="status pending"><?php echo $row['EstadoAtencionTexto']; ?></td>
                     </tr>
                     <?php
