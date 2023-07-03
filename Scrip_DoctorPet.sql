@@ -10,7 +10,8 @@ nombreCli varchar(50) not null,
 TelefonoCons char(9) not null, 
 FechaCons date not null, 
 correoCli varchar(100) not null,
-Motivo varchar(200) not null
+Motivo varchar(200) not null,
+estadoAtencion int not null default 0
 ); 
 
 drop table if exists DP_Distrito;

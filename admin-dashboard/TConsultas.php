@@ -96,6 +96,7 @@ include ('barra-lateral.php');
                                                     <th class="colorCabecera">FECHA</th>
                                                     <th class="colorCabecera">CORREO</th>
                                                     <th class="colorCabecera">MOTIVO</th>
+                                                    <th>Estado de Atención</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -115,6 +116,27 @@ include ('barra-lateral.php');
                                                             <td><?php echo $row['FechaCons']; ?></td>
                                                             <td><?php echo $row['correoCli']; ?></td>
                                                             <td><?php echo $row['Motivo']; ?></td>
+                                                            <td>
+                                                                <select name="opciones" class="btn btn-primary btn-sm dropdown-toggle">
+                                                                    <?php
+                                                                    // Definir manualmente las opciones del select
+                                                                    $estados_pago = array(
+                                                                        array('id' => 0, 'texto' => 'Pendiente'),
+                                                                        array('id' => 1, 'texto' => 'En curso'),
+                                                                        array('id' => 2, 'texto' => 'Atendido')
+                                                                    );
+
+                                                                    // Generar las opciones del select
+                                                                    foreach ($estados_pago as $estado) {
+                                                                        $selected = ($row['EstadoPagoTexto'] == $estado['texto']) ? 'selected' : '';
+                                                                        echo '<option value="' . $estado['id'] . '" ' . $selected . '>' . $estado['texto'] . '</option>';
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-outline-warning">Actualizar</a>
+                                                            </td>
                                                         </tr>
                                                 <?php
                                                     }

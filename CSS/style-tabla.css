@@ -213,6 +213,30 @@ tbody tr.hide td img {
 .status.pending {
     background-color: #ebc474;
 }
+.status.pendingPago {
+    background-color: #f3df2c;
+    color: #1e008b;
+}
+.status.pendingPagoValid {
+    background-color: #e76021;
+    color: #000000;
+    animation: blink-animation 1.5s infinite;
+}
+
+
+
+@keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.status.Pago {
+    background-color: #00d86c;
+    color: #000000;
+}
+
+
 
 .status.shipped {
     background-color: #6fcaea;

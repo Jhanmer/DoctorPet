@@ -51,6 +51,32 @@ class cUsuario
 
 		return  $Result;
 	}
+	function ActualizarEstadoPago($idConsultaPer,$estadoPago){
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="UPDATE dp_consultapersonalizada set estadoPago='$estadoPago' WHERE idConsultaPer = '$idConsultaPer'";
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
+	function ActualizarEstadoAtencion($idConsultaPer,$estadoAte){
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="UPDATE dp_consultapersonalizada set estadoAtencion='$estadoAte' WHERE idConsultaPer = '$idConsultaPer'" ;
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
 	function Login($user,$pass)
 	{
 		require_once('../Config/conexion.php');
