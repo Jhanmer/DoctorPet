@@ -50,6 +50,7 @@ $numeracion=0; //contador de registros
                         <th> Sexo <span class="icon-arrow">&UpArrow;</span></th>
                         <th hidden> Cliente <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Peso <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Imagen Mascota <span class="icon-arrow">&UpArrow;</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,6 +68,11 @@ $numeracion=0; //contador de registros
                         <td> <?php echo $row['SexoMasc']; ?> </td>
                         <td hidden> <?php echo $row['idCliente']; ?> </td>
                         <td> <?php echo $row['peso']; ?> Kg Aproximadamente</td>
+                        <td> 
+                            <figure>
+                                <img width="250px" height="500px" src="data:image/jpg;base64,<?php echo base64_encode($row['imgMascota']); ?>"/>                                      
+                            </figure> 
+                        </td>
                     </tr>
                     <?php
                         }
