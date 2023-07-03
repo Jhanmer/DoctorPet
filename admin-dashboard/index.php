@@ -2,7 +2,8 @@
 include('barra-lateral.php');
 require('../includes/config/database.php');
 $db = conectarDB();
-
+$nombreUser = isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : "";
+$apeUser = isset($_SESSION["apellidos"]) ? $_SESSION["apellidos"] : "";
 ?>
 <!-- contenido -->
 <div id="main">
@@ -410,8 +411,8 @@ $db = conectarDB();
                                 <img src="assets/images/faces/1.jpg" alt="Face 1">
                             </div>
                             <div class="ms-3 name">
-                                <h5 class="font-bold">John Duck</h5>
-                                <h6 class="text-muted mb-0">@johnducky</h6>
+                                <h5 class="font-bold"><?php echo $nombreUser ?></h5>
+                                <h6 class="text-muted mb-0">@<?php echo $apeUser ?></h6>
                             </div>
                         </div>
                         <div class="mt-3">
