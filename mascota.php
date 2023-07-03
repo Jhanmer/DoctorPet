@@ -18,7 +18,7 @@ $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] 
 
     
     <!-- partial:index.partial.html -->
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
     <?php include 'Controlador/Ctrl_Registro_Mascota.php';?> 
         <div class='signup-container'>
             <div class='left-container'>
@@ -89,7 +89,7 @@ $nombreUsuario = isset($_SESSION["NombreUsuario"]) ? $_SESSION["NombreUsuario"] 
                         <div class='pets-spayed-neutered'>
                             <div class='pets-birthday'>
                                 <label for='pets-birthday'>Correo</label>
-                                <input id='pets-breed' name="coreo_dueño" value="<?php echo $nombreUsuario  ?>" placeholder="Correo del dueño" type='text'  required="" readonly>
+                                <input id='pets-breed' name="correo" value="<?php echo $nombreUsuario?>" placeholder="Correo del dueño" type='text'  required="" readonly>
                             </div>
                         </div>
                     </div>
