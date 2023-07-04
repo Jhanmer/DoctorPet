@@ -31,7 +31,7 @@ include "Config/conexion.php";
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-    
+    <link rel="stylesheet" href="/estilos/css/MostarComentario.css">
 
 
     <style>
@@ -285,18 +285,7 @@ include "Config/conexion.php";
                 
 
 
-    <table class="table table-hover mb-0 table_id" id="tblProductos">
-            <thead>
-                <tr class="Lineas">
-                    <th colspan="7" class="colorCabecera"> COMENTARIOS </th>                   
-                </tr>
-                <tr>
-                    <td class="colorCabecera">NOMBRE</td>
-                    <td class="colorCabecera">COMENTARIO</td>
-                </tr>
-            </thead>    
-            <tbody>
-        <?php
+       <?php
 
         $busc= mysqli_query($con, $sql);
 
@@ -304,17 +293,41 @@ include "Config/conexion.php";
             while($row= mysqli_fetch_array($busc)){
           
         
-        ?> 
-        <tr>
-            <td ><?php echo $row['nombre']; ?></td>
-            <td ><?php echo $row['comentario']; ?></td>
-        </tr>
-            
+        ?>            
+
+        <ul id="comments-list" class="comments-list">
+			<li>
+				<div class="comment-main-level">
+					<!-- Avatar -->
+					<div class="comment-avatar"><img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt=""></div>
+					<!-- Contenedor del Comentario -->
+					<div class="comment-box">
+						<div class="comment-head">
+							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $row['nombre']; ?></a></h6>
+							<span>hace 20 minutos</span>
+							<i class="fa fa-reply"></i>
+							<i class="fa fa-heart"></i>
+						</div>
+						<div class="comment-content">
+                        <?php echo $row['comentario']; ?>
+						</div>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+
+
+
+
         <?php
 }
 }
 
 ?>
+
+
+
 
  
     
