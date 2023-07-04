@@ -278,53 +278,48 @@ include "Config/conexion.php";
                 <div class="alinear-derecha flex">
                     <input class="btn btn-danger boton" type="submit" name="enviar" value="Registrar" id="enviar">
                 </div>
-
             </fieldset>
         </form>
-    </section>
-                
-
-
-       <?php
-
-        $busc= mysqli_query($con, $sql);
-
-        if($busc -> num_rows >0){
-            while($row= mysqli_fetch_array($busc)){
-          
-        
-        ?>            
-
-        <ul id="comments-list" class="comments-list">
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $row['nombre']; ?></a></h6>
-							<span>hace 20 minutos</span>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
-						</div>
-						<div class="comment-content">
-                        <?php echo $row['comentario']; ?>
-						</div>
-					</div>
-				</div>
-			</li>
-
-		</ul>
-
-
-
-
         <?php
+
+$busc= mysqli_query($con, $sql);
+
+if($busc -> num_rows >0){
+    while($row= mysqli_fetch_array($busc)){
+  
+
+?>            
+
+<ul id="comments-list" class="comments-list">
+    <li>
+        <div class="comment-main-level">
+            <!-- Avatar -->
+            <div class="comment-avatar"><img src="https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png" alt=""></div>
+            <!-- Contenedor del Comentario -->
+            <div class="comment-box">
+                <div class="comment-head">
+                    <h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $row['nombre']; ?></a></h6>
+                    <span>hace 1 minutos</span>
+                    <i class="fa fa-reply"></i>
+                    <i class="fa fa-heart"></i>
+                </div>
+                <div class="comment-content">
+                <?php echo $row['comentario']; ?>
+                </div>
+            </div>
+        </div>
+    </li>
+
+</ul>
+<?php
 }
 }
 
 ?>
+
+    </section>
+                
+
 
 
 
