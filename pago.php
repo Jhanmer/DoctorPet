@@ -2,9 +2,7 @@
 // Verificar si el parámetro "idConsultaPer" existe en la URL
 if (isset($_GET['idConsultaPer'])) {
     $idConsultaPer = $_GET['idConsultaPer'];
-
 ?>
-
     <?php
     require('includes/funciones.php');
     incluirTemplate('header');
@@ -15,16 +13,13 @@ if (isset($_GET['idConsultaPer'])) {
     ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <div class="containerpago">
-
         <div class="card-container">
-
             <div class="front">
                 <div class="image">
                     <img src="Imagenes/chip.png" alt="">
                     <img src="Imagenes/visa.png" alt="">
                 </div>
-
-                <div class="card-number-box">#########</div>
+                <div class="card-number-box">DOCTORPET</div>
                 <div class="flexbox">
                     <div class="box">
                         <span><?php echo $nombreUser; ?> <?php echo $apeUser; ?></span>
@@ -34,12 +29,11 @@ if (isset($_GET['idConsultaPer'])) {
                         <span>App | Monto</span>
                         <div class="expiration">
                             <span class="exp-month">App</span>
-                            <span class="exp-year">Monto</span>
+                            <span class="exp-year">S/. 55.00</span>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="back">
                 <div class="stripe"></div>
                 <div class="box">
@@ -51,24 +45,25 @@ if (isset($_GET['idConsultaPer'])) {
 
         </div>
 
-        <form action="">
+        <form action="/Controlador/RegistrarPago.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
+            <input type="hidden" name="idConsultaPer" value="<?php echo $idConsultaPer; ?>">
             <div class="contador">
                 <span id="minutos">02</span>:<span id="segundos">00</span>
                 <h1 class="yape">Destino: <strong>944028451</strong> - Doctor Pet</h1>
             </div>
             <div class="inputBox">
                 <span>Celular de Origen</span>
-                <input type="text" maxlength="9" value="<?php echo $tele; ?>" readonly>
+                <input type="text" maxlength="9" name="txtcelular" value="<?php echo $tele; ?>" readonly>
             </div>
             <div class="inputBox">
                 <span>Celular Alternativo de Origen para realizar el pago</span>
-                <input type="text" maxlength="9" class="card-number-input">
+                <input type="text" maxlength="9" class="card-number-input" name="txtcelularAl">
             </div>
             <div class="flexbox">
                 <div class="inputBox">
                     <span>Ingrese su DNI:</span>
-                    <input type="text" name="dni" id="dni" required>
+                    <input type="text" class="card-holder-input" id="documento" name="txtdni" required="" />
                 </div>
                 <div class="inputBox">
 
@@ -79,7 +74,7 @@ if (isset($_GET['idConsultaPer'])) {
                     </button>
                 </div>
             </div>
-            
+
             <div class="flexbox">
                 <div class="inputBox">
                     <input type="text" class="card-holder-name" id="apellidoP" disabled>
@@ -91,7 +86,7 @@ if (isset($_GET['idConsultaPer'])) {
                     <input type="text" class="card-holder-name" id="nombre" disabled>
                 </div>
             </div>
-            
+
             <div class="flexbox">
                 <div class="inputBox">
                     <span>Ingrese evidencia:</span>
@@ -100,55 +95,45 @@ if (isset($_GET['idConsultaPer'])) {
                 <div class="inputBox">
                 </div>
             </div>
+
             <div class="flexbox">
                 <div class="inputBox">
                     <span>Cartera de App</span>
-                    <select name="" id="" class="month-input" required="">
+                    <select name="txtaplicacion" id="" class="month-input" required="">
                         <option value="month" selected disabled>Cartera</option>
                         <option value="Yape">Yape</option>
                         <option value="Plin">Plin</option>
                     </select>
                 </div>
                 <div class="inputBox">
-                    <span>Seleccione Monto</span>
-                    <select name="" id="" class="year-input" required="">
-                        <option value="year" selected disabled>Monto</option>
-                        <option value="S/. 55.00">S/. 55.00</option>
-                    </select>
+                    <span>Monto</span>
+                    <input type="text" class="card-holder-name" id="" name="txtmonto" value="55.00" readonly>
                 </div>
             </div>
             <input type="submit" value="Validar" class="submit-btn">
         </form>
-
     </div>
-
     <script>
         document.querySelector('.card-number-input').oninput = () => {
             document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
         }
-
         document.querySelector('.card-holder-input').oninput = () => {
             document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
         }
-
         document.querySelector('.month-input').oninput = () => {
             document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
         }
-
         document.querySelector('.year-input').oninput = () => {
             document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
         }
-
         document.querySelector('.cvv-input').onmouseenter = () => {
             document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
             document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
         }
-
         document.querySelector('.cvv-input').onmouseleave = () => {
             document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
             document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
         }
-
         document.querySelector('.cvv-input').oninput = () => {
             document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
         }
@@ -157,7 +142,7 @@ if (isset($_GET['idConsultaPer'])) {
     <script>
         $(document).ready(function() {
             $('#buscar').click(function() {
-                var dni = $('#dni').val();
+                var dni = $('#documento').val();
                 if (dni !== '') {
                     // Construir la URL de la API con el número de DNI y el token
                     var url = "https://dniruc.apisperu.com/api/v1/dni/" + dni + "?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InhlaGFqNDAyNjVAZGV2c3dwLmNvbSJ9.BAZQ4rrkJbkcRX9rSSjR0zgeWdaozMLhLh3QfuWECFA";
@@ -198,24 +183,19 @@ if (isset($_GET['idConsultaPer'])) {
         // Obtener elementos del DOM
         var minutosElement = document.getElementById('minutos');
         var segundosElement = document.getElementById('segundos');
-
         // Configuración inicial del contador
         var tiempoTotal = 2 * 60; // 4 minutos en segundos
         var tiempoRestante = tiempoTotal;
-
         // Función para actualizar el contador
         function actualizarContador() {
             var minutos = Math.floor(tiempoRestante / 60);
             var segundos = tiempoRestante % 60;
-
             // Añadir un 0 al principio si los minutos o segundos son menores a 10
             minutos = minutos < 10 ? '0' + minutos : minutos;
             segundos = segundos < 10 ? '0' + segundos : segundos;
-
             // Actualizar los elementos del DOM con los nuevos valores
             minutosElement.textContent = minutos;
             segundosElement.textContent = segundos;
-
             // Detener el contador cuando llegue a cero
             if (tiempoRestante === 0) {
                 clearInterval(intervalo);
@@ -225,7 +205,6 @@ if (isset($_GET['idConsultaPer'])) {
                 tiempoRestante--; // Disminuir el tiempo restante en 1 segundo
             }
         }
-
         // Llamar a la función de actualización cada segundo
         var intervalo = setInterval(actualizarContador, 1000);
     </script>
@@ -235,10 +214,6 @@ if (isset($_GET['idConsultaPer'])) {
     // Realiza alguna acción de manejo de errores o redirecciona a otra página
 }
 ?>
-
-
-
 <?php
 include './includes/templates/footer.php';
-
 ?>
