@@ -6,10 +6,6 @@ incluirTemplate('header');
 
 <link rel="stylesheet" href="/estilos/css/MostarComentario.css">
 
-<!-- <link rel="stylesheet" href="/estilos/css/comentario.css">  -->
-
-<!--<link rel="stylesheet" href="/estilos/css/MostarComentario.css"> -->
-
 
 <!-- Comentario -->
 
@@ -18,7 +14,7 @@ incluirTemplate('header');
     <form class="minimalista-formulario" method="post">
         <?php include 'Controlador/Ctrl_Comentario.php'; ?>
         <fieldset>
-            <legend >DEJANOS TU COMENTARIO!</legend>
+            <legend>DEJANOS TU COMENTARIO!</legend>
 
             <div class="minimalista-contenedor-campos">
                 <div class="minimalista-campo">

@@ -87,7 +87,7 @@ incluirTemplate('header');
         </div>
         <div class="col-lg-5">
             <div class="row px-3">
-                
+
                 <div class="col-6 p-0">
                     <img class="img-fluid w-100" src="Imagenes/nosotros/about-2.jpg" alt="">
                 </div>
@@ -145,83 +145,90 @@ incluirTemplate('header');
 <!-- Features End -->
 
 
+
 <!-- Team Start -->
-<div class="container mt-5 pt-5 pb-3">
-    <div class="d-flex flex-column text-center mb-5">
-        <h4 class="text-secondary mb-3">Team Member</h4>
-        <h1 class="display-4 m-0">Meet Our <span class="text-primary">Team Member</span></h1>
+
+<div style="margin-top: 5rem; padding-top: 5rem; padding-bottom: 3rem;">
+    <div style="display: flex; flex-direction: column; text-align: center; margin-bottom: 5rem;">
+        <h4 style="color: #6c757d; margin-bottom: 1.5rem;">Team Member</h4>
+        <h1 style="font-size: 2.5rem; margin: 0;">Meet Our <span style="color: #007bff;">Team Member</span></h1>
     </div>
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <div class="team card position-relative overflow-hidden border-0 mb-4">
-                <img class="card-img-top" src="Imagenes/nosotros/admin.jpg" alt="">
-                <div class="card-body text-center p-0">
-                    <div class="team-text d-flex flex-column justify-content-center bg-light">
-                        <h5>admin</h5>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div style="width: 300px; margin-bottom: 1rem; margin-right: 1rem;">
+            <div style="position: relative; overflow: hidden; border: none; margin-bottom: 1rem;">
+                <img style="width: 100%; height: auto;" src="Imagenes/nosotros/admin.jpg" alt="">
+                <div style="padding: 0;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; background-color: #f8f9fa; padding: 1rem;">
+                        <h5 class="text-center">admin</h5>
                         <i>ADMINISTRADOR</i>
                     </div>
-                    <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <div style="display: flex; align-items: center; justify-content: center; background-color: #343a40;">
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-twitter" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-facebook-f" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-linkedin-in" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;"><i class="fab fa-instagram" style="color: #007bff;"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="team card position-relative overflow-hidden border-0 mb-4">
-                <img class="card-img-top" src="Imagenes/nosotros/veter.avif" alt="">
-                <div class="card-body text-center p-0">
-                    <div class="team-text d-flex flex-column justify-content-center bg-light">
-                        <h5>veterinario</h5>
+
+        <div style="width: 300px; margin-bottom: 1rem; margin-right: 1rem;">
+            <div style="position: relative; overflow: hidden; border: none; margin-bottom: 1rem;">
+                <img style="width: 100%; height: auto;" src="Imagenes/nosotros/veter.avif" alt="">
+                <div style="padding: 0;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; background-color: #f8f9fa; padding: 1rem;">
+                        <h5 class="text-center">veterinario</h5>
                         <i>VETERINARIO</i>
                     </div>
-                    <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <div style="display: flex; align-items: center; justify-content: center; background-color: #343a40;">
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-twitter" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-facebook-f" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-linkedin-in" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;"><i class="fab fa-instagram" style="color: #007bff;"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="team card position-relative overflow-hidden border-0 mb-4">
-                <img class="card-img-top" src="Imagenes/nosotros/estilsit.avif" alt="">
-                <div class="card-body text-center p-0">
-                    <div class="team-text d-flex flex-column justify-content-center bg-light">
-                        <h5>estilista</h5>
+
+        <div style="width: 300px; margin-bottom: 1rem; margin-right: 1rem;">
+            <div style="position: relative; overflow: hidden; border: none; margin-bottom: 1rem;">
+                <img style="width: 100%; height: auto;" src="Imagenes/nosotros/estilsit.avif" alt="">
+                <div style="padding: 0;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; background-color: #f8f9fa; padding: 1rem;">
+                        <h5 class="text-center">estilista</h5>
                         <i>ESTILISTA</i>
                     </div>
-                    <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <div style="display: flex; align-items: center; justify-content: center; background-color: #343a40;">
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-twitter" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-facebook-f" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-linkedin-in" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;"><i class="fab fa-instagram" style="color: #007bff;"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="team card position-relative overflow-hidden border-0 mb-4">
-                <img class="card-img-top" src="Imagenes/nosotros/cajero.jpg" alt="">
-                <div class="card-body text-center p-0">
-                    <div class="team-text d-flex flex-column justify-content-center bg-light">
-                        <h5>cajero</h5>
+
+        <div style="width: 300px; margin-bottom: 1rem;">
+            <div style="position: relative; overflow: hidden; border: none; margin-bottom: 1rem;">
+                <img style="width: 100%; height: auto;" src="Imagenes/nosotros/cajero.jpg" alt="">
+                <div style="padding: 0;">
+                    <div style="display: flex; flex-direction: column; justify-content: center; background-color: #f8f9fa; padding: 1rem;">
+                        <h5 class="text-center">cajero</h5>
                         <i>CAJERO</i>
                     </div>
-                    <div class="team-social d-flex align-items-center justify-content-center bg-dark">
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-primary rounded-circle text-center px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <div style="display: flex; align-items: center; justify-content: center; background-color: #343a40;">
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-twitter" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-facebook-f" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; margin-right: 0.5rem;"><i class="fab fa-linkedin-in" style="color: #007bff;"></i></a>
+                        <a href="#" style="border: 1px solid #007bff; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;"><i class="fab fa-instagram" style="color: #007bff;"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 <!-- Team End -->
 
 
