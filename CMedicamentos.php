@@ -1,24 +1,24 @@
-<?php 
-    
-    require ('includes/funciones.php');
-    require ('includes/config/database.php');
-    $db = conectarDB();
-    incluirTemplate('header');
+<?php
+
+require('includes/funciones.php');
+require('includes/config/database.php');
+$db = conectarDB();
+incluirTemplate('header');
 ?>
 
-        <div class="container">
-        <?php 
-        $limite = 100;
-        include 'parce-medicamento.php';
-        ?>
-            
-        </div>
+<div class="container">
+    <?php
+    $limite = 100;
+    include 'parce-medicamento.php';
+    ?>
 
-        
-       
+</div>
 
 
-    <?php 
-    include './includes/templates/footer.php';
+
+
+
+<?php
+include './includes/templates/footer.php';
 
 ?>
