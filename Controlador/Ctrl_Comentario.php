@@ -1,7 +1,7 @@
 <?php
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select c.nombre, c.comentario from comentarios c;";
+$sql = "select c.nombre, c.comentario, c.fechaC from comentarios c;";
 $error=null;
 $mensaje=null;
 

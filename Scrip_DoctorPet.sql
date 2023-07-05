@@ -250,7 +250,8 @@ CREATE TABLE Comentarios (
 idComentario int NOT NULL PRIMARY KEY auto_increment,
 nombre varchar(255) not null,
 apellidos VARCHAR(255) not null,
-comentario varchar(255) not null
+comentario varchar(255) not null,
+fechaC Datetime not null default CURRENT_TIMESTAMP
 );
 
 drop table if exists dp_PagoConsultaPersonalizada;
@@ -403,6 +404,10 @@ VALUES ('Carlos', 'Lopez', '1988-06-18', '1', 'Calle 789', '4', '932165478', 'ca
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
 VALUES ('Laura', 'Gonzalez', '1996-01-31', '1', 'Avenida 890', '7', '954362781', 'lauragonzalez@example.com', 'password20', 'Usuario', '2023-07-04 12:45:00');
+
+
+
+
 
 
 

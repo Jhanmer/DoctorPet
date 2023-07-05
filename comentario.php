@@ -50,7 +50,7 @@ incluirTemplate('header');
                             <div class="comment-box">
                                 <div class="comment-head">
                                     <h6 class="comment-name by-author"><a href="http://creaticode.com/blog"><?php echo $row['nombre']; ?></a></h6>
-                                    <span>hace 1 minutos</span>
+                                    <?php echo $row['fechaC']; ?>
                                     <i class="fa fa-reply"></i>
                                     <i class="fa fa-heart"></i>
                                 </div>
