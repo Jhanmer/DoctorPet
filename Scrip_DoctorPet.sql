@@ -249,6 +249,7 @@ drop table if exists Comentarios;
 CREATE TABLE Comentarios (
 idComentario int NOT NULL PRIMARY KEY auto_increment,
 nombre varchar(255) not null,
+apellidos VARCHAR(255) not null,
 comentario varchar(255) not null
 );
 
