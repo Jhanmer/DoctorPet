@@ -16,10 +16,14 @@ a {
     color: #03658c;
     text-decoration: none;
 }
+.listita-comment{
+   display: grid;
+   align-items: center;
+   justify-content: center;
+}
 
 ul {
    list-style-type: none;
-   padding-left: 55rem;;
 }
 
 body {
@@ -264,4 +268,14 @@ body {
    .reply-list .comment-box {
        width: 320px;
    }
+}
+@media (max-width:510px){
+   .comments-list .comment-box {
+      width: 300px;
+  }
+}
+@media (max-width:300px){
+   .comments-list .comment-box {
+      width: 200px;
+  }
 }
