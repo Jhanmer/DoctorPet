@@ -18,8 +18,8 @@
     display: flex;
     margin: 1.5rem;
     overflow: hidden;
-    width: 80rem;
-    height: 30rem;
+    width: 74rem;
+    height: 45rem;
 }
 .consulta-card h6{
     opacity: 0.6;
@@ -54,7 +54,7 @@
     justify-content: space-between;
 }
 .right-column p{
-    font-size: .9rem;
+    font-size: 1.5rem;
     color: rgb(68, 66, 66);
 }
 .button{
