@@ -17,7 +17,7 @@ $sqlEvidencia = "select idConsultaPer, pago.cartera, pago.dni, pago.evidenciaPag
 inner join dp_cliente cli on cli.idCliente=pago.idCliente;";
 $lista= mysqli_query($con, $sqlEvidencia);
 
-$sqlhora = "select hora.idHora, hora.hora, CASE hora.estado WHEN 0 THEN 'Hora no Diponible' WHEN 1 THEN 'Hora Disponible' END AS estadoHora from dp_hora hora;";
+$sqlhora = "select hora.idHora, hora.hora, CASE hora.estado WHEN 0 THEN 'Hora no Diponible' WHEN 1 THEN 'Hora Disponible' END AS estadoHora, hora.estado from dp_hora hora;";
 $lista= mysqli_query($con, $sqlhora);
 
 include ('barra-lateral.php');
@@ -251,7 +251,7 @@ include ('barra-lateral.php');
                                 <div class="card-content">
                                     <div class="card-body">
                                         <p class="card-text">Por favor, verificar con la tabla superior la atención del
-                                            <code> veterinario</code> una vez que se tenga la información que disponibilidad, cambiar el estado de la hora.
+                                            <code> veterinario</code> una vez que se tenga la información de disponibilidad, cambiar el estado de la hora.
                                         </p>
                                     </div>
 
@@ -279,9 +279,14 @@ include ('barra-lateral.php');
                                                         <td><?php echo $row['estadoHora']; ?></td>
                                                         <td>
                                                             <div class="form-check form-switch">
-                                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheck" checked>
-                                                                <label class="form-check-label" for="flexSwitchCheck">
-                                                                </label>
+                                                                <?php 
+                                                                $checkboxId = 'checkbox_' . $row['idHora'];
+                                                                if ($row['estado'] == 1) {
+                                                                    echo '<input class="form-check-input" type="checkbox" id="' . $checkboxId . '" checked onchange="actualizarEstadoHora(' . $row['idHora'] . ', this.checked)">';
+                                                                } else {
+                                                                    echo '<input class="form-check-input" type="checkbox" id="' . $checkboxId . '" onchange="actualizarEstadoHora(' . $row['idHora'] . ', this.checked)">';
+                                                                }
+                                                                ?>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -342,6 +347,26 @@ include ('barra-lateral.php');
         data: {
             idConsultaPer: idConsultaPer,
             estadoSeleccionado: estadoSeleccionado
+        },
+        success: function(response) {
+            // La actualización se realizó correctamente
+            // Puedes realizar alguna acción adicional, como actualizar la interfaz de usuario
+            console.log('Actualización exitosa');
+        },
+        error: function(xhr, status, error) {
+            // Ocurrió un error durante la actualización
+            console.error(error);
+        }
+    });
+    }
+    function actualizarEstadoHora(idHora, estado) {
+    $.ajax({
+        
+        url: '/Controlador/ActualizarHora.php', // ruta del archivo PHP que procesará la actualización
+        method: 'POST',
+        data: {
+            idHora: idHora,
+            estado: estado ? 1: 0
         },
         success: function(response) {
             // La actualización se realizó correctamente
