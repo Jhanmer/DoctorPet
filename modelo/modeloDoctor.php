@@ -77,6 +77,19 @@ class cUsuario
 
 		return  $Result;
 	}
+	function ActualizarEstadoHora($idHora,$estado){
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="UPDATE dp_hora set estado='$estado' WHERE idHora = '$idHora'" ;
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
 	function Login($user,$pass)
 	{
 		require_once('../Config/conexion.php');

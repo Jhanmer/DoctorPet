@@ -178,7 +178,10 @@ include "Config/conexion.php";
                 ?>
                 
                 <div class="item">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="Carrito.php">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    
                 </div>
                 <?php
                     if($Cargo != "Usuario"){
@@ -278,8 +281,8 @@ include "Config/conexion.php";
                                 <i class="fa-solid fa-circle-info"></i><a href="nosotros.php">Nosotros</a>
                             </div>
 
-                            <div class="modal-line">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                            <div class="modal-line">                              
+                                <i class="fa-solid fa-cart-shopping"></i><a href="Carrito.php"></a>
                             </div>
 
                             <a href="login.php" class="navb-button" type="button">Iniciar sesion</a>
