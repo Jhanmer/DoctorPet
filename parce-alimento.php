@@ -11,31 +11,7 @@ $resultado = mysqli_query($db, $query);
 
 
 ?>
-<section class="producto">
-    <?php while ($propiedad = mysqli_fetch_assoc($resultado)) : ?>
-        <div class="producto-base">
-            <div class="imagen">
-                <img src="/imagenes1/<?php echo $propiedad['imagen'] . ".jpg" ?>" alt="imagen producto">
-            </div>
-            <div class="texto">
-                <h4> <?php echo $propiedad['nombre'] ?></h4>
-                <p><?php echo $propiedad['descripcion'] ?></p>
-                <h4>S/.<?php echo $propiedad['precio'] ?></h4>
-                <input type="submit" class="alert alert-primary" value="Agregar">
-            </div>
-        </div>
-    <?php endwhile; ?>
-
-</section>
-
-<!-- fin de productos para gatos -->
-
 <style>
-    .producto {
-        display: flex;
-        margin-bottom: 20px;
-    }
-
     .producto-base {
         width: 300px;
         border: 1px solid #ccc;
@@ -94,3 +70,21 @@ $resultado = mysqli_query($db, $query);
         background-color: #0056b3;
     }
 </style>
+<section class="producto">
+    <?php while ($propiedad = mysqli_fetch_assoc($resultado)) : ?>
+        <div class="producto-base">
+            <div class="imagen">
+                <img src="/imagenes1/<?php echo $propiedad['imagen'] . ".jpg" ?>" alt="imagen producto">
+            </div>
+            <div class="texto">
+                <h4> <?php echo $propiedad['nombre'] ?></h4>
+                <p><?php echo $propiedad['descripcion'] ?></p>
+                <h4>S/.<?php echo $propiedad['precio'] ?></h4>
+                <input type="submit" class="alert alert-primary" value="Agregar">
+            </div>
+        </div>
+    <?php endwhile; ?>
+
+</section>
+
+<!-- fin de productos para gatos -->

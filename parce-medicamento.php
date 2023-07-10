@@ -15,7 +15,7 @@ $resultado = mysqli_query($db, $query);
     <?php while ($propiedad = mysqli_fetch_assoc($resultado)) : ?>
         <div class="producto-base">
             <div class="imagen">
-                <img src="/imagenes3/<?php echo $propiedad['imagen']. ".jpg" ?>" alt="imagen producto">
+                <img src="/imagenes3/<?php echo $propiedad['imagen'] . ".jpg" ?>" alt="imagen producto">
             </div>
             <div class="texto">
                 <h4> <?php echo $propiedad['nombre'] ?></h4>
@@ -29,11 +29,6 @@ $resultado = mysqli_query($db, $query);
 </section><!-- fin de productos para gatos -->
 
 <style>
-    .producto {
-        display: flex;
-        margin-bottom: 20px;
-    }
-
     .producto-base {
         width: 300px;
         border: 1px solid #ccc;
