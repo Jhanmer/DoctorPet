@@ -134,9 +134,6 @@ include ('barra-lateral.php');
                                                                     ?>
                                                                 </select>
                                                             </td>
-                                                            <td>
-                                                                <a href="#" class="btn btn-outline-warning">Actualizar</a>
-                                                            </td>
                                                         </tr>
                                                 <?php
                                                     }
