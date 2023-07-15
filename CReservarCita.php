@@ -296,7 +296,7 @@ body{
                                 <div class="row row-refine">                           
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="date" name="txtFecha">
+                                            <input class="input--style-5" type="date" name="txtFecha" required="" min="<?php echo date('Y-m-d'); ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +308,7 @@ body{
                                 <div class="value">
                                     <div class="input-group">
                                         <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="mascotaCli" requerid>
+                                            <select name="mascotaCli" required="">
                                                 <option disabled="disabled" selected="selected">Seleccione</option>
                                                 <?php while ($row = mysqli_fetch_assoc($ListaMascCli)) { ?>
 												<option value="<?php echo $row["idMascota"] ?>">
@@ -326,7 +326,7 @@ body{
                                 <div class="value">
                                     <div class="input-group">
                                         <div class="rs-select2 js-select-simple select--no-search">
-                                            <select name="txtHora" requerid>
+                                            <select name="txtHora" required="">
                                                 <option disabled="disabled" selected="selected">Seleccione una Hora</option>
                                                 <?php while ($row = mysqli_fetch_assoc($ListaHora)) { ?>
 												<option value="<?php echo $row["idHora"] ?>">
