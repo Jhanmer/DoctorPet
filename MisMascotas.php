@@ -73,6 +73,9 @@ $numeracion=0; //contador de registros
                                 <img width="250px" height="500px" src="data:image/jpg;base64,<?php echo base64_encode($row['imgMascota']); ?>"/>                                      
                             </figure> 
                         </td>
+                        <td>
+                            <a href="#" class="status shipped"> Actualizar </a>
+                        </td>
                     </tr>
                     <?php
                         }

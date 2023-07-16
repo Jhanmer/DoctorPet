@@ -77,6 +77,19 @@ class cUsuario
 
 		return  $Result;
 	}
+	function ActualizarEstadoConsulta($idConsulta,$estadoCons){
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="UPDATE dp_consulta set estadoAtencion='$estadoCons' WHERE idConsulta = '$idConsulta'" ;
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
 	function ActualizarEstadoHora($idHora,$estado){
 		$cnx = new conexion();
 
