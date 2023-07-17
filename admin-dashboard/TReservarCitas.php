@@ -188,7 +188,7 @@ include ('barra-lateral.php');
                                                             <td  id="fila-<?php echo $row['idConsultaPer'];?>" ><?php echo $row['idConsultaPer']; ?></td> 
                                                             <td><?php echo $row['cartera']; ?></td>  
                                                             <td><?php echo $row['dni']; ?></td>  
-                                                            <td>
+                                                            <td hidden>
                                                                     <!-- Button trigger for Disabled Backdrop -->
                                                                     <button type="button" class="btn btn-outline-primary block"
                                                                         data-bs-toggle="modal" data-bs-backdrop="false" data-bs-target="#backdrop">
@@ -228,6 +228,9 @@ include ('barra-lateral.php');
                                                                         </div>
                                                                     </div>
                                                             </td>
+                                                            <td>
+                                                                <img width="250px" height="500px" src="data:image/jpg;base64,<?php echo base64_encode($row['evidenciaPago']); ?>"/>      
+                                                            </td> 
                                                             <td><?php echo $row['nombre']; ?></td>  
                                                             <td><?php echo $row['apellidos']; ?></td>  
                                                         </tr>
