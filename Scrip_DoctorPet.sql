@@ -321,6 +321,43 @@ CREATE TABLE medicamento (
   `stock` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+drop table if exists boleta;
+CREATE TABLE boleta (
+  `idBoleta` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `montoTotal` decimal(10,2) NOT NULL,
+  `productos` text NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp(),
+  `codigoUnico` varchar(20) NOT NULL,
+  `imagen` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+drop table if exists carrito_compras;
+CREATE TABLE carrito_compras (
+  `idCliente` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `tipoProducto` enum('alimento','accesorio','medicamento') NOT NULL,
+  `cantidad` int(11) NOT NULL DEFAULT 1,
+  `fechaAgregado` datetime NOT NULL DEFAULT current_timestamp(),
+  `precioProducto` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+drop table if exists compras_realizadas;
+CREATE TABLE compras_realizadas (
+  `idCompra` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `fechaCompra` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+drop table if exists detalles_compra;
+CREATE TABLE detalles_compra (
+  `idDetalle` int(11) NOT NULL,
+  `idCompra` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `tipoProducto` enum('alimento','accesorio','medicamento') NOT NULL,
+  `cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 drop table if exists comidap;
 CREATE TABLE comidap (
   `idComidap` int NOT NULL PRIMARY KEY auto_increment,
