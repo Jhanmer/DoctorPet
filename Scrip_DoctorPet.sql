@@ -613,3 +613,35 @@ BEGIN
 	END IF;
 End$$
 DELIMITER ;
+
+
+INSERT INTO `accesorio` (`idAccesorio`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`) VALUES
+(1, 'Camisa', 'Camisa para perro ', '37da4da0bf4e3cf789f93e43530ad573', '35.00', 10),
+(2, 'Ropa polar', 'Ropa polar para gato', '14331d9ce881224a23954fa9ac5fc6e0', '30.00', 10),
+(3, 'Ropa Stich', 'Ropa para perro', '401d98ea11b545a8b68261f67c7fa81c', '35.00', 15),
+(4, 'Ropa Monstruo', 'Ropa para perro', '9f703ef3de9b8e838edaf39b9d05753e', '10.00', 20),
+(5, 'Ropa flores', 'Ropa para perro', 'b9e9fb0957fe27e1bcbe6aad8ff7f441', '15.00', 20),
+(6, 'Ropa capucha', 'Ropa para perro', 'a00f0c4c1ad047f642e9c98415317e29', '30.00', 30),
+(7, 'Ropa Mickey', 'Ropa para perro', '16d7f1c57b5ed18aea954243bad66c1d', '20.00', 15),
+(8, 'Ropa chaleco', 'Ropa para perro', 'aabfebfd11df76f0e01875d90c7d9a67', '40.00', 30),
+(9, 'Botas para gato', 'Ropa para gato', 'a6a46568dd2aa6c3a03635092d8e7da7', '10.00', 25),
+(10, 'Cama', 'Cama mediana', 'cfba314b1d13fe8aa51f98802c09209e', '30.00', 30),
+(11, 'Cama', 'cama grande', 'b047c7b05b6193cd2d3ab92999544641', '50.00', 30),
+(12, 'Cepillo', 'Cepillo quita pelo', 'a82a7703d1342f1c140ed51a899ff5e8', '10.00', 20),
+(13, 'Cortauñas', 'Accesorio gato', '9f05cb77c6a6f05b516f3813af2770ef', '10.00', 50);
+
+INSERT INTO `alimento` (`idAlimento`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`) VALUES
+(1, 'Cat Chow', 'Comida de gato 1kg.', '4cb00feb1f5ba746afdb8fb740410c71', '15.00', 20),
+(2, 'Dogui', 'Comida para perro cachorro 8 kg.', '721e8dacbe2924668ceadde1de9edf9d', '60.00', 50),
+(3, 'Whiskas', 'Comida para gato 9kg.', '40a062afba81a68a3fb44614c1be07df', '120.00', 20),
+(4, 'Michicat', 'Comida para gato 9kg.', 'df7a28f02af5c4b831e6bf356da00b57', '60.00', 20),
+(5, 'Mimaskot', 'Comida para perro cachorro 1kg.', '1a32355562979e19a619c28c28cf75db', '15.00', 30),
+(6, 'Mimaskot', 'Comida para perro adulto 15kg.', '6a08394bb5937ba5e7f172bad6d8e586', '80.00', 30),
+(7, 'Mimaskot', 'Comida para perro 1kg.', 'b07bb6de50db6d7ac614c81fc60339f1', '20.00', 20),
+(8, 'Mimaskot', 'Comida para perro cachorro 15kg.', 'd8a7cc087d4466a176a4348a03300365', '100.00', 20),
+(9, 'Ricocan', 'Comida para perro adulto 1kg.', '49726ebe5da0103b0b00ba43ed948963', '10.00', 10),
+(10, 'Ricocat', 'Comida para gato en lata', 'ef7db95ac95874c4460fa1af1832db43', '5.00', 20),
+(11, 'Ricocat', 'Comida para gato 9kg', '59f9f21f77de3ba9598219ba462a4317', '100.00', 20),
+(12, 'Uno', 'Comida para gato 1kg.', '5ea2fda7194b44006b484f20cb231edc', '8.00', 20),
+(13, 'Uno', 'Comida para perro cachorro 2kg.', 'c15f71d8b9a5281a1152e00fff1d57a8', '20.00', 20);
+
