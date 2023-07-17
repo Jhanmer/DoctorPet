@@ -1,7 +1,7 @@
 <?php 
     require ('includes/funciones.php');
     incluirTemplate('header');
-?>  
+?> 
 <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -43,8 +43,8 @@
                                 <div class="row row-refine">                           
                                     <div class="col-9">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="date" name="txtFecha">
-                                        </div>
+                                            <input class="input--style-5" type="date" name="txtFecha" min="<?php echo date('Y-m-d'); ?>">
+                                        </div>                                  
                                     </div>
                                 </div>
                                 </div>
@@ -109,7 +109,6 @@
             </div>
         </div>
     </div>
-
 <?php 
     include './includes/templates/footer.php';
 

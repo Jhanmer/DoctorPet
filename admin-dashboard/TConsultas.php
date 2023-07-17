@@ -2,44 +2,12 @@
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
 $sql = "select c.idConsulta, c.nombreCli, c.TelefonoCons,c.FechaCons,c.correoCli,
-   c.Motivo from DP_Consulta c;";
+c.Motivo, CASE c.estadoAtencion when 0 THEN 'Pendiente' WHEN 1 then 'En curso' WHEN 2 then 'Atendido' end as EstadoConsulta from DP_Consulta c;";
 $lista = mysqli_query($con, $sql);
-$numeracion = 0; //contador de registros
 
-$error = null;
-$mensaje = null;
-if (isset($_POST["enviar"])) {
-    //capturando datos
-    $reg["idConsulta"] = $_POST["idConsulta"];
-    $reg["nombreCli"] = $_POST["nombreCli"];
-    $reg["TelefonoCons"] = $_POST["TelefonoCons"];
-    $reg["FechaCons"] = $_POST["FechaCons"];
-    $reg["correoCli"] = $_POST["correoCli"];
-    $reg["Motivo"] = $_POST["Motivo"];
-    InsertarCliente($reg, $mensaje, $error);
-}
-function InsertarCliente($reg, &$mensaje, &$error)
-{
-    $con = fnConnect($msg);
-    mysqli_query($con, "start transaction");
-    $sqlinsert = "insert into DP_Cliente(idConsulta, nombreCli, TelefonoCons, FechaCons,
-    correoCli, Motivo) values ('{$reg["idConsulta"]}',"
-        . "             '{$reg["nombreCli"]}','{$reg["TelefonoCons"]}','{$reg["FechaCons"]}',"
-        . "             '{$reg["correoCli"]}','{$reg["Motivo"]}';";
-    //ejecutamos la consulta
-    $respuesta = mysqli_query($con, $sqlinsert);
-    if (!$respuesta) {
-        mysqli_query($con, "rollback");
-        $error = "<p>Datos ingresados no son correctos...</p>";
-        $error .= "<p>SQL: $sqlinsert </p>";
-        return;
-    }
-    //hacemos permanente los cambios
-    mysqli_query($con, "commit");
-    $mensaje = "<p>Cliente registrado correctamente..</p>";
-}
 include ('barra-lateral.php');
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- Contenido -->
         <div id="main">
             <header class="mb-3">
@@ -110,32 +78,31 @@ include ('barra-lateral.php');
 
                                                 ?>
                                                         <tr>
-                                                            <td><?php echo $row['idConsulta']; ?></td>
+                                                            <td id="fila-<?php echo $row['idConsulta'];?>" ><?php echo $row['idConsulta']; ?></td>
                                                             <td><?php echo $row['nombreCli']; ?></td>
                                                             <td><?php echo $row['TelefonoCons']; ?></td>
                                                             <td><?php echo $row['FechaCons']; ?></td>
                                                             <td><?php echo $row['correoCli']; ?></td>
                                                             <td><?php echo $row['Motivo']; ?></td>
                                                             <td>
-                                                                <select name="opciones" class="btn btn-primary btn-sm dropdown-toggle">
-                                                                    <?php
-                                                                    // Definir manualmente las opciones del select
-                                                                    $estados_pago = array(
-                                                                        array('id' => 0, 'texto' => 'Pendiente'),
-                                                                        array('id' => 1, 'texto' => 'En curso'),
-                                                                        array('id' => 2, 'texto' => 'Atendido')
-                                                                    );
+                                                                <div class="dropdown">
+                                                                    <select name="opciones" class="btn btn-primary btn-sm dropdown-toggle"  onchange="actualizarEstadoConsulta(<?php echo $row['idConsulta']; ?>, this.value)">
+                                                                        <?php
+                                                                        // Definir manualmente las opciones del select
+                                                                        $estados_consulta = array(
+                                                                            array('id' => 0, 'texto' => 'Pendiente'),
+                                                                            array('id' => 1, 'texto' => 'En curso'),
+                                                                            array('id' => 2, 'texto' => 'Atendido')
+                                                                        );
 
-                                                                    // Generar las opciones del select
-                                                                    foreach ($estados_pago as $estado) {
-                                                                        $selected = ($row['EstadoPagoTexto'] == $estado['texto']) ? 'selected' : '';
-                                                                        echo '<option value="' . $estado['id'] . '" ' . $selected . '>' . $estado['texto'] . '</option>';
-                                                                    }
-                                                                    ?>
-                                                                </select>
-                                                            </td>
-                                                            <td>
-                                                                <a href="#" class="btn btn-outline-warning">Actualizar</a>
+                                                                        // Generar las opciones del select
+                                                                        foreach ($estados_consulta as $estado) {
+                                                                            $selected = ($row['EstadoConsulta'] == $estado['texto']) ? 'selected' : '';
+                                                                            echo '<option value="' . $estado['id'] . '" ' . $selected . '>' . $estado['texto'] . '</option>';
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>    
                                                             </td>
                                                         </tr>
                                                 <?php
@@ -173,6 +140,32 @@ include ('barra-lateral.php');
 
     <script src="assets/js/main.js"></script>
 </body>
+
+<script>
+function actualizarEstadoConsulta(idConsulta, estadoSeleccionado) {
+    $.ajax({
+        
+        url: '/Controlador/ActualizarConsulta.php', // ruta del archivo PHP que procesará la actualización
+        method: 'POST',
+        data: {
+            idConsulta: idConsulta,
+            estadoSeleccionado: estadoSeleccionado
+        },
+        success: function(response) {
+            // La actualización se realizó correctamente
+            // Puedes realizar alguna acción adicional, como actualizar la interfaz de usuario
+            console.log('Actualización exitosa');
+        },
+        error: function(xhr, status, error) {
+            // Ocurrió un error durante la actualización
+            console.error(error);
+        }
+    });
+}
+
+</script>
+
+
 <script src="../js/buscador.js" type="text/javascript"></script>
 
 </html>
