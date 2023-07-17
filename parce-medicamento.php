@@ -21,12 +21,19 @@ $resultado = mysqli_query($db, $query);
                 <h4> <?php echo $propiedad['nombre'] ?></h4>
                 <p><?php echo $propiedad['descripcion'] ?></p>
                 <h4>S/.<?php echo $propiedad['precio'] ?></h4>
-                <input type="submit" class="alert alert-primary" value="Agregar">
             </div>
+            <!-- ... mostrar la información del producto ... -->
+            <form action="agregar_al_carrito.php" method="POST">
+                <input type="hidden" name="idProducto" value="<?php echo $propiedad['idMedicamento']; ?>">
+                <input type="hidden" name="tipoProducto" value="medicamento">
+                <input type="submit" class="alert alert-primary" value="Agregar al carrito">
+            </form>
         </div>
     <?php endwhile; ?>
 
-</section><!-- fin de productos para gatos -->
+</section>
+
+<!-- fin de productos para gatos -->
 
 <style>
     .producto-base {
