@@ -13,7 +13,9 @@ cp.fechaAtencion,cp.estadoPago,cp.monto,
 Case cp.estadoPago WHEN 0 THEN 'Pago pendiente' WHEN 1 THEN 'Pendiente de Validar' WHEN 2 THEN 'Pago Realizado' END AS EstadoPagoTexto, 
 Case cp.estadoAtencion WHEN 0 THEN 'Pendiente' WHEN 1 THEN 'En curso' WHEN 2 THEN 'Atendido' END AS EstadoAtencionTexto, 
 hor.hora 
-from dp_consultapersonalizada cp inner join dp_veterinarios vet on cp.idConsultaPer=vet.idVeterinario inner join dp_mascota mas on mas.idMascota=cp.idConsultaPer inner join dp_hora hor on cp.idConsultaPer=hor.idHora where cp.idCliente = '$idCliente';";
+from dp_consultapersonalizada cp inner join dp_veterinarios vet on vet.idVeterinario=cp.idVeterinario 
+inner join dp_mascota mas on mas.idMascota=cp.idMascota 
+inner join dp_hora hor on hor.idHora=cp.idHora where cp.idCliente = '$idCliente';";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 ?>
