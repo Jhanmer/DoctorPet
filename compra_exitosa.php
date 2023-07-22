@@ -17,7 +17,7 @@ $resultadoCliente = mysqli_query($db, $queryCliente);
 $cliente = mysqli_fetch_assoc($resultadoCliente);
 
 // Obtener la información de la boleta
-$queryBoleta = "SELECT * FROM boleta WHERE idCliente = $idCliente ORDER BY idBoleta DESC LIMIT 1";
+$queryBoleta = "SELECT * FROM boleta WHERE idCliente = $idCliente ORDER BY fecha DESC LIMIT 1";
 $resultadoBoleta = mysqli_query($db, $queryBoleta);
 $boleta = mysqli_fetch_assoc($resultadoBoleta);
 ?>
