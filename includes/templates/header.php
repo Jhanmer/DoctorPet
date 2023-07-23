@@ -141,6 +141,11 @@ include "Config/conexion.php";
                     <a href="CMedicamentos.php">Medicamentos</a>
                     <a href="CAlimentos.php">Alimentos</a>
                     <a href="CAccesorios.php">Accesorios</a>
+                    <?php 
+                    if($Cargo == "Usuario"){
+                        echo "<a style = 'color: #008862' href='MisCompras.php'>Mis compras</a>";
+                    }
+                    ?>
                     </div>
                 </div>
 

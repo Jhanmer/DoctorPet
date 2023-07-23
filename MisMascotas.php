@@ -17,11 +17,11 @@ $numeracion=0; //contador de registros
 ?>
 
 <div class="cuerpo-tabla">
-
-
     <main class="table">
+        <h1 style="margin: inherit; padding: 25px; background-color: #f9f9f9; text-align: center; text-shadow: 1px 1px 2px #3f09ff;">
+            <span style="text-decoration: none; font-weight: bold;">Lista de Mascotas</span>
+        </h1>
         <section class="table__header">
-            <h1>Lista de Mascotas</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
