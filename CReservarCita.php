@@ -148,6 +148,9 @@ body{
 
 <div class="cuerpo-tabla">
     <main class="table">
+        <h1 style="margin: inherit; padding: 25px; background-color: #f9f9f9; text-align: center; text-shadow: 1px 1px 2px #3f09ff;">
+            <span style="text-decoration: none; font-weight: bold;">Disponibilidad de Veterinarios</span>
+        </h1>
         <div class="popup">
                 <button id="close">&times;</button>
                 <h2>¿Ya registrastes a tu Mascota?</h2>
@@ -158,7 +161,6 @@ body{
                 <a class="buton" href="mascota.php">Registrar Mascota</a>
         </div>    
         <section class="table__header">
-            <h1>Disponibilidad de Veterinarios</h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 <img src="images/search.png" alt="">
