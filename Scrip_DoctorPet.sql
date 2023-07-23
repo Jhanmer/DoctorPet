@@ -323,13 +323,14 @@ CREATE TABLE medicamento (
 
 drop table if exists boleta;
 CREATE TABLE boleta (
-  `idBoleta` int(11) NOT NULL,
+  `idBoleta` int NOT NULL PRIMARY KEY auto_increment,
   `idCliente` int(11) NOT NULL,
   `montoTotal` decimal(10,2) NOT NULL,
   `productos` text NOT NULL,
   `fecha` datetime NOT NULL DEFAULT current_timestamp(),
   `codigoUnico` varchar(20) NOT NULL,
-  `imagen` longblob DEFAULT NULL
+  `imagen` longblob DEFAULT NULL,
+  `estado` int not null default 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 drop table if exists carrito_compras;

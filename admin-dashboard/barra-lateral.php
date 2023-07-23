@@ -142,14 +142,20 @@ include "../Config/conexion.php";
                         </li>
                         
                         <li class="sidebar-item  ">
-                            <a href="application-gallery.html" class='sidebar-link'>
+                            <a href="TMascotas.php" class='sidebar-link'>
                                 <i class="bi bi-image-fill"></i>
                                 <span>Nuestras Mascotas</span>
                             </a>
                         </li>
-
                         <li class="sidebar-item  ">
-                            <a href="#" class='sidebar-link'>
+                            <a href="VentasGeneradas.php" class='sidebar-link'>
+                                <i class="bi bi-cash"></i>
+                                <span>Ventas Generadas</span>
+                            </a>
+                        </li>
+
+                        <li hidden class="sidebar-item  ">
+                            <a href="Campanias.php" class='sidebar-link'>
                                 
                                 <span>Campañas</span>
                             </a>
@@ -159,7 +165,7 @@ include "../Config/conexion.php";
 
                         <li class="sidebar-title">Soporte</li>
 
-                        <li class="sidebar-item  ">
+                        <li hidden class="sidebar-item  ">
                             <a href="#" class='sidebar-link'>
                                 
                                 <span>Desarrolladores</span>

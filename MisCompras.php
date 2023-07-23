@@ -71,7 +71,9 @@ $numeracion=0; //contador de registros
                                 <img style="border-radius: 0%; width: 130px;height: 300px;" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/>                                      
                             </figure> 
                         </td>
-                        <td>Sin entregar</td>
+                        <td>
+                            <a style="display: inline-block; padding: 10px 20px; border: 2px solid #3498db47; text-decoration: none; color: #fff; background-color: #e79c3c; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); font-family: 'Arial', sans-serif; font-size: 16px;">Pendiente</a>
+                        </td>
                         
                     </tr>
                     <?php
