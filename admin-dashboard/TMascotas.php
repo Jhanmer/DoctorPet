@@ -1,8 +1,11 @@
 <?php
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select m.idMascota, m.NomMasc, m.EdadMasc, m.idEspecie,m.idRaza,
-   m.SexoMasc, m.idCliente,m.peso,m.imgMascota from DP_Mascota m;";
+$sql = "select m.idMascota, m.NomMasc, m.EdadMasc, es.nombreEspe,ra.nombreRaza,
+m.SexoMasc, m.idCliente,m.peso,m.imgMascota 
+from DP_Mascota m 
+inner join dp_especie es on es.idEspecie=m.idEspecie
+inner join dp_raza ra on ra.idRaza=m.idRaza;";
 $lista= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -117,12 +120,14 @@ $mensaje=null;
                                                     <td ><?php echo $row['idMascota']; ?></td>
                                                     <td ><?php echo $row['NomMasc']; ?></td>
                                                     <td ><?php echo $row['EdadMasc']; ?></td>
-                                                    <td ><?php echo $row['idEspecie']; ?></td>
-                                                    <td ><?php echo $row['idRaza']; ?></td>
+                                                    <td ><?php echo $row['nombreEspe']; ?></td>
+                                                    <td ><?php echo $row['nombreRaza']; ?></td>
                                                     <td ><?php echo $row['SexoMasc']; ?></td>
                                                     <td ><?php echo $row['idCliente']; ?></td>
-                                                    <td ><?php echo $row['peso']; ?></td>
-                                                    <td ><?php echo $row['imgMascota']; ?></td>
+                                                    <td ><?php echo $row['peso']; ?> Kg.</td>
+                                                    <td >
+                                                        <img width="250px" height="250px" src="data:image/jpg;base64,<?php echo base64_encode($row['imgMascota']); ?>"/>   
+                                                    </td>
                                                 </tr>
                                                <?php
                                                 }
