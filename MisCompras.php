@@ -10,7 +10,9 @@ $idCliente = isset($_SESSION["idCliente"]) ? $_SESSION["idCliente"] : "";
 <?php
 require 'Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "sELECT * FROM boleta where idCliente = '$idCliente'";
+$sql = "SELECT idBoleta, idCliente, montoTotal, productos, fecha, codigoUnico, 
+imagen,  Case estado When 0 then 'Pendiente' WHEN 1 THEN 'Entregado' WHEN 2 THEN 'Rechazado' end as estadoPedido
+FROM boleta where idCliente = '$idCliente'";
 $listaVet= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -72,9 +74,18 @@ $numeracion=0; //contador de registros
                             </figure> 
                         </td>
                         <td>
-                            <a style="display: inline-block; padding: 10px 20px; border: 2px solid #3498db47; text-decoration: none; color: #fff; background-color: #e79c3c; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); font-family: 'Arial', sans-serif; font-size: 16px;">Pendiente</a>
+                            <?php 
+                            if ($row['estadoPedido'] == 'Pendiente') {
+                                echo '<a style="display: inline-block; padding: 10px 20px; border: 2px solid #3498db; text-decoration: none; color: #fff; background-color: #e79c3c; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); font-size: 16px;">' . $row['estadoPedido'] . '</a>';    
+                            } else if ($row['estadoPedido'] == 'Entregado') {
+                                echo '<a style="display: inline-block; padding: 10px 20px; border: 2px solid #3498db; text-decoration: none; color: #fff; background-color: #3ce74f; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); font-size: 16px;">' . $row['estadoPedido'] . '</a>';     
+                            } else {
+                                echo '<a style="display: inline-block; padding: 10px 20px; border: 2px solid #3498db; text-decoration: none; color: #fff; background-color: #e73c3c; border-radius: 15px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); font-size: 16px;">' . $row['estadoPedido'] . '</a>';
+                            }
+                            ?> 
                         </td>
-                        
+
+
                     </tr>
                     <?php
                         }
