@@ -103,6 +103,19 @@ class cUsuario
 
 		return  $Result;
 	}
+	function ActualizarPedido($idBoleta, $estadoPedido){
+		$cnx = new conexion();
+
+		$Cadena = $cnx->AbrirConexion();
+
+		$Query ="UPDATE boleta set estado='$estadoPedido' WHERE idBoleta = '$idBoleta'" ;
+
+		$Result = mysqli_query($Cadena, $Query);
+
+		$cnx->CerrarConexion($Cadena);
+
+		return  $Result;
+	}
 	function Login($user,$pass)
 	{
 		require_once('../Config/conexion.php');

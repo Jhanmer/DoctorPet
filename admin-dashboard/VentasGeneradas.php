@@ -68,19 +68,19 @@ include ('barra-lateral.php');
                                             </td>
                                             <td>
                                                 <div class="dropdown">
-                                                    <select name="opciones" class="btn btn-primary btn-sm dropdown-toggle" onchange="actualizarEstado(<?php echo $row['idCliente']; ?>, this.value)">
+                                                    <select name="opciones" class="btn btn-primary btn-sm dropdown-toggle" onchange="actualizarPedido(<?php echo $row['idBoleta']; ?>, this.value)">
                                                             <?php
                                                             // Definir manualmente las opciones del select
-                                                            $estados_pago = array(
+                                                            $estados_pedido = array(
                                                                 array('id' => 0, 'texto' => 'Pendiente'),
                                                                 array('id' => 1, 'texto' => 'Entregado'),
                                                                 array('id' => 2, 'texto' => 'Rechazado')
                                                             );
 
                                                             // Generar las opciones del select
-                                                            foreach ($estados_pago as $estadoPago) {
-                                                                $selected = ($row['estadoPedido'] == $estadoPago['texto']) ? 'selected' : '';
-                                                                echo '<option value="' . $estadoPago['id'] . '" ' . $selected . '>' . $estadoPago['texto'] . '</option>';
+                                                            foreach ($estados_pedido as $estadoPedido) {
+                                                                $selected = ($row['estadoPedido'] == $estadoPedido['texto']) ? 'selected' : '';
+                                                                echo '<option value="' . $estadoPedido['id'] . '" ' . $selected . '>' . $estadoPedido['texto'] . '</option>';
                                                             }
                                                             ?>
                                                     </select>
@@ -104,54 +104,14 @@ include ('barra-lateral.php');
             
 
 <script>
-    function actualizarEstado(idConsultaPer, estadoSeleccionado) {
+    function actualizarPedido(idBoleta, estadoPedido) {
     $.ajax({
         
-        url: '/Controlador/ActualizarPago.php', // ruta del archivo PHP que procesará la actualización
+        url: '/Controlador/ActualizarPedido.php', // ruta del archivo PHP que procesará la actualización
         method: 'POST',
         data: {
-            idConsultaPer: idConsultaPer,
-            estadoSeleccionado: estadoSeleccionado
-        },
-        success: function(response) {
-            // La actualización se realizó correctamente
-            // Puedes realizar alguna acción adicional, como actualizar la interfaz de usuario
-            console.log('Actualización exitosa');
-        },
-        error: function(xhr, status, error) {
-            // Ocurrió un error durante la actualización
-            console.error(error);
-        }
-    });
-    }
-    function actualizarEstadoAtencion(idConsultaPer, estadoSeleccionado) {
-    $.ajax({
-        
-        url: '/Controlador/ActualizarAtencion.php', // ruta del archivo PHP que procesará la actualización
-        method: 'POST',
-        data: {
-            idConsultaPer: idConsultaPer,
-            estadoSeleccionado: estadoSeleccionado
-        },
-        success: function(response) {
-            // La actualización se realizó correctamente
-            // Puedes realizar alguna acción adicional, como actualizar la interfaz de usuario
-            console.log('Actualización exitosa');
-        },
-        error: function(xhr, status, error) {
-            // Ocurrió un error durante la actualización
-            console.error(error);
-        }
-    });
-    }
-    function actualizarEstadoHora(idHora, estado) {
-    $.ajax({
-        
-        url: '/Controlador/ActualizarHora.php', // ruta del archivo PHP que procesará la actualización
-        method: 'POST',
-        data: {
-            idHora: idHora,
-            estado: estado ? 1: 0
+            idBoleta: idBoleta,
+            estadoPedido: estadoPedido
         },
         success: function(response) {
             // La actualización se realizó correctamente
