@@ -1,9 +1,9 @@
 <?php
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
-$sql = "select t.idCliente, t.nombre, t.apellidos, t.Fecha_nacimiento, CASE t.Genero WHEN 1 then 'Hombre' when 2 then 'Mujer' end as genero,
-t.direccion, dis.Nombre, t.Telefono, t.Email, t.Password, t.cargo, t.Fecha_registro
-from DP_Cliente t inner join dp_distrito dis on  dis.idDistrito=t.idCliente;";
+$sql = "select C.idCliente, C.nombre, C.apellidos, C.Fecha_nacimiento, C.Genero,
+C.direccion, dis.Nombre, C.Telefono, C.Email, C.Password, C.cargo, C.Fecha_registro
+from DP_Cliente C inner join dp_distrito dis on  dis.idDistrito=C.idDistrito;";
 $lista= mysqli_query($con, $sql);
 $numeracion=0; //contador de registros
 
@@ -127,7 +127,7 @@ $mensaje=null;
                                                     <td ><?php echo $row['nombre']; ?></td>
                                                     <td ><?php echo $row['apellidos']; ?></td>
                                                     <td ><?php echo $row['Fecha_nacimiento']; ?></td>
-                                                    <td ><?php echo $row['genero']; ?></td>
+                                                    <td ><?php echo $row['Genero']; ?></td>
                                                     <td ><?php echo $row['direccion']; ?></td>
                                                     <td ><?php echo $row['Nombre']; ?></td>
                                                     <td ><?php echo $row['Telefono']; ?></td>
@@ -173,3 +173,4 @@ $mensaje=null;
 </body>
 <script src="../js/buscador.js" type="text/javascript"></script>   
 </html>
+

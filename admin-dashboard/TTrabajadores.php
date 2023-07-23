@@ -2,7 +2,7 @@
 require '../Config/conexion_bd.php';
 $con = fnConnect($msg);
 $sql = "select t.idPersonal, t.NomPers, t.ApePers, t.CorreoPers,t.NumeroPers,
-    t.IdDistrito, t.CargoPers from DP_Personal t;";
+    dis.Nombre, t.CargoPers from DP_Personal t inner join dp_distrito dis on  dis.idDistrito=t.IdDistrito;";
 $lista = mysqli_query($con, $sql);
 $numeracion = 0; //contador de registros
 
@@ -116,7 +116,7 @@ include ('barra-lateral.php');
                                                             <td><?php echo $row['ApePers']; ?></td>
                                                             <td><?php echo $row['CorreoPers']; ?></td>
                                                             <td><?php echo $row['NumeroPers']; ?></td>
-                                                            <td><?php echo $row['IdDistrito']; ?></td>
+                                                            <td><?php echo $row['Nombre']; ?></td>
                                                             <td><?php echo $row['CargoPers']; ?></td>
                                                         </tr>
                                                 <?php
@@ -157,3 +157,4 @@ include ('barra-lateral.php');
 <script src="../js/buscador.js" type="text/javascript"></script>
 
 </html>
+

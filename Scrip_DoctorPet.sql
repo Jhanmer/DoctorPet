@@ -84,7 +84,7 @@ idCliente int primary key auto_increment not null,
 nombre varchar(50) not null, 
 apellidos varchar(50) not null, 
 Fecha_nacimiento date not null, 
-Genero bit not null,
+Genero varchar(10) not null,
 direccion varchar(100) not null, 
 IdDistrito int, 
 Telefono varchar(20),
@@ -374,74 +374,74 @@ INSERT INTO `comidap` (`idComidap`, `nombre`, `descripcion`, `imagen`, `precio`)
 
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
-				VALUES ('Admin','Administracion','2000-02-02','1','Icaros','11','987456321','admin@doctorpet.pe','123456','Admin','2023-06-05 00:28:01'); 
+				VALUES ('Admin','Administracion','2000-02-02','Hombre','Icaros','11','987456321','admin@doctorpet.pe','123456','Admin','2023-06-05 00:28:01'); 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
-				VALUES ('Efren','HR','2023-06-08','1','AV CENTRAL','10','963598623','efrenhuamanreyna@gmail.com','123','Usuario','2023-06-12 18:02:10'); 
+				VALUES ('Efren','HR','2023-06-08','Hombre','AV CENTRAL','10','963598623','efrenhuamanreyna@gmail.com','123','Usuario','2023-06-12 18:02:10'); 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
-				VALUES ('Ryan', 'Juarez Perez', '2004-07-29', '1', '#711', '7', '962563262', 'Ryan@gmail.com', '123456', 'Usuario', '2023-06-17 21:22:24'); 
+				VALUES ('Ryan', 'Juarez Perez', '2004-07-29', 'Hombre', '#711', '7', '962563262', 'Ryan@gmail.com', '123456', 'Usuario', '2023-06-17 21:22:24'); 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
-				VALUES ('Maria', 'Alves Alvis', '2008-06-11', '1', '#251', '4', '963256895', 'Juana@gmail.com', 'juana123', 'Usuario', '2023-06-17 21:23:16'); 				
+				VALUES ('Maria', 'Alves Alvis', '2008-06-11', 'Mujer', '#251', '4', '963256895', 'Juana@gmail.com', 'juana123', 'Usuario', '2023-06-17 21:23:16'); 				
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`) 
-				VALUES ('Berta', 'Perez Vasquez', '2005-06-15', '1', '#125', '4', '986523562', 'Berta@gmail.com', '123456', 'Usuario', '2023-06-17 21:24:01'); 	
+				VALUES ('Berta', 'Perez Vasquez', '2005-06-15', 'Mujer', '#125', '4', '986523562', 'Berta@gmail.com', '123456', 'Usuario', '2023-06-17 21:24:01'); 	
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Juan', 'Perez', '1990-05-15', '1', 'Calle Principal', '7', '987654321', 'juanperez@example.com', 'password1', 'Usuario', '2023-06-15 09:30:00');
+				VALUES ('Juan', 'Perez', '1990-05-15', 'Hombre', 'Calle Principal', '7', '987654321', 'juanperez@example.com', 'password1', 'Usuario', '2023-06-15 09:30:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Maria', 'Lopez', '1985-09-20', '1', 'Avenida 123', '5', '945612378', 'marialopez@example.com', 'password2', 'Usuario', '2023-06-16 14:45:00');
+				VALUES ('Maria', 'Lopez', '1985-09-20', 'Hombre', 'Avenida 123', '5', '945612378', 'marialopez@example.com', 'password2', 'Usuario', '2023-06-16 14:45:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Carlos', 'Gonzalez', '1978-03-10', '1', 'Calle Secundaria', '3', '978563214', 'carlosgonzalez@example.com', 'password3', 'Usuario', '2023-06-17 11:20:00');
+VALUES ('Carlos', 'Gonzalez', '1978-03-10', 'Hombre', 'Calle Secundaria', '3', '978563214', 'carlosgonzalez@example.com', 'password3', 'Usuario', '2023-06-17 11:20:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Ana', 'Martinez', '1995-07-08', '1', 'Avenida Central', '1', '932456789', 'anamartinez@example.com', 'password4', 'Usuario', '2023-06-18 16:55:00');
+VALUES ('Ana', 'Martinez', '1995-07-08', 'Mujer', 'Avenida Central', '1', '932456789', 'anamartinez@example.com', 'password4', 'Usuario', '2023-06-18 16:55:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Luis', 'Rodriguez', '1982-11-25', '1', 'Calle Principal', '9', '976543210', 'luisrodriguez@example.com', 'password5', 'Usuario', '2023-06-19 13:40:00');
+VALUES ('Luis', 'Rodriguez', '1982-11-25', 'Hombre', 'Calle Principal', '9', '976543210', 'luisrodriguez@example.com', 'password5', 'Usuario', '2023-06-19 13:40:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Laura', 'Gomez', '1998-02-17', '1', 'Avenida Sur', '6', '912345678', 'lauragomez@example.com', 'password6', 'Usuario', '2023-06-20 10:15:00');
+VALUES ('Laura', 'Gomez', '1998-02-17', 'Mujer', 'Avenida Sur', '6', '912345678', 'lauragomez@example.com', 'password6', 'Usuario', '2023-06-20 10:15:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Pedro', 'Sanchez', '1993-09-03', '1', 'Calle Norte', '2', '965874321', 'pedrosanchez@example.com', 'password7', 'Usuario', '2023-06-21 07:00:00');
+VALUES ('Pedro', 'Sanchez', '1993-09-03', 'Hombre', 'Calle Norte', '2', '965874321', 'pedrosanchez@example.com', 'password7', 'Usuario', '2023-06-21 07:00:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Marta', 'Garcia', '1987-04-12', '1', 'Avenida Este', '8', '943218765', 'martagarcia@example.com', 'password8', 'Usuario', '2023-06-22 03:45:00');
+VALUES ('Marta', 'Garcia', '1987-04-12', 'Mujer', 'Avenida Este', '8', '943218765', 'martagarcia@example.com', 'password8', 'Usuario', '2023-06-22 03:45:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Roberto', 'Hernandez', '1980-12-29', '1', 'Calle Oeste', '4', '998765432', 'robertohernandez@example.com', 'password9', 'Usuario', '2023-06-23 00:30:00');
+VALUES ('Roberto', 'Hernandez', '1980-12-29', 'Hombre', 'Calle Oeste', '4', '998765432', 'robertohernandez@example.com', 'password9', 'Usuario', '2023-06-23 00:30:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Sofia', 'Torres', '1996-06-21', '1', 'Avenida 456', '10', '954362781', 'sofiatorres@example.com', 'password10', 'Usuario', '2023-06-24 21:15:00');
+VALUES ('Sofia', 'Torres', '1996-06-21', 'Mujer', 'Avenida 456', '10', '954362781', 'sofiatorres@example.com', 'password10', 'Usuario', '2023-06-24 21:15:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Javier', 'Ramirez', '1991-03-07', '1', 'Calle 789', '11', '932187456', 'javierramirez@example.com', 'password11', 'Usuario', '2023-06-25 18:00:00');
+VALUES ('Javier', 'Ramirez', '1991-03-07', 'Hombre', 'Calle 789', '11', '932187456', 'javierramirez@example.com', 'password11', 'Usuario', '2023-06-25 18:00:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Ana', 'Luna', '1997-08-18', '1', 'Avenida 890', '3', '978546321', 'analuna@example.com', 'password12', 'Usuario', '2023-06-26 14:45:00');
+VALUES ('Ana', 'Luna', '1997-08-18', 'Mujer', 'Avenida 890', '3', '978546321', 'analuna@example.com', 'password12', 'Usuario', '2023-06-26 14:45:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Carlos', 'Fernandez', '1984-01-30', '1', 'Calle 123', '5', '945678912', 'carlosfernandez@example.com', 'password13', 'Usuario', '2023-06-27 11:30:00');
+VALUES ('Carlos', 'Fernandez', '1984-01-30', 'Hombre', 'Calle 123', '5', '945678912', 'carlosfernandez@example.com', 'password13', 'Usuario', '2023-06-27 11:30:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Laura', 'Sanchez', '1992-07-11', '1', 'Avenida 456', '9', '967891234', 'laurasanchez@example.com', 'password14', 'Usuario', '2023-06-28 08:15:00');
+VALUES ('Laura', 'Sanchez', '1992-07-11', 'Mujer', 'Avenida 456', '9', '967891234', 'laurasanchez@example.com', 'password14', 'Usuario', '2023-06-28 08:15:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Pedro', 'Gomez', '1989-04-24', '1', 'Calle 789', '1', '923467891', 'pedrogomez@example.com', 'password15', 'Usuario', '2023-06-29 05:00:00');
+VALUES ('Pedro', 'Gomez', '1989-04-24', 'Hombre', 'Calle 789', '1', '923467891', 'pedrogomez@example.com', 'password15', 'Usuario', '2023-06-29 05:00:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Sofia', 'Hernandez', '1994-11-09', '1', 'Avenida 890', '6', '976543219', 'sofiahernandez@example.com', 'password16', 'Usuario', '2023-06-30 01:45:00');
+VALUES ('Sofia', 'Hernandez', '1994-11-09', 'Mujer', 'Avenida 890', '6', '976543219', 'sofiahernandez@example.com', 'password16', 'Usuario', '2023-06-30 01:45:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Javier', 'Torres', '1999-02-22', '1', 'Calle 123', '8', '945612378', 'javiertorres@example.com', 'password17', 'Usuario', '2023-07-01 22:30:00');
+VALUES ('Javier', 'Torres', '1999-02-22', 'Hombre', 'Calle 123', '8', '945612378', 'javiertorres@example.com', 'password17', 'Usuario', '2023-07-01 22:30:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Ana', 'Ramirez', '1993-09-05', '1', 'Avenida 456', '2', '987654321', 'anaramirez@example.com', 'password18', 'Usuario', '2023-07-02 19:15:00');
+VALUES ('Ana', 'Ramirez', '1993-09-05', 'Mujer', 'Avenida 456', '2', '987654321', 'anaramirez@example.com', 'password18', 'Usuario', '2023-07-02 19:15:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Carlos', 'Lopez', '1988-06-18', '1', 'Calle 789', '4', '932165478', 'carloslopez@example.com', 'password19', 'Usuario', '2023-07-03 16:00:00');
+VALUES ('Carlos', 'Lopez', '1988-06-18', 'Hombre', 'Calle 789', '4', '932165478', 'carloslopez@example.com', 'password19', 'Usuario', '2023-07-03 16:00:00');
 
 INSERT INTO `dp_cliente`(`nombre`, `apellidos`, `Fecha_nacimiento`, `Genero`, `direccion`, `IdDistrito`, `Telefono`, `Email`, `Password`, `cargo`, `Fecha_registro`)
-VALUES ('Laura', 'Gonzalez', '1996-01-31', '1', 'Avenida 890', '7', '954362781', 'lauragonzalez@example.com', 'password20', 'Usuario', '2023-07-04 12:45:00');
+VALUES ('Laura', 'Gonzalez', '1996-01-31', 'Mujer', 'Avenida 890', '7', '954362781', 'lauragonzalez@example.com', 'password20', 'Usuario', '2023-07-04 12:45:00');
 
 
 
