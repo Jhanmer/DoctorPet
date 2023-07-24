@@ -222,7 +222,10 @@ $resultado = mysqli_query($db, $query);
             <td>S/. <?php echo number_format($totalCarrito, 2); ?></td>
         </tr>
     </table>
+
     <img class="metodo-pago" src="/Imagenes/visa.png" alt="Metodo de pago">
+    <img class="metodo-pago" src="/Imagenes/QR-YAPE.jpg" alt="QR de pago">
+    <h4>+51 944 028 451</h4>
     <br>
     <form class="comprobante-form" action="guardar_boleta.php" method="post" enctype="multipart/form-data">
         <label for="comprobante_pago">Subir Comprobante de Pago:</label>
