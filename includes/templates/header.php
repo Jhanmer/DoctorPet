@@ -167,6 +167,7 @@ include "Config/conexion.php";
                                 </div>
                                 
                             </div>
+                            
                             <div class='item'>
                             <a>Citas</a>
                                 <div class='submenu'>
@@ -175,19 +176,21 @@ include "Config/conexion.php";
                                 <a href='ListaReseva.php'>Lista de Reservas</a>
                                 </div>
                             </div>
+
                             <div class='item'>
-                            <a href='comentario.php'>Comentarios</a>                                
+                                <a href='comentario.php'>Comentarios</a>                                
+                            </div>
+
+                            <div class='item'>
+                                <a href='Carrito.php'>
+                                <i class='fa-solid fa-cart-shopping'></i>
+                                </a>
                             </div>
                             ";
                         }
                 ?>
                 
-                <div class="item">
-                    <a href="Carrito.php">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                    
-                </div>
+                
                 <?php
                     if($Cargo != "Usuario"){
                         echo "
@@ -275,10 +278,6 @@ include "Config/conexion.php";
 
                             <div class="modal-line">
                                 <i class="fa-solid fa-circle-info"></i><a href="nosotros.php">Nosotros</a>
-                            </div>
-
-                            <div class="modal-line">                              
-                                <i class="fa-solid fa-cart-shopping"></i><a href="Carrito.php"></a>
                             </div>
 
                             <a href="login.php" class="navb-button" type="button">Iniciar sesion</a>
