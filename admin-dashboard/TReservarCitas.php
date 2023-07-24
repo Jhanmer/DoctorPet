@@ -6,11 +6,12 @@ vet.especialidad,cp.motivo, cp.fechaAtencion,
 cp.monto, 
 Case cp.estadoPago WHEN 0 THEN 'Pago Pendiente' WHEN 1 THEN 'Pago Sin Validar' WHEN 2 THEN 'Pago Realizado' END AS EstadoPagoTexto, 
 Case cp.estadoAtencion WHEN 0 THEN 'Pendiente' WHEN 1 THEN 'En curso' WHEN 2 THEN 'Atendido' END AS EstadoAtencionTexto, 
-hor.hora, mas.NomMasc
+hor.hora, mas.NomMasc, cli.nombre
 from dp_consultapersonalizada cp 
 inner join dp_veterinarios vet on vet.idVeterinario=cp.idVeterinario
 inner join dp_hora hor on hor.idHora=cp.idHora
-inner join dp_mascota mas on mas.idMascota = cp.idMascota;";
+inner join dp_mascota mas on mas.idMascota = cp.idMascota
+inner JOIN dp_cliente cli on cli.idCliente = cp.idCliente;";
 $lista= mysqli_query($con, $sql);
 
 $sqlEvidencia = "select idConsultaPer, pago.cartera, pago.dni, pago.evidenciaPago, cli.nombre, cli.apellidos from dp_pagoconsultapersonalizada pago
@@ -53,6 +54,7 @@ include ('barra-lateral.php');
                                 <thead>
                                     <tr>
                                         <th class="colorCabecera">ID</th>
+                                        <th class="colorCabecera">Cliente</th>
                                         <th class="colorCabecera">Mascota</th>
                                         <th class="colorCabecera">Nombre Vet</th>
                                         <th class="colorCabecera">Apellidos Vet</th>
@@ -77,6 +79,7 @@ include ('barra-lateral.php');
                                         ?> 
                                         <tr>
                                             <td  id="fila-<?php echo $row['idConsultaPer'];?>" ><?php echo $row['idConsultaPer']; ?></td>
+                                            <td><?php echo $row['nombre']; ?> </td>
                                             <td><?php echo $row['NomMasc']; ?> </td>
                                             <td><?php echo $row['nombreVet']; ?> </td>
                                             <td> <?php echo $row['apellidoVet']; ?></td>
@@ -196,7 +199,7 @@ include ('barra-lateral.php');
                                                                     </button>
 
                                                                     <!--Disabled Backdrop Modal -->
-                                                                    <div class="modal fade text-left" id="backdrop" tabindex="-1" role="dialog"
+                                                                    <div class="modal fade text-left" id="backdrop - <?php echo $row['idConsultaPer'];?>" tabindex="-1" role="dialog"
                                                                         aria-labelledby="myModalLabel4" aria-hidden="true">
                                                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
                                                                             role="document">
@@ -229,7 +232,7 @@ include ('barra-lateral.php');
                                                                     </div>
                                                             </td>
                                                             <td>
-                                                                <img width="250px" height="500px" src="data:image/jpg;base64,<?php echo base64_encode($row['evidenciaPago']); ?>"/>      
+                                                                <img width="150px" height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row['evidenciaPago']); ?>"/>      
                                                             </td> 
                                                             <td><?php echo $row['nombre']; ?></td>  
                                                             <td><?php echo $row['apellidos']; ?></td>  
