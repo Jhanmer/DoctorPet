@@ -647,16 +647,6 @@ INSERT INTO `alimento` (`idAlimento`, `nombre`, `descripcion`, `imagen`, `precio
 (13, 'Uno', 'Comida para perro cachorro 2kg.', 'c15f71d8b9a5281a1152e00fff1d57a8', '20.00', 20);
 
 INSERT INTO `medicamento` (`idMedicamento`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`) VALUES
-(1, 'Alerflam', 'Medicamento para perros y gatos', '2a1e65bf50588cc093bdec927a07fb3d', 20.00, 20),
-(2, 'Rimadyl', 'Medicamento para perros y gatos', 'de35e174dcc733beaaea436a0269e574', 20.00, 14),
-(3, 'AmylaDol', 'Medicamento para perros y gatos', 'e87ec7c3af6b8ac63c28e7d532d8d4a6', 30.00, 8),
-(4, 'Power Ultra', 'Medicamento para perros y gatos', '95f7e61b8fba97d9d5b04734c05c44f0', 30.00, 9),
-(5, 'Drontal', 'Medicamento para perros y gatos', 'a1269b99fdfc2a6dbe3675cf4dd393a5', 20.00, 25),
-(6, 'Cefavet', 'Medicamento para perros y gatos', 'd87f83cefa8adfd3188eee3c8e1c577e', 20.00, 10),
-(7, 'Naxpet', 'Medicamento para perros y gatos', 'f189347618789fffe8a0e7ec58316f05', 30.00, 10),
-(8, 'Meloxic', 'Medicamento para perros y gatos', 'e0e5dbf2d0c032778d4361ae42da1c4e', 20.00, 30);
-
-INSERT INTO `medicamento` (`idMedicamento`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`) VALUES
 (1, 'Alerflam', 'Medicamento para perros y gatos', '7a054e77dffae93742807bc77c366abb', 20.00, 20),
 (2, 'Rimadyl', 'Medicamento para perros y gatos', 'de35e174dcc733beaaea436a0269e574', 20.00, 14),
 (3, 'AmylaDol', 'Medicamento para perros y gatos', 'e87ec7c3af6b8ac63c28e7d532d8d4a6', 30.00, 8),
