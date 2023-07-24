@@ -44,8 +44,25 @@ if (isset($_GET['idConsultaPer'])) {
             </div>
 
         </div>
-
+        <style>
+             .metodo-pago {
+            max-width: 200px;
+            /* Ajusta el tamaño máximo de la imagen */
+            display: block;
+            /* Asegura que la imagen sea un elemento de bloque para alinear correctamente */
+            margin: 0 auto;
+            /* Centra horizontalmente la imagen */
+            border: 2px solid #ccc;
+            /* Agrega un borde de 2px alrededor de la imagen */
+            border-radius: 4px;
+            /* Agrega un borde redondeado */
+            padding: 5px;
+            /* Agrega un pequeño espacio entre el borde y la imagen */
+        }
+        </style>
+        
         <form action="/Controlador/RegistrarPago.php" method="post" enctype="multipart/form-data">
+            <img class="metodo-pago" src="/Imagenes/QR-YAPE.jpg" alt="QR de pago">
             <input type="hidden" name="idCliente" value="<?php echo $idCliente; ?>">
             <input type="hidden" name="idConsultaPer" value="<?php echo $idConsultaPer; ?>">
             <div class="contador">
