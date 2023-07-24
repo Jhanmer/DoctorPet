@@ -656,3 +656,23 @@ INSERT INTO `medicamento` (`idMedicamento`, `nombre`, `descripcion`, `imagen`, `
 (7, 'Naxpet', 'Medicamento para perros y gatos', 'f189347618789fffe8a0e7ec58316f05', 30.00, 10),
 (8, 'Meloxic', 'Medicamento para perros y gatos', 'e0e5dbf2d0c032778d4361ae42da1c4e', 20.00, 30);
 
+INSERT INTO `medicamento` (`idMedicamento`, `nombre`, `descripcion`, `imagen`, `precio`, `stock`) VALUES
+(1, 'Alerflam', 'Medicamento para perros y gatos', '7a054e77dffae93742807bc77c366abb', 20.00, 20),
+(2, 'Rimadyl', 'Medicamento para perros y gatos', 'de35e174dcc733beaaea436a0269e574', 20.00, 14),
+(3, 'AmylaDol', 'Medicamento para perros y gatos', 'e87ec7c3af6b8ac63c28e7d532d8d4a6', 30.00, 8),
+(4, 'Power Ultra', 'Medicamento para perros y gatos', '95f7e61b8fba97d9d5b04734c05c44f0', 30.00, 9),
+(5, 'Drontal', 'Medicamento para perros y gatos', 'a1269b99fdfc2a6dbe3675cf4dd393a5', 20.00, 25),
+(6, 'Cefavet', 'Medicamento para perros y gatos', '51e74fec75cc4842e0986d07eb33fada', 35.00, 20),
+(7, 'Naxpet', 'Medicamento para perros y gatos', 'f189347618789fffe8a0e7ec58316f05', 30.00, 10),
+(8, 'Meloxic', 'Medicamento para perros y gatos', 'e0e5dbf2d0c032778d4361ae42da1c4e', 20.00, 30),
+(9, 'Antivon-Vet', 'Medicamento para perros', 'e251ce36735c8b6e705f28e78695b74b', '35.00', 20),
+(10, 'Clindamicina-Spectrum', 'Medicamento para perros y gatos', '38e321f8351ad0a2fc87ded146144eba', 40.00, 25),
+(11, 'Dirulan', 'Medicamento para perros y gatos', '986f5a66877f17fde3ac24adc2745252', 25.00, 25),
+(12, 'Fullspot', 'Medicamento para gatos', 'e9036298ec227542fb1be4c6a8743ca3', 30.00, 20),
+(13, 'gastroprazol', 'Medicamento para perros y gatos', 'b4ef7ff82edf63bbad82fffa3ed3755b', 35.00, 25),
+(14, 'Humectan gotas', 'Medicamento para perros y gatos', 'dcfd83059da0e6963231d76175d83334', 35.00, 25),
+(15, 'humectan unguento', 'Medicamento para perros y gatos', 'fb5f8c8937f6731bbe0ce209a684eada', 25.00, 20),
+(16, 'Micoplex Plus Shampoo', 'Medicamento para perros y gatos', '27c76001387ad238c102f5eae7c11efe', 30.00, 20),
+(17, 'Omepra', 'Medicamento para perros y gatos', '2d6d805acd3858f370943cd057b21e0f', 40.00, 20),
+(18, 'Trihepat', 'Medicina para perros y gatos', '8f250ac7f46154b7e1ff32c96fbfd73c', 30.00, 20),
+(19, 'Vetriderm jabon', 'Medicamento para perros y gatos', 'dddbca3642551c719629540f10044cd0', 40.00, 20);
