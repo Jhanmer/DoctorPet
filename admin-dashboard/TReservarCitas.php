@@ -191,15 +191,15 @@ include ('barra-lateral.php');
                                                             <td  id="fila-<?php echo $row['idConsultaPer'];?>" ><?php echo $row['idConsultaPer']; ?></td> 
                                                             <td><?php echo $row['cartera']; ?></td>  
                                                             <td><?php echo $row['dni']; ?></td>  
-                                                            <td hidden>
+                                                            <td >
                                                                     <!-- Button trigger for Disabled Backdrop -->
                                                                     <button type="button" class="btn btn-outline-primary block"
-                                                                        data-bs-toggle="modal" data-bs-backdrop="false" data-bs-target="#backdrop">
+                                                                        data-bs-toggle="modal" data-bs-backdrop="false" data-bs-target="#backdrop-<?php echo $row['idConsultaPer'];?>">
                                                                         Ver Imagen
                                                                     </button>
 
                                                                     <!--Disabled Backdrop Modal -->
-                                                                    <div class="modal fade text-left" id="backdrop - <?php echo $row['idConsultaPer'];?>" tabindex="-1" role="dialog"
+                                                                    <div class="modal fade text-left" id="backdrop-<?php echo $row['idConsultaPer'];?>" tabindex="-1" role="dialog"
                                                                         aria-labelledby="myModalLabel4" aria-hidden="true">
                                                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
                                                                             role="document">
@@ -231,9 +231,7 @@ include ('barra-lateral.php');
                                                                         </div>
                                                                     </div>
                                                             </td>
-                                                            <td>
-                                                                <img width="150px" height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row['evidenciaPago']); ?>"/>      
-                                                            </td> 
+                                                            
                                                             <td><?php echo $row['nombre']; ?></td>  
                                                             <td><?php echo $row['apellidos']; ?></td>  
                                                         </tr>
