@@ -216,15 +216,6 @@ include "Config/conexion.php";
                                         <hr class='dropdown-divider'>
                                     </li>
                                     <li>
-                                        <a class='dropdown-item d-flex align-items-center' href='#'>
-                                            <i class='bi bi-gear'></i>
-                                            <span>Configuración</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <hr class='dropdown-divider'>
-                                    </li>
-                                    <li>
                                         <a class='dropdown-item d-flex align-items-center' href='../ListaReseva.php'>
                                             <i class='bi bi-question-circle'></i>
                                             <span>Mi lista de Citas</span>
