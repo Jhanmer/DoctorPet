@@ -86,7 +86,7 @@ include('b-medicamento.php');
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex justify-content-end">
-                                                <input type="submit" class="btn btn-outline-warning btn-lg btn-block" value="RegistrarMediamento"></input>
+                                                <input type="submit" class="btn btn-outline-warning btn-lg btn-block" value="Registrar Medicamento"></input>
 
                                             </div>
                                         </div>
